@@ -41,6 +41,8 @@
 #import "SVProgressHUD.h"
 #import "SDAutoLayout.h"
 
+#import "BaseViewController.h"
+#import "BaseNavViewController.h"
 
 #endif
 #endif /* PrefixHeader_pch */

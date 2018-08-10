@@ -41,6 +41,15 @@
 #define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)
 #define KScreenHeight [[UIScreen mainScreen] bounds].size.height
 
+//金色
+#define mainColor UIColorFromHex(0xCBAE86)
+//底色
+#define mainBackgroudColor UIColorFromHex(0x303030)
+//控件底色
+#define mainItemsBackgroudColor UIColorFromHex(0x424242)
+//灰色字体
+#define mainGrayColor UIColorFromHex(0x848484)
+
 // 主服务器地址
 #define SERVER_IP         @""
 

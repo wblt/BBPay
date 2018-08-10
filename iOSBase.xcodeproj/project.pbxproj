@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		363853AA200465BA00899B11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 363853A9200465BA00899B11 /* AppDelegate.m */; };
-		363853AD200465BA00899B11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363853AC200465BA00899B11 /* ViewController.m */; };
-		363853B0200465BA00899B11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363853AE200465BA00899B11 /* Main.storyboard */; };
 		363853B2200465BA00899B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 363853B1200465BA00899B11 /* Assets.xcassets */; };
 		363853B5200465BA00899B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363853B3200465BA00899B11 /* LaunchScreen.storyboard */; };
 		363853B8200465BA00899B11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 363853B7200465BA00899B11 /* main.m */; };
@@ -21,7 +19,6 @@
 		363853E620046DFC00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363853E520046DFC00899B11 /* README.md */; };
 		363853E920046E0400899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363853E820046E0300899B11 /* README.md */; };
 		363853EC20046E0B00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363853EB20046E0B00899B11 /* README.md */; };
-		363853F12004706800899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363853EE2004706800899B11 /* README.md */; };
 		363853F42004714D00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363853F32004714D00899B11 /* README.md */; };
 		363854162004981D00899B11 /* SPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 363853FB2004981D00899B11 /* SPUtil.m */; };
 		363854172004981D00899B11 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 363853FE2004981D00899B11 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -51,6 +48,14 @@
 		3638545F2004C4EF00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3638545E2004C4EF00899B11 /* README.md */; };
 		363854612004C4FA00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363854602004C4F900899B11 /* README.md */; };
 		92A34F38F4AC27A3C3ADFC02 /* libPods-iOSBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D497ADAEE224F0451F225E /* libPods-iOSBase.a */; };
+		EEB368CA211DE4DE00CF00AF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368C8211DE4DE00CF00AF /* LoginViewController.m */; };
+		EEB368CB211DE4DE00CF00AF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEB368C9211DE4DE00CF00AF /* LoginViewController.xib */; };
+		EEB368CF211DE6FE00CF00AF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368CD211DE6FE00CF00AF /* HomeViewController.m */; };
+		EEB368D0211DE6FE00CF00AF /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEB368CE211DE6FE00CF00AF /* HomeViewController.xib */; };
+		EEB368D4211DEE3300CF00AF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368D2211DEE3300CF00AF /* RegisterViewController.m */; };
+		EEB368D5211DEE3300CF00AF /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEB368D3211DEE3300CF00AF /* RegisterViewController.xib */; };
+		EEB368D9211DEE5300CF00AF /* ForgetPwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368D7211DEE5300CF00AF /* ForgetPwdController.m */; };
+		EEB368DA211DEE5300CF00AF /* ForgetPwdController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEB368D8211DEE5300CF00AF /* ForgetPwdController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,9 +80,6 @@
 		363853A5200465BA00899B11 /* iOSBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		363853A8200465BA00899B11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		363853A9200465BA00899B11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		363853AB200465BA00899B11 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		363853AC200465BA00899B11 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		363853AF200465BA00899B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		363853B1200465BA00899B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		363853B4200465BA00899B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		363853B6200465BA00899B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,7 +97,6 @@
 		363853E520046DFC00899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		363853E820046E0300899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		363853EB20046E0B00899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		363853EE2004706800899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		363853F32004714D00899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		363853F5200495C100899B11 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		363853F82004977400899B11 /* FlowAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowAPI.h; sourceTree = "<group>"; };
@@ -143,6 +144,18 @@
 		3638545E2004C4EF00899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		363854602004C4F900899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6D47F575D57BBA9836E5F5A5 /* Pods-iOSBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBase/Pods-iOSBase.release.xcconfig"; sourceTree = "<group>"; };
+		EEB368C7211DE4DE00CF00AF /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EEB368C8211DE4DE00CF00AF /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EEB368C9211DE4DE00CF00AF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		EEB368CC211DE6FE00CF00AF /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		EEB368CD211DE6FE00CF00AF /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		EEB368CE211DE6FE00CF00AF /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		EEB368D1211DEE3300CF00AF /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		EEB368D2211DEE3300CF00AF /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		EEB368D3211DEE3300CF00AF /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		EEB368D6211DEE5300CF00AF /* ForgetPwdController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdController.h; sourceTree = "<group>"; };
+		EEB368D7211DEE5300CF00AF /* ForgetPwdController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdController.m; sourceTree = "<group>"; };
+		EEB368D8211DEE5300CF00AF /* ForgetPwdController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPwdController.xib; sourceTree = "<group>"; };
 		FC0F68CA62C14D611F9401DA /* Pods-iOSBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBase/Pods-iOSBase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,9 +226,6 @@
 				363853DA20046C1B00899B11 /* Utils */,
 				363853A8200465BA00899B11 /* AppDelegate.h */,
 				363853A9200465BA00899B11 /* AppDelegate.m */,
-				363853AB200465BA00899B11 /* ViewController.h */,
-				363853AC200465BA00899B11 /* ViewController.m */,
-				363853AE200465BA00899B11 /* Main.storyboard */,
 				363853B1200465BA00899B11 /* Assets.xcassets */,
 				363853B3200465BA00899B11 /* LaunchScreen.storyboard */,
 				363853B6200465BA00899B11 /* Info.plist */,
@@ -312,7 +322,8 @@
 		363853ED2004706800899B11 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				363853EE2004706800899B11 /* README.md */,
+				EEB368BE211DE39900CF00AF /* Home */,
+				EEB368BA211DE39900CF00AF /* Login */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -401,6 +412,80 @@
 				6D47F575D57BBA9836E5F5A5 /* Pods-iOSBase.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EEB368BA211DE39900CF00AF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EEB368BB211DE39900CF00AF /* Models */,
+				EEB368BC211DE39900CF00AF /* Controllers */,
+				EEB368BD211DE39900CF00AF /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EEB368BB211DE39900CF00AF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EEB368BC211DE39900CF00AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEB368C7211DE4DE00CF00AF /* LoginViewController.h */,
+				EEB368C8211DE4DE00CF00AF /* LoginViewController.m */,
+				EEB368C9211DE4DE00CF00AF /* LoginViewController.xib */,
+				EEB368D1211DEE3300CF00AF /* RegisterViewController.h */,
+				EEB368D2211DEE3300CF00AF /* RegisterViewController.m */,
+				EEB368D3211DEE3300CF00AF /* RegisterViewController.xib */,
+				EEB368D6211DEE5300CF00AF /* ForgetPwdController.h */,
+				EEB368D7211DEE5300CF00AF /* ForgetPwdController.m */,
+				EEB368D8211DEE5300CF00AF /* ForgetPwdController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EEB368BD211DE39900CF00AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EEB368BE211DE39900CF00AF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EEB368BF211DE39900CF00AF /* Models */,
+				EEB368C0211DE39900CF00AF /* Controllers */,
+				EEB368C3211DE39A00CF00AF /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EEB368BF211DE39900CF00AF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EEB368C0211DE39900CF00AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEB368CC211DE6FE00CF00AF /* HomeViewController.h */,
+				EEB368CD211DE6FE00CF00AF /* HomeViewController.m */,
+				EEB368CE211DE6FE00CF00AF /* HomeViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EEB368C3211DE39A00CF00AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,18 +598,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				363853E620046DFC00899B11 /* README.md in Resources */,
+				EEB368CB211DE4DE00CF00AF /* LoginViewController.xib in Resources */,
 				363853B5200465BA00899B11 /* LaunchScreen.storyboard in Resources */,
 				3638545B2004C13200899B11 /* README.md in Resources */,
 				3638545D2004C4BB00899B11 /* README.md in Resources */,
 				363853B2200465BA00899B11 /* Assets.xcassets in Resources */,
+				EEB368DA211DEE5300CF00AF /* ForgetPwdController.xib in Resources */,
 				363854502004C0A600899B11 /* close_icon@2x.png in Resources */,
 				363853E920046E0400899B11 /* README.md in Resources */,
 				363854612004C4FA00899B11 /* README.md in Resources */,
 				363854572004C0C200899B11 /* README.md in Resources */,
 				363853E320046DF500899B11 /* README.md in Resources */,
+				EEB368D5211DEE3300CF00AF /* RegisterViewController.xib in Resources */,
 				363854522004C0A600899B11 /* sure_placeholder_error@3x.png in Resources */,
 				363853E020046DDC00899B11 /* README.md in Resources */,
-				363853F12004706800899B11 /* README.md in Resources */,
 				363854542004C0A600899B11 /* back_icon@2x.png in Resources */,
 				3638544F2004C0A600899B11 /* sure_placeholder_error@2x.png in Resources */,
 				363854592004C11A00899B11 /* README.md in Resources */,
@@ -533,7 +620,7 @@
 				363854532004C0A600899B11 /* close_icon@3x.png in Resources */,
 				363853F42004714D00899B11 /* README.md in Resources */,
 				3638545F2004C4EF00899B11 /* README.md in Resources */,
-				363853B0200465BA00899B11 /* Main.storyboard in Resources */,
+				EEB368D0211DE6FE00CF00AF /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,11 +695,14 @@
 			files = (
 				3638542C20049D8500899B11 /* BaseViewController.m in Sources */,
 				363854202004981D00899B11 /* BeanManager.m in Sources */,
+				EEB368D9211DEE5300CF00AF /* ForgetPwdController.m in Sources */,
 				363854552004C0A600899B11 /* SureWebViewController.m in Sources */,
+				EEB368CF211DE6FE00CF00AF /* HomeViewController.m in Sources */,
+				EEB368D4211DEE3300CF00AF /* RegisterViewController.m in Sources */,
 				363854192004981D00899B11 /* UIButton+XYButton.m in Sources */,
+				EEB368CA211DE4DE00CF00AF /* LoginViewController.m in Sources */,
 				363854162004981D00899B11 /* SPUtil.m in Sources */,
 				363854172004981D00899B11 /* GTMBase64.m in Sources */,
-				363853AD200465BA00899B11 /* ViewController.m in Sources */,
 				3638541F2004981D00899B11 /* Util.m in Sources */,
 				363853B8200465BA00899B11 /* main.m in Sources */,
 				3638541B2004981D00899B11 /* UIColor+Extend.m in Sources */,
@@ -660,14 +750,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		363853AE200465BA00899B11 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				363853AF200465BA00899B11 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		363853B3200465BA00899B11 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
