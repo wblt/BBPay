@@ -51,9 +51,13 @@
 #define mainGrayColor UIColorFromHex(0x848484)
 
 // 主服务器地址
-#define SERVER_IP         @""
+#define SERVER_IP         @"http://ddcapp.top"
 
 // 登录
-#define API_LOGIN       SERVER_IP@""
+#define API_LOGIN       SERVER_IP@"/app/user/login"
+// 注册
+#define API_SYREG       SERVER_IP@"/app/user/syreg"
+// 首页
+#define API_HOMEPAGE       SERVER_IP@"/app/index/homePage"
 
 #endif /* FlowAPI_h */

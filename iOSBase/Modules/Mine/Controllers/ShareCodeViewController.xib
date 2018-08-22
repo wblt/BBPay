@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShareCodeViewController">
+            <connections>
+                <outlet property="imageView" destination="OmM-21-iha" id="GAo-LG-WNG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrb-09-RHU">
+                    <rect key="frame" x="72.5" y="60" width="230" height="230"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OmM-21-iha">
+                            <rect key="frame" x="15" y="15" width="200" height="200"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="230" id="ASa-YG-qHU"/>
+                        <constraint firstItem="OmM-21-iha" firstAttribute="leading" secondItem="Mrb-09-RHU" secondAttribute="leading" constant="15" id="HuW-O3-Q8T"/>
+                        <constraint firstAttribute="height" constant="230" id="LwA-IB-W9M"/>
+                        <constraint firstItem="OmM-21-iha" firstAttribute="top" secondItem="Mrb-09-RHU" secondAttribute="top" constant="15" id="d7l-sr-7SC"/>
+                        <constraint firstAttribute="bottom" secondItem="OmM-21-iha" secondAttribute="bottom" constant="15" id="eF8-Af-8Gp"/>
+                        <constraint firstAttribute="trailing" secondItem="OmM-21-iha" secondAttribute="trailing" constant="15" id="p2w-Fl-Jod"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描二维码即可分享给好友哟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHH-HY-kGb">
+                    <rect key="frame" x="101" y="300" width="173" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2B-qK-6fA">
+                    <rect key="frame" x="142" y="494" width="91" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="复制Dpay地址">
+                        <color key="titleColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7v-tW-UP3">
+                    <rect key="frame" x="158.5" y="623" width="58" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="分享记录">
+                        <color key="titleColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="R7v-tW-UP3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8sA-an-wX5"/>
+                <constraint firstItem="IHH-HY-kGb" firstAttribute="top" secondItem="Mrb-09-RHU" secondAttribute="bottom" constant="10" id="M6V-hD-y2j"/>
+                <constraint firstItem="Mrb-09-RHU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="Mof-rX-Fnt"/>
+                <constraint firstItem="R7v-tW-UP3" firstAttribute="top" secondItem="R2B-qK-6fA" secondAttribute="bottom" constant="100" id="SJg-BP-7vK"/>
+                <constraint firstItem="IHH-HY-kGb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fak-9s-hJu"/>
+                <constraint firstItem="R2B-qK-6fA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kbA-er-OSK"/>
+                <constraint firstItem="Mrb-09-RHU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oKz-eJ-11O"/>
+                <constraint firstAttribute="bottom" secondItem="R7v-tW-UP3" secondAttribute="bottom" constant="15" id="rYx-yy-NIq"/>
+            </constraints>
+            <point key="canvasLocation" x="65.5" y="117.5"/>
+        </view>
+    </objects>
+</document>

@@ -21,16 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Qok-sA-5iV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Qok-sA-5iV">
+                                <rect key="frame" x="0.0" y="-24" width="375" height="741"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Qok-sA-5iV" secondAttribute="trailing" id="BIl-3W-XNV"/>
-                            <constraint firstItem="zHb-R9-vzd" firstAttribute="top" secondItem="Qok-sA-5iV" secondAttribute="bottom" id="e3C-uJ-2rm"/>
+                            <constraint firstItem="zHb-R9-vzd" firstAttribute="top" secondItem="Qok-sA-5iV" secondAttribute="bottom" constant="-50" id="e3C-uJ-2rm"/>
                             <constraint firstItem="Qok-sA-5iV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="mpM-WY-UWr"/>
-                            <constraint firstItem="Qok-sA-5iV" firstAttribute="top" secondItem="0tI-vE-NkW" secondAttribute="bottom" constant="-20" id="zNs-hR-YuO"/>
+                            <constraint firstItem="Qok-sA-5iV" firstAttribute="top" secondItem="0tI-vE-NkW" secondAttribute="bottom" constant="-44" id="zNs-hR-YuO"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="guide_bg" width="1080" height="1920"/>
+        <image name="guide_bg" width="540" height="960"/>
     </resources>
 </document>

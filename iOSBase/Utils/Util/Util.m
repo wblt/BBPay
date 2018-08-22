@@ -611,7 +611,26 @@
     
 }
 
-
++ (BOOL)valiPassword:(NSString *)password
+{
+    password = [password stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if (password.length < 6 || password.length > 32)
+    {
+        return NO;
+    }else{
+        /**
+         * 数字+字母正则表达式
+         */
+        NSString *regex = @"^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,32}$";
+        NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+        BOOL isMatch1 = [pred1 evaluateWithObject:password];
+        if (isMatch1) {
+            return YES;
+        }else{
+            return NO;
+        }
+    }
+}
 
 
 

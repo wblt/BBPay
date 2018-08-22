@@ -223,4 +223,7 @@
 
 // 判断手机号码
 + (BOOL)valiMobile:(NSString *)mobile;
+
+// 判断密码6-32位数字加字母
++ (BOOL)valiPassword:(NSString *)password;
 @end

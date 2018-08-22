@@ -52,7 +52,7 @@ static AFHTTPSessionManager *manager;
     //NSString *requestURL = [baseUrl stringByAppendingString:ut8Str];
     // 3. 构造一个操作对象的管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
     // 这里要注意一下，不同的接口，我们在这里拼接一下可能会出错
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain", nil];
@@ -80,12 +80,19 @@ static AFHTTPSessionManager *manager;
         [SVProgressHUD dismiss];
         if (successBlock) {
             DLog(@"%@成功返回:{{%@}}",title,responseObject);
-            successBlock(responseObject);
+            if ([responseObject[@"code"] isEqualToString:@"1000"]) {
+                successBlock(responseObject);
+            }else {
+                [SVProgressHUD showErrorWithStatus:responseObject[@"message"]];
+                failureBlock(nil);
+            }
+            
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         if (failureBlock) {
             DLog(@"%@错误返回:{{%@}}",title,[error localizedDescription]);
+            [SVProgressHUD showErrorWithStatus:@"网络请求错误"];
             failureBlock(error);
         }
     }];

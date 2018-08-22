@@ -11,4 +11,5 @@ pod 'SVProgressHUD'
 pod 'LKDBHelper'
 pod 'SDAutoLayout', '~> 2.1.3'
 pod 'Bugly'
+pod 'HMQRCodeScanner'
 end
