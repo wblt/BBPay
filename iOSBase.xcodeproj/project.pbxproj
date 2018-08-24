@@ -83,6 +83,12 @@
 		EED14B2C21297B27005973C6 /* AnotherSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED14B2B21297B26005973C6 /* AnotherSearchViewController.m */; };
 		EEDDB27E211F164F007FE540 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDDB27C211F164F007FE540 /* MineViewController.m */; };
 		EEDDB27F211F164F007FE540 /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEDDB27D211F164F007FE540 /* MineViewController.xib */; };
+		EEE4249B212DB5DD000A3915 /* DigitalAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE42499212DB5DD000A3915 /* DigitalAssetsViewController.m */; };
+		EEE4249C212DB5DD000A3915 /* DigitalAssetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE4249A212DB5DD000A3915 /* DigitalAssetsViewController.xib */; };
+		EEE424A0212DB6FC000A3915 /* DigitalAssetsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE4249E212DB6FC000A3915 /* DigitalAssetsCell.m */; };
+		EEE424A1212DB6FC000A3915 /* DigitalAssetsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE4249F212DB6FC000A3915 /* DigitalAssetsCell.xib */; };
+		EEE424A4212DBA02000A3915 /* DigitalAssetsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE424A3212DBA02000A3915 /* DigitalAssetsHeadView.m */; };
+		EEE424A6212DBA0C000A3915 /* DigitalAssetsHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE424A5212DBA0C000A3915 /* DigitalAssetsHeadView.xib */; };
 		EEF19E61212AFC3400B812B1 /* IndividualPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF19E5F212AFC3400B812B1 /* IndividualPropertyViewController.m */; };
 		EEF19E62212AFC3400B812B1 /* IndividualPropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF19E60212AFC3400B812B1 /* IndividualPropertyViewController.xib */; };
 		EEF19E66212B011900B812B1 /* EditLoginPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF19E64212B011900B812B1 /* EditLoginPwdViewController.m */; };
@@ -249,6 +255,15 @@
 		EEDDB27B211F164F007FE540 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		EEDDB27C211F164F007FE540 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		EEDDB27D211F164F007FE540 /* MineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
+		EEE42498212DB5DD000A3915 /* DigitalAssetsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalAssetsViewController.h; sourceTree = "<group>"; };
+		EEE42499212DB5DD000A3915 /* DigitalAssetsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalAssetsViewController.m; sourceTree = "<group>"; };
+		EEE4249A212DB5DD000A3915 /* DigitalAssetsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DigitalAssetsViewController.xib; sourceTree = "<group>"; };
+		EEE4249D212DB6FC000A3915 /* DigitalAssetsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalAssetsCell.h; sourceTree = "<group>"; };
+		EEE4249E212DB6FC000A3915 /* DigitalAssetsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalAssetsCell.m; sourceTree = "<group>"; };
+		EEE4249F212DB6FC000A3915 /* DigitalAssetsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DigitalAssetsCell.xib; sourceTree = "<group>"; };
+		EEE424A2212DBA02000A3915 /* DigitalAssetsHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalAssetsHeadView.h; sourceTree = "<group>"; };
+		EEE424A3212DBA02000A3915 /* DigitalAssetsHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalAssetsHeadView.m; sourceTree = "<group>"; };
+		EEE424A5212DBA0C000A3915 /* DigitalAssetsHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DigitalAssetsHeadView.xib; sourceTree = "<group>"; };
 		EEF19E5E212AFC3400B812B1 /* IndividualPropertyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IndividualPropertyViewController.h; sourceTree = "<group>"; };
 		EEF19E5F212AFC3400B812B1 /* IndividualPropertyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndividualPropertyViewController.m; sourceTree = "<group>"; };
 		EEF19E60212AFC3400B812B1 /* IndividualPropertyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndividualPropertyViewController.xib; sourceTree = "<group>"; };
@@ -608,6 +623,9 @@
 				EEFD6485212C5BB000BF1C34 /* PurchaseViewController.h */,
 				EEFD6486212C5BB000BF1C34 /* PurchaseViewController.m */,
 				EEFD6487212C5BB000BF1C34 /* PurchaseViewController.xib */,
+				EEE42498212DB5DD000A3915 /* DigitalAssetsViewController.h */,
+				EEE42499212DB5DD000A3915 /* DigitalAssetsViewController.m */,
+				EEE4249A212DB5DD000A3915 /* DigitalAssetsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -618,6 +636,12 @@
 				EEFD6480212C57A000BF1C34 /* TurnOutRecordListCell.h */,
 				EEFD6481212C57A000BF1C34 /* TurnOutRecordListCell.m */,
 				EEFD6482212C57A000BF1C34 /* TurnOutRecordListCell.xib */,
+				EEE4249D212DB6FC000A3915 /* DigitalAssetsCell.h */,
+				EEE4249E212DB6FC000A3915 /* DigitalAssetsCell.m */,
+				EEE4249F212DB6FC000A3915 /* DigitalAssetsCell.xib */,
+				EEE424A2212DBA02000A3915 /* DigitalAssetsHeadView.h */,
+				EEE424A3212DBA02000A3915 /* DigitalAssetsHeadView.m */,
+				EEE424A5212DBA0C000A3915 /* DigitalAssetsHeadView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -861,6 +885,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEFD647A212C552700BF1C34 /* ConvertibilityViewController.xib in Resources */,
+				EEE424A6212DBA0C000A3915 /* DigitalAssetsHeadView.xib in Resources */,
 				363853E620046DFC00899B11 /* README.md in Resources */,
 				EED0574D212284A500F0AB9C /* sure_placeholder_error@3x.png in Resources */,
 				EED14AEA21294CF7005973C6 /* MineCell.xib in Resources */,
@@ -879,11 +904,13 @@
 				EEFD647F212C56AF00BF1C34 /* TurnOutRecordListViewController.xib in Resources */,
 				EEB368DA211DEE5300CF00AF /* ForgetPwdController.xib in Resources */,
 				EED05750212284A500F0AB9C /* back_icon@3x.png in Resources */,
+				EEE424A1212DB6FC000A3915 /* DigitalAssetsCell.xib in Resources */,
 				EEFD6475212C521D00BF1C34 /* TurnOutViewController.xib in Resources */,
 				363853E920046E0400899B11 /* README.md in Resources */,
 				EED14AF421296137005973C6 /* EditNicknameViewController.xib in Resources */,
 				363854612004C4FA00899B11 /* README.md in Resources */,
 				EEF19E62212AFC3400B812B1 /* IndividualPropertyViewController.xib in Resources */,
+				EEE4249C212DB5DD000A3915 /* DigitalAssetsViewController.xib in Resources */,
 				EEDDB27F211F164F007FE540 /* MineViewController.xib in Resources */,
 				363853E320046DF500899B11 /* README.md in Resources */,
 				EED0574F212284A500F0AB9C /* back_icon@2x.png in Resources */,
@@ -974,6 +1001,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE424A0212DB6FC000A3915 /* DigitalAssetsCell.m in Sources */,
 				EED14B1E21296EDD005973C6 /* PinyinHelper.m in Sources */,
 				EEFD647E212C56AF00BF1C34 /* TurnOutRecordListViewController.m in Sources */,
 				EED14B2321296EDD005973C6 /* PinyinFormatter.m in Sources */,
@@ -990,6 +1018,7 @@
 				EED14AF82129633A005973C6 /* MyBankViewController.m in Sources */,
 				EED14B2021296EDD005973C6 /* HanyuPinyinOutputFormat.m in Sources */,
 				EEFD6488212C5BB000BF1C34 /* PurchaseViewController.m in Sources */,
+				EEE4249B212DB5DD000A3915 /* DigitalAssetsViewController.m in Sources */,
 				363854192004981D00899B11 /* UIButton+XYButton.m in Sources */,
 				EED14AEF212959B9005973C6 /* MineHeadView.m in Sources */,
 				EEF19E66212B011900B812B1 /* EditLoginPwdViewController.m in Sources */,
@@ -1000,6 +1029,7 @@
 				EEB368CA211DE4DE00CF00AF /* LoginViewController.m in Sources */,
 				EED14AE921294CF7005973C6 /* MineCell.m in Sources */,
 				363854162004981D00899B11 /* SPUtil.m in Sources */,
+				EEE424A4212DBA02000A3915 /* DigitalAssetsHeadView.m in Sources */,
 				EEF19E75212B0F0400B812B1 /* AboutViewController.m in Sources */,
 				EEDDB27E211F164F007FE540 /* MineViewController.m in Sources */,
 				363854172004981D00899B11 /* GTMBase64.m in Sources */,

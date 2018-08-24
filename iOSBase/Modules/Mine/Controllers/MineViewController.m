@@ -138,11 +138,14 @@
     }else if (indexPath.section == 4 && indexPath.row == 1) {
         ShareCodeViewController *vc = [[ShareCodeViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 4 && indexPath.row == 2) {
+        self.navigationController.navigationBarHidden = YES;
     }else if (indexPath.section == 4 && indexPath.row == 3) {
         AboutViewController *vc = [[AboutViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }else {
         self.navigationController.navigationBarHidden = YES;
+        [SVProgressHUD showInfoWithStatus:@"开发中"];
     }
 }
 

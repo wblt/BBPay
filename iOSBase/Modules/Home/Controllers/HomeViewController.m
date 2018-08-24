@@ -12,6 +12,7 @@
 #import "TurnOutViewController.h"
 #import "ShareCodeViewController.h"
 #import "PurchaseViewController.h"
+#import "DigitalAssetsViewController.h"
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *score;
 @property (weak, nonatomic) IBOutlet UILabel *money;
@@ -77,9 +78,11 @@
         PurchaseViewController *vc = [[PurchaseViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 105) {
-        
+        DigitalAssetsViewController *vc = [[DigitalAssetsViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 106) {
-        
+        self.navigationController.navigationBarHidden = YES;
+        [SVProgressHUD showInfoWithStatus:@"开发中"];
     }
 }
 
