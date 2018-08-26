@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DigitalAssetsHeadView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="396"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -70,11 +70,6 @@
                         <constraint firstAttribute="trailing" secondItem="qgD-vz-i7b" secondAttribute="trailing" id="oHC-XN-Ygo"/>
                         <constraint firstItem="kzv-vY-Z9d" firstAttribute="top" secondItem="1Ip-l1-ZvV" secondAttribute="top" constant="33" id="wl1-By-cTh"/>
                     </constraints>
-                    <connections>
-                        <outlet property="backBtn" destination="WFC-Xs-jXv" id="hal-xf-ruD"/>
-                        <outlet property="headImg" destination="XBl-cU-744" id="5WB-cq-5f5"/>
-                        <outlet property="userName" destination="H0r-NH-AU3" id="Pkj-KG-pa6"/>
-                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGP-8f-KSb">
                     <rect key="frame" x="0.0" y="183" width="375" height="128"/>
@@ -268,6 +263,12 @@
                 <constraint firstItem="1Ip-l1-ZvV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qHl-Of-TF3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backBtn" destination="WFC-Xs-jXv" id="8yq-cw-jbJ"/>
+                <outlet property="currentPrice" destination="H0r-NH-AU3" id="oU2-pp-37N"/>
+                <outlet property="headImg" destination="XBl-cU-744" id="1em-hk-IE8"/>
+                <outlet property="turnOutBtn" destination="Acf-9P-5ch" id="LhB-dX-c5t"/>
+            </connections>
             <point key="canvasLocation" x="65.5" y="-18"/>
         </view>
     </objects>

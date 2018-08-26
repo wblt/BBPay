@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DigitalAssetsHeadView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *currentPrice;
+@property (weak, nonatomic) IBOutlet UIImageView *headImg;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *turnOutBtn;
 
 @end

@@ -9,6 +9,7 @@
 #import "DigitalAssetsViewController.h"
 #import "DigitalAssetsCell.h"
 #import "DigitalAssetsHeadView.h"
+#import "DigitalTurnOutViewController.h"
 @interface DigitalAssetsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -51,7 +52,14 @@
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     DigitalAssetsHeadView *headV = [[NSBundle mainBundle] loadNibNamed:@"DigitalAssetsHeadView" owner:nil options:nil].lastObject;
-    
+    [headV.backBtn addTapBlock:^(UIButton *btn) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    [headV.turnOutBtn addTapBlock:^(UIButton *btn) {
+        self.navigationController.navigationBarHidden = NO;
+        DigitalTurnOutViewController *turnOutVC = [[DigitalTurnOutViewController alloc] init];
+        [self.navigationController pushViewController:turnOutVC animated:YES];
+    }];
     return headV;
 }
 
