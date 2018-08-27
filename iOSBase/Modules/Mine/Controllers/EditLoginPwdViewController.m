@@ -9,6 +9,8 @@
 #import "EditLoginPwdViewController.h"
 
 @interface EditLoginPwdViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *oldText;
+@property (weak, nonatomic) IBOutlet UITextField *passwardNew;
 
 @end
 
@@ -17,7 +19,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"修改密码";
+    
 }
+
+- (IBAction)toEditCentainAction:(UIButton *)sender {
+    if (_oldText.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入原密码"];
+        return;
+    }
+    
+    if (self.isPayPwd) {
+        if (_passwardNew.text.length != 6) {
+            [SVProgressHUD showErrorWithStatus:@"请输入新的六位支付密码"];
+            return;
+        }
+        
+        RequestParams *parms = [[RequestParams alloc] initWithParams:API_AQPASSW];
+        [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+        [parms addParameter:@"OLD_PAS" value:self.oldText.text];
+        [parms addParameter:@"NEW_PAS" value:self.passwardNew.text];
+        [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"修改支付密码" successBlock:^(id data) {
+            [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+
+        } failureBlock:^(NSError *error) {
+            
+        }];
+    }else {
+        if (![Util valiPassword:_passwardNew.text]) {
+            [SVProgressHUD showErrorWithStatus:@"请输入6-32位数字+字母密码"];
+            return;
+        }
+        
+        RequestParams *parms = [[RequestParams alloc] initWithParams:API_CHANGEPWD];
+        [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+        [parms addParameter:@"OLD_PAS" value:self.oldText.text];
+        [parms addParameter:@"NEW_PAS" value:self.passwardNew.text];
+        [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"修改登录密码" successBlock:^(id data) {
+            [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+            
+            [SPUtil setObject:_passwardNew.text forKey:k_app_passNumber];
+            
+        } failureBlock:^(NSError *error) {
+            
+        }];
+    }
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

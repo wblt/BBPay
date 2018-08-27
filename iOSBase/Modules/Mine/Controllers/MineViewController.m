@@ -128,10 +128,12 @@
         [self.navigationController pushViewController:individualVC animated:YES];
     }else if (indexPath.section == 1 && indexPath.row == 0) {
         EditLoginPwdViewController *editPwdVC = [[EditLoginPwdViewController alloc] init];
+        editPwdVC.isPayPwd = NO;
         [self.navigationController pushViewController:editPwdVC animated:YES];
     }else if (indexPath.section == 1 && indexPath.row == 1) {
-        ForgetPwdController *forgetVC = [[ForgetPwdController alloc] init];
-        [self.navigationController pushViewController:forgetVC animated:YES];
+        EditLoginPwdViewController *editPwdVC = [[EditLoginPwdViewController alloc] init];
+        editPwdVC.isPayPwd = YES;
+        [self.navigationController pushViewController:editPwdVC animated:YES];
     }else if (indexPath.section == 4 && indexPath.row == 0) {
         SuggestionViewController *suggestionVC = [[SuggestionViewController alloc] init];
         [self.navigationController pushViewController:suggestionVC animated:YES];

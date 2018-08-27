@@ -10,6 +10,7 @@
 #import "DigitalAssetsCell.h"
 #import "DigitalAssetsHeadView.h"
 #import "DigitalTurnOutViewController.h"
+#import "TransactionViewController.h"
 @interface DigitalAssetsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -58,6 +59,11 @@
     [headV.turnOutBtn addTapBlock:^(UIButton *btn) {
         self.navigationController.navigationBarHidden = NO;
         DigitalTurnOutViewController *turnOutVC = [[DigitalTurnOutViewController alloc] init];
+        [self.navigationController pushViewController:turnOutVC animated:YES];
+    }];
+    [headV.transactionBtn addTapBlock:^(UIButton *btn) {
+        self.navigationController.navigationBarHidden = NO;
+        TransactionViewController *turnOutVC = [[TransactionViewController alloc] init];
         [self.navigationController pushViewController:turnOutVC animated:YES];
     }];
     return headV;

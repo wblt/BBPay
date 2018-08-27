@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface EditLoginPwdViewController : BaseViewController
-
+@property (nonatomic) BOOL isPayPwd;
 @end

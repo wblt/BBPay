@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionViewController">
             <connections>
+                <outlet property="tableView" destination="CHq-P0-6Mt" id="6cM-Vr-o9d"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="1OS-7R-fw7"/>
             </connections>
         </placeholder>
@@ -24,6 +25,9 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2l-ug-3lG">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="65"/>
+                            <connections>
+                                <action selector="toPostSaleOrder:" destination="-1" eventType="touchUpInside" id="KQK-4w-2S7"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布出售订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWo-eF-7i1">
                             <rect key="frame" x="22.5" y="41" width="80" height="16"/>
@@ -40,6 +44,9 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sln-IF-CG5">
                             <rect key="frame" x="125" y="0.0" width="125" height="65"/>
+                            <connections>
+                                <action selector="toPostBuyOrder:" destination="-1" eventType="touchUpInside" id="ETx-79-Jur"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布购买订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tx-VT-dM7">
                             <rect key="frame" x="147.5" y="41" width="80" height="16"/>
@@ -56,6 +63,9 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yin-gG-k3j">
                             <rect key="frame" x="250" y="0.0" width="125" height="65"/>
+                            <connections>
+                                <action selector="toOrderListAction:" destination="-1" eventType="touchUpInside" id="CwX-Oa-uDi"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMz-Dp-0Q2">
                             <rect key="frame" x="285.5" y="41" width="54" height="16"/>

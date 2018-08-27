@@ -267,6 +267,7 @@
                 <outlet property="backBtn" destination="WFC-Xs-jXv" id="8yq-cw-jbJ"/>
                 <outlet property="currentPrice" destination="H0r-NH-AU3" id="oU2-pp-37N"/>
                 <outlet property="headImg" destination="XBl-cU-744" id="1em-hk-IE8"/>
+                <outlet property="transactionBtn" destination="BAv-sL-xsV" id="AcH-4M-Jfv"/>
                 <outlet property="turnOutBtn" destination="Acf-9P-5ch" id="LhB-dX-c5t"/>
             </connections>
             <point key="canvasLocation" x="65.5" y="-18"/>

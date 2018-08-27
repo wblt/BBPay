@@ -70,8 +70,8 @@
         return;
     }
     
-    if (![self.centainText.text isEqualToString:_passwordText.text]) {
-        [SVProgressHUD showErrorWithStatus:@"确认密码与密码不一致"];
+    if (self.centainText.text.length != 6) {
+        [SVProgressHUD showErrorWithStatus:@"请输入六位支付密码"];
         return;
     }
     
@@ -80,6 +80,7 @@
     [parms addParameter:@"ACCOUNT" value:self.phoneText.text];
     [parms addParameter:@"PASSWORD" value:self.passwordText.text];
     [parms addParameter:@"YQ_CODE" value:self.inviteText.text];
+    [parms addParameter:@"PASSW" value:self.centainText.text];
     
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"注册" successBlock:^(id data) {
         [SVProgressHUD showSuccessWithStatus:@"注册成功"];

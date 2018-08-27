@@ -41,6 +41,12 @@
 		363854612004C4FA00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363854602004C4F900899B11 /* README.md */; };
 		92A34F38F4AC27A3C3ADFC02 /* libPods-iOSBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D497ADAEE224F0451F225E /* libPods-iOSBase.a */; };
 		EE01E9C8212913BF00D2019B /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */; };
+		EE3573A82132ABC300C1F167 /* XDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573A42132ABC200C1F167 /* XDMenuView.m */; };
+		EE3573A92132ABC300C1F167 /* XDMenuPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573A72132ABC200C1F167 /* XDMenuPopoverBackgroundView.m */; };
+		EE3573AD2132ABEA00C1F167 /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3573AA2132ABE900C1F167 /* TransactionViewController.xib */; };
+		EE3573AE2132ABEA00C1F167 /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573AC2132ABE900C1F167 /* TransactionViewController.m */; };
+		EE3573B22132AE6700C1F167 /* PostSaleOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573B02132AE6700C1F167 /* PostSaleOrderViewController.m */; };
+		EE3573B32132AE6700C1F167 /* PostSaleOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3573B12132AE6700C1F167 /* PostSaleOrderViewController.xib */; };
 		EEB368CA211DE4DE00CF00AF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368C8211DE4DE00CF00AF /* LoginViewController.m */; };
 		EEB368CB211DE4DE00CF00AF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEB368C9211DE4DE00CF00AF /* LoginViewController.xib */; };
 		EEB368CF211DE6FE00CF00AF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368CD211DE6FE00CF00AF /* HomeViewController.m */; };
@@ -192,6 +198,16 @@
 		6D47F575D57BBA9836E5F5A5 /* Pods-iOSBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBase/Pods-iOSBase.release.xcconfig"; sourceTree = "<group>"; };
 		EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQVerCodeImageView.m; sourceTree = "<group>"; };
 		EE01E9C7212913BF00D2019B /* MQVerCodeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQVerCodeImageView.h; sourceTree = "<group>"; };
+		EE3573A42132ABC200C1F167 /* XDMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDMenuView.m; sourceTree = "<group>"; };
+		EE3573A52132ABC200C1F167 /* XDMenuPopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDMenuPopoverBackgroundView.h; sourceTree = "<group>"; };
+		EE3573A62132ABC200C1F167 /* XDMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDMenuView.h; sourceTree = "<group>"; };
+		EE3573A72132ABC200C1F167 /* XDMenuPopoverBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDMenuPopoverBackgroundView.m; sourceTree = "<group>"; };
+		EE3573AA2132ABE900C1F167 /* TransactionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionViewController.xib; sourceTree = "<group>"; };
+		EE3573AB2132ABE900C1F167 /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
+		EE3573AC2132ABE900C1F167 /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
+		EE3573AF2132AE6700C1F167 /* PostSaleOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostSaleOrderViewController.h; sourceTree = "<group>"; };
+		EE3573B02132AE6700C1F167 /* PostSaleOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostSaleOrderViewController.m; sourceTree = "<group>"; };
+		EE3573B12132AE6700C1F167 /* PostSaleOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSaleOrderViewController.xib; sourceTree = "<group>"; };
 		EEB368C7211DE4DE00CF00AF /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		EEB368C8211DE4DE00CF00AF /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		EEB368C9211DE4DE00CF00AF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -434,6 +450,7 @@
 		363853E420046DFC00899B11 /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				EE3573A32132ABC200C1F167 /* XDMenu */,
 				EED14B0421296EDD005973C6 /* HCSortAndSearch */,
 				363853E520046DFC00899B11 /* README.md */,
 			);
@@ -553,6 +570,17 @@
 			path = "图片验证码SDK";
 			sourceTree = "<group>";
 		};
+		EE3573A32132ABC200C1F167 /* XDMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EE3573A42132ABC200C1F167 /* XDMenuView.m */,
+				EE3573A52132ABC200C1F167 /* XDMenuPopoverBackgroundView.h */,
+				EE3573A62132ABC200C1F167 /* XDMenuView.h */,
+				EE3573A72132ABC200C1F167 /* XDMenuPopoverBackgroundView.m */,
+			);
+			path = XDMenu;
+			sourceTree = "<group>";
+		};
 		EEB368BA211DE39900CF00AF /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +662,12 @@
 				EEED0A2C213255A600784C55 /* DigitalTurnOutViewController.h */,
 				EEED0A2D213255A600784C55 /* DigitalTurnOutViewController.m */,
 				EEED0A2E213255A600784C55 /* DigitalTurnOutViewController.xib */,
+				EE3573AB2132ABE900C1F167 /* TransactionViewController.h */,
+				EE3573AC2132ABE900C1F167 /* TransactionViewController.m */,
+				EE3573AA2132ABE900C1F167 /* TransactionViewController.xib */,
+				EE3573AF2132AE6700C1F167 /* PostSaleOrderViewController.h */,
+				EE3573B02132AE6700C1F167 /* PostSaleOrderViewController.m */,
+				EE3573B12132AE6700C1F167 /* PostSaleOrderViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -892,6 +926,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE3573AD2132ABEA00C1F167 /* TransactionViewController.xib in Resources */,
 				EEFD647A212C552700BF1C34 /* ConvertibilityViewController.xib in Resources */,
 				EEE424A6212DBA0C000A3915 /* DigitalAssetsHeadView.xib in Resources */,
 				EEED0A30213255A600784C55 /* DigitalTurnOutViewController.xib in Resources */,
@@ -929,6 +964,7 @@
 				EED14B03212968AD005973C6 /* AddBankViewController.xib in Resources */,
 				363853E020046DDC00899B11 /* README.md in Resources */,
 				EEF19E76212B0F0400B812B1 /* AboutViewController.xib in Resources */,
+				EE3573B32132AE6700C1F167 /* PostSaleOrderViewController.xib in Resources */,
 				EED14AFE21296579005973C6 /* MyBankCell.xib in Resources */,
 				363854592004C11A00899B11 /* README.md in Resources */,
 				EEF19E67212B011900B812B1 /* EditLoginPwdViewController.xib in Resources */,
@@ -1045,9 +1081,11 @@
 				363854172004981D00899B11 /* GTMBase64.m in Sources */,
 				EEF19E61212AFC3400B812B1 /* IndividualPropertyViewController.m in Sources */,
 				EED14B2121296EDD005973C6 /* ZYPinYinSearch.m in Sources */,
+				EE3573A82132ABC300C1F167 /* XDMenuView.m in Sources */,
 				EED14AFD21296579005973C6 /* MyBankCell.m in Sources */,
 				3638541F2004981D00899B11 /* Util.m in Sources */,
 				363853B8200465BA00899B11 /* main.m in Sources */,
+				EE3573AE2132ABEA00C1F167 /* TransactionViewController.m in Sources */,
 				EED14B2421296EDD005973C6 /* PinYinForObjc.m in Sources */,
 				3638541B2004981D00899B11 /* UIColor+Extend.m in Sources */,
 				3638541D2004981D00899B11 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
@@ -1055,7 +1093,9 @@
 				EEF19E6B212B053F00B812B1 /* SuggestionViewController.m in Sources */,
 				EED14B02212968AD005973C6 /* AddBankViewController.m in Sources */,
 				363854262004997200899B11 /* RequestParams.m in Sources */,
+				EE3573A92132ABC300C1F167 /* XDMenuPopoverBackgroundView.m in Sources */,
 				EED0574A212284A500F0AB9C /* SureWebViewController.m in Sources */,
+				EE3573B22132AE6700C1F167 /* PostSaleOrderViewController.m in Sources */,
 				3638542B20049D8500899B11 /* BaseNavViewController.m in Sources */,
 				EED14B2221296EDD005973C6 /* ChineseToPinyinResource.m in Sources */,
 				363854252004997200899B11 /* NetworkSingleton.m in Sources */,

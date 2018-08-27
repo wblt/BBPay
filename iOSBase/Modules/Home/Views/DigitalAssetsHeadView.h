@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
 @property (weak, nonatomic) IBOutlet UIButton *turnOutBtn;
+@property (weak, nonatomic) IBOutlet UIButton *transactionBtn;
 
 @end

@@ -59,5 +59,9 @@
 #define API_SYREG       SERVER_IP@"/app/user/syreg"
 // 首页
 #define API_HOMEPAGE       SERVER_IP@"/app/index/homePage"
+//
+#define API_CHANGEPWD       SERVER_IP@"/app/tool/changePassw"
+//
+#define API_AQPASSW       SERVER_IP@"/app/tool/aqPassw"
 
 #endif /* FlowAPI_h */
