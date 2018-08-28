@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *cardName = @"天涯刀哥 - 傅红雪";
+    NSString *cardName = [SPUtil objectForKey:k_app_W_ADDRESS];
     
     [HMScannerController cardImageWithCardName:cardName avatar:nil scale:0.2 completion:^(UIImage *image) {
         self.imageView.image = image;

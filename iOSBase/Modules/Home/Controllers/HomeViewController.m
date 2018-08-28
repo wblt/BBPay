@@ -16,6 +16,8 @@
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *score;
 @property (weak, nonatomic) IBOutlet UILabel *money;
+@property (weak, nonatomic) IBOutlet UIImageView *headImg;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewWidth;
 
 @end
 
@@ -23,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.scrollViewWidth.constant = KScreenWidth*2;
     self.title = @"首页";
     [self requestData];
 }
@@ -35,12 +37,23 @@
 
 - (void)requestData {
     RequestParams *parms = [[RequestParams alloc] initWithParams:API_HOMEPAGE];
-    [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+    [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"首页" successBlock:^(id data) {
 
         self.score.text = data[@"pd"][@"INTEGRAL"];
         self.money.text = data[@"pd"][@"BALANCE"];
-        
+        [self.headImg sd_setImageWithURL:[NSURL URLWithString:data[@"pd"][@"HEAD_URL"]] placeholderImage:[UIImage imageNamed:@"head"]];
+        [SPUtil setObject:data[@"pd"][@"USER_NAME"] forKey:k_app_USER_NAME];
+        [SPUtil setObject:data[@"pd"][@"NICK_NAME"] forKey:k_app_NICK_NAME];
+        [SPUtil setObject:data[@"pd"][@"USER_ID"] forKey:k_app_USER_ID];
+        [SPUtil setObject:data[@"pd"][@"TEL"] forKey:k_app_TEL];
+        [SPUtil setObject:data[@"pd"][@"HEAD_URL"] forKey:k_app_HEAD_URL];
+        [SPUtil setObject:data[@"pd"][@"INTEGRAL"] forKey:k_app_INTEGRAL];
+        [SPUtil setObject:data[@"pd"][@"BALANCE"] forKey:k_app_BALANCE];
+        [SPUtil setObject:data[@"pd"][@"CREDIT"] forKey:k_app_CREDIT];
+        [SPUtil setObject:data[@"pd"][@"VIP"] forKey:k_app_VIP];
+        [SPUtil setObject:data[@"pd"][@"W_ADDRESS"] forKey:k_app_W_ADDRESS];
+        [SPUtil setObject:data[@"pd"][@"IFPAS"] forKey:k_app_IFPAS];
     } failureBlock:^(NSError *error) {
         
     }];

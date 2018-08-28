@@ -71,8 +71,8 @@
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"登录" successBlock:^(id data) {
         [SVProgressHUD showSuccessWithStatus:@"登录成功"];
         [SPUtil setBool:YES forKey:k_app_login];
-        [SPUtil setObject:_phoneText.text forKey:k_app_userNumber];
-        [SPUtil setObject:_passwordText.text forKey:k_app_passNumber];
+        [SPUtil setObject:_phoneText.text forKey:k_app_USER_NAME];
+        [SPUtil setObject:_passwordText.text forKey:k_app_PASSWORD];
         HomeViewController *homeVC = [[HomeViewController alloc] init];
         BaseNavViewController *homeNav = [[BaseNavViewController alloc] initWithRootViewController:homeVC];
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

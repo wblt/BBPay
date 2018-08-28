@@ -63,5 +63,7 @@
 #define API_CHANGEPWD       SERVER_IP@"/app/tool/changePassw"
 //
 #define API_AQPASSW       SERVER_IP@"/app/tool/aqPassw"
+//
+#define API_NOTICE       SERVER_IP@"/app/index/notice"
 
 #endif /* FlowAPI_h */

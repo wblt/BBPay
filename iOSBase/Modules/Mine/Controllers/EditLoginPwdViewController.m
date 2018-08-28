@@ -35,7 +35,7 @@
         }
         
         RequestParams *parms = [[RequestParams alloc] initWithParams:API_AQPASSW];
-        [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+        [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
         [parms addParameter:@"OLD_PAS" value:self.oldText.text];
         [parms addParameter:@"NEW_PAS" value:self.passwardNew.text];
         [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"修改支付密码" successBlock:^(id data) {
@@ -51,13 +51,13 @@
         }
         
         RequestParams *parms = [[RequestParams alloc] initWithParams:API_CHANGEPWD];
-        [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_userNumber]];
+        [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
         [parms addParameter:@"OLD_PAS" value:self.oldText.text];
         [parms addParameter:@"NEW_PAS" value:self.passwardNew.text];
         [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"修改登录密码" successBlock:^(id data) {
             [SVProgressHUD showSuccessWithStatus:@"修改成功"];
             
-            [SPUtil setObject:_passwardNew.text forKey:k_app_passNumber];
+            [SPUtil setObject:_passwardNew.text forKey:k_app_PASSWORD];
             
         } failureBlock:^(NSError *error) {
             

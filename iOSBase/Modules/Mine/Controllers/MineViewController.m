@@ -18,6 +18,7 @@
 #import "SuggestionViewController.h"
 #import "ShareCodeViewController.h"
 #import "AboutViewController.h"
+#import "NoticeViewController.h"
 @interface MineViewController () <UITableViewDataSource, UITableViewDelegate> {
     NSArray *titleArr;
     NSArray *imgArr;
@@ -60,7 +61,7 @@
     cell.titleText.text = titleArr[indexPath.section][indexPath.row];
     cell.img.image = [UIImage imageNamed:imgArr[indexPath.section][indexPath.row]];
     if (indexPath.section == 0 && indexPath.row == 0) {
-        cell.detailTitle.text = @"大兵哥";
+        cell.detailTitle.text = [SPUtil objectForKey:k_app_NICK_NAME];
     }else if (indexPath.section == 4 && indexPath.row == 2) {
         cell.detailTitle.text = @"1.0";
     }else {
@@ -89,6 +90,9 @@
         [headV.backBtn addTapBlock:^(UIButton *btn) {
             [self.navigationController popViewControllerAnimated:YES];
         }];
+        [headV.headImg sd_setImageWithURL:[NSURL URLWithString:[SPUtil objectForKey:k_app_HEAD_URL]] placeholderImage:[UIImage imageNamed:@"head"]];
+        headV.userName.text = [NSString stringWithFormat:@"用户名：%@",[SPUtil objectForKey:k_app_NICK_NAME]];
+        headV.trustLbl.text = [NSString stringWithFormat:@"信用：%@",[SPUtil objectForKey:k_app_CREDIT]];
         return headV;
     }
     return nil;
@@ -144,6 +148,9 @@
         self.navigationController.navigationBarHidden = YES;
     }else if (indexPath.section == 4 && indexPath.row == 3) {
         AboutViewController *vc = [[AboutViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 2 && indexPath.row == 0) {
+        NoticeViewController *vc = [[NoticeViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }else {
         self.navigationController.navigationBarHidden = YES;

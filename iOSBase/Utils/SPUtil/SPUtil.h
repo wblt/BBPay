@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 
 #define k_app_login @"app_login"      // 判断是否登录
-#define k_app_userNumber @"app_userNumber"
-#define k_app_passNumber @"app_passNumber"
-#define k_app_telNumber @"app_telNumber"
-#define k_app_rongCloud_token @"app_rongCloud_token"//融云Token
+#define k_app_PASSWORD @"app_PASSWORD"
+#define k_app_TEL @"app_TEL"
+#define k_app_USER_NAME @"app_USER_NAME"
+#define k_app_NICK_NAME @"app_NICK_NAME"
+#define k_app_USER_ID @"app_USER_ID"
+#define k_app_HEAD_URL @"app_HEAD_URL"
+#define k_app_INTEGRAL @"app_INTEGRAL"
+#define k_app_BALANCE @"app_BALANCE"
+#define k_app_CREDIT @"app_CREDIT"
+#define k_app_VIP @"app_VIP"
+#define k_app_W_ADDRESS @"app_W_ADDRESS"
+#define k_app_IFPAS @"app_IFPAS"
 @interface SPUtil : NSObject
 
 // 设置

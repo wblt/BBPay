@@ -41,6 +41,11 @@
 		363854612004C4FA00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363854602004C4F900899B11 /* README.md */; };
 		92A34F38F4AC27A3C3ADFC02 /* libPods-iOSBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D497ADAEE224F0451F225E /* libPods-iOSBase.a */; };
 		EE01E9C8212913BF00D2019B /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */; };
+		EE21C968213553F100A4E0CA /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE21C966213553F100A4E0CA /* NoticeViewController.m */; };
+		EE21C969213553F100A4E0CA /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE21C967213553F100A4E0CA /* NoticeViewController.xib */; };
+		EE21C96D2135549F00A4E0CA /* NoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE21C96B2135549F00A4E0CA /* NoticeCell.m */; };
+		EE21C96E2135549F00A4E0CA /* NoticeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE21C96C2135549F00A4E0CA /* NoticeCell.xib */; };
+		EE21C9712135581900A4E0CA /* NoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE21C9702135581900A4E0CA /* NoticeModel.m */; };
 		EE3573A82132ABC300C1F167 /* XDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573A42132ABC200C1F167 /* XDMenuView.m */; };
 		EE3573A92132ABC300C1F167 /* XDMenuPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573A72132ABC200C1F167 /* XDMenuPopoverBackgroundView.m */; };
 		EE3573AD2132ABEA00C1F167 /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3573AA2132ABE900C1F167 /* TransactionViewController.xib */; };
@@ -198,6 +203,14 @@
 		6D47F575D57BBA9836E5F5A5 /* Pods-iOSBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBase/Pods-iOSBase.release.xcconfig"; sourceTree = "<group>"; };
 		EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQVerCodeImageView.m; sourceTree = "<group>"; };
 		EE01E9C7212913BF00D2019B /* MQVerCodeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQVerCodeImageView.h; sourceTree = "<group>"; };
+		EE21C965213553F100A4E0CA /* NoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
+		EE21C966213553F100A4E0CA /* NoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
+		EE21C967213553F100A4E0CA /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
+		EE21C96A2135549F00A4E0CA /* NoticeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeCell.h; sourceTree = "<group>"; };
+		EE21C96B2135549F00A4E0CA /* NoticeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeCell.m; sourceTree = "<group>"; };
+		EE21C96C2135549F00A4E0CA /* NoticeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeCell.xib; sourceTree = "<group>"; };
+		EE21C96F2135581900A4E0CA /* NoticeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeModel.h; sourceTree = "<group>"; };
+		EE21C9702135581900A4E0CA /* NoticeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeModel.m; sourceTree = "<group>"; };
 		EE3573A42132ABC200C1F167 /* XDMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDMenuView.m; sourceTree = "<group>"; };
 		EE3573A52132ABC200C1F167 /* XDMenuPopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDMenuPopoverBackgroundView.h; sourceTree = "<group>"; };
 		EE3573A62132ABC200C1F167 /* XDMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDMenuView.h; sourceTree = "<group>"; };
@@ -761,6 +774,8 @@
 		EEDDB278211F161C007FE540 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE21C96F2135581900A4E0CA /* NoticeModel.h */,
+				EE21C9702135581900A4E0CA /* NoticeModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -797,6 +812,9 @@
 				EEF19E72212B0F0400B812B1 /* AboutViewController.h */,
 				EEF19E73212B0F0400B812B1 /* AboutViewController.m */,
 				EEF19E74212B0F0400B812B1 /* AboutViewController.xib */,
+				EE21C965213553F100A4E0CA /* NoticeViewController.h */,
+				EE21C966213553F100A4E0CA /* NoticeViewController.m */,
+				EE21C967213553F100A4E0CA /* NoticeViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -813,6 +831,9 @@
 				EED14AFA21296579005973C6 /* MyBankCell.h */,
 				EED14AFB21296579005973C6 /* MyBankCell.m */,
 				EED14AFC21296579005973C6 /* MyBankCell.xib */,
+				EE21C96A2135549F00A4E0CA /* NoticeCell.h */,
+				EE21C96B2135549F00A4E0CA /* NoticeCell.m */,
+				EE21C96C2135549F00A4E0CA /* NoticeCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -969,11 +990,13 @@
 				363854592004C11A00899B11 /* README.md in Resources */,
 				EEF19E67212B011900B812B1 /* EditLoginPwdViewController.xib in Resources */,
 				363853EC20046E0B00899B11 /* README.md in Resources */,
+				EE21C969213553F100A4E0CA /* NoticeViewController.xib in Resources */,
 				EEFD6489212C5BB000BF1C34 /* PurchaseViewController.xib in Resources */,
 				EED0574C212284A500F0AB9C /* sure_placeholder_error@2x.png in Resources */,
 				363853F42004714D00899B11 /* README.md in Resources */,
 				3638545F2004C4EF00899B11 /* README.md in Resources */,
 				EEB368D0211DE6FE00CF00AF /* HomeViewController.xib in Resources */,
+				EE21C96E2135549F00A4E0CA /* NoticeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1068,6 +1091,7 @@
 				EED14AEF212959B9005973C6 /* MineHeadView.m in Sources */,
 				EEF19E66212B011900B812B1 /* EditLoginPwdViewController.m in Sources */,
 				EEF19E70212B0B9700B812B1 /* ShareCodeViewController.m in Sources */,
+				EE21C968213553F100A4E0CA /* NoticeViewController.m in Sources */,
 				EEED0A2F213255A600784C55 /* DigitalTurnOutViewController.m in Sources */,
 				EED14AF321296137005973C6 /* EditNicknameViewController.m in Sources */,
 				EEFD6483212C57A000BF1C34 /* TurnOutRecordListCell.m in Sources */,
@@ -1078,6 +1102,7 @@
 				EEE424A4212DBA02000A3915 /* DigitalAssetsHeadView.m in Sources */,
 				EEF19E75212B0F0400B812B1 /* AboutViewController.m in Sources */,
 				EEDDB27E211F164F007FE540 /* MineViewController.m in Sources */,
+				EE21C96D2135549F00A4E0CA /* NoticeCell.m in Sources */,
 				363854172004981D00899B11 /* GTMBase64.m in Sources */,
 				EEF19E61212AFC3400B812B1 /* IndividualPropertyViewController.m in Sources */,
 				EED14B2121296EDD005973C6 /* ZYPinYinSearch.m in Sources */,
@@ -1105,6 +1130,7 @@
 				3638541A2004981D00899B11 /* UICollectionView+IndexPath.m in Sources */,
 				363854182004981D00899B11 /* NSString+MD5.m in Sources */,
 				EEFD6479212C552700BF1C34 /* ConvertibilityViewController.m in Sources */,
+				EE21C9712135581900A4E0CA /* NoticeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

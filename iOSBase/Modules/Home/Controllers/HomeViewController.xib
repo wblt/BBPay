@@ -12,8 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="headImg" destination="3EC-bl-0fN" id="xBv-Se-Cax"/>
                 <outlet property="money" destination="tsl-ii-j2F" id="i5B-G8-jGC"/>
                 <outlet property="score" destination="7xQ-Ff-AQj" id="uqc-PQ-mD0"/>
+                <outlet property="scrollViewWidth" destination="kta-9z-5oO" id="tDF-NB-Mir"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -83,11 +85,41 @@
                         <action selector="QRCodeScannerAction:" destination="-1" eventType="touchUpInside" id="YhC-Ou-Ucj"/>
                     </connections>
                 </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RjZ-3K-8jo">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjZ-3K-8jo">
                     <rect key="frame" x="0.0" y="299" width="375" height="100"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X74-eN-x3h">
+                            <rect key="frame" x="0.0" y="0.0" width="750" height="100"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shuzizichan_bg" translatesAutoresizingMaskIntoConstraints="NO" id="4T3-8s-CRh">
+                                    <rect key="frame" x="375" y="0.0" width="375" height="100"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_bg" translatesAutoresizingMaskIntoConstraints="NO" id="KKt-Tz-p7K">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="KKt-Tz-p7K" firstAttribute="leading" secondItem="X74-eN-x3h" secondAttribute="leading" id="ClY-5Z-RSD"/>
+                                <constraint firstAttribute="bottom" secondItem="4T3-8s-CRh" secondAttribute="bottom" id="Dft-28-weU"/>
+                                <constraint firstItem="4T3-8s-CRh" firstAttribute="width" secondItem="KKt-Tz-p7K" secondAttribute="width" id="HpT-iu-EoN"/>
+                                <constraint firstAttribute="bottom" secondItem="KKt-Tz-p7K" secondAttribute="bottom" id="cfq-5W-yjV"/>
+                                <constraint firstAttribute="height" constant="100" id="ddT-mV-PEj"/>
+                                <constraint firstItem="4T3-8s-CRh" firstAttribute="leading" secondItem="KKt-Tz-p7K" secondAttribute="trailing" id="eIG-yo-Dzv"/>
+                                <constraint firstItem="4T3-8s-CRh" firstAttribute="top" secondItem="X74-eN-x3h" secondAttribute="top" id="jia-2g-cEi"/>
+                                <constraint firstAttribute="width" constant="750" id="kta-9z-5oO"/>
+                                <constraint firstItem="KKt-Tz-p7K" firstAttribute="top" secondItem="X74-eN-x3h" secondAttribute="top" id="twb-DB-wma"/>
+                                <constraint firstAttribute="trailing" secondItem="4T3-8s-CRh" secondAttribute="trailing" id="xCc-1Y-XO1"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="X74-eN-x3h" firstAttribute="top" secondItem="RjZ-3K-8jo" secondAttribute="top" id="Aua-Ng-M8m"/>
+                        <constraint firstAttribute="bottom" secondItem="X74-eN-x3h" secondAttribute="bottom" id="ENz-On-1Rw"/>
+                        <constraint firstItem="X74-eN-x3h" firstAttribute="leading" secondItem="RjZ-3K-8jo" secondAttribute="leading" id="G2g-8A-hMv"/>
                         <constraint firstAttribute="height" constant="100" id="J8G-tE-hC7"/>
+                        <constraint firstAttribute="trailing" secondItem="X74-eN-x3h" secondAttribute="trailing" id="Qle-ac-ukl"/>
                     </constraints>
                 </scrollView>
                 <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2G-bS-imR">
@@ -372,8 +404,10 @@
     <resources>
         <image name="head" width="100" height="100"/>
         <image name="home_bg" width="600" height="375"/>
+        <image name="info_bg" width="250" height="140"/>
         <image name="scan" width="22" height="22"/>
         <image name="setting_icon" width="60" height="60"/>
+        <image name="shuzizichan_bg" width="240" height="135"/>
         <image name="suanli_icon" width="60" height="60"/>
     </resources>
 </document>
