@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *bankNum;
 @property (weak, nonatomic) IBOutlet UILabel *bankName;
 @property (weak, nonatomic) IBOutlet UITextField *bankSubName;
+@property (weak, nonatomic) IBOutlet UIButton *defaultBtn;
 
 @end
 
@@ -35,6 +36,38 @@
         _bankName.text = item;
     }];
     [self.navigationController pushViewController:search animated:YES];
+}
+
+- (IBAction)addBankAction:(UIButton *)sender {
+    if (_name.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入持卡人姓名"];
+        return;
+    }
+    if (_bankNum.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入银行卡号"];
+        return;
+    }
+    if ([_bankName.text isEqualToString:@"开户行"]) {
+        [SVProgressHUD showErrorWithStatus:@"请选择开户行"];
+        return;
+    }
+    if (_bankSubName.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入开户行支行"];
+        return;
+    }
+    RequestParams *parms = [[RequestParams alloc] initWithParams:API_ADDPAYMES];
+    [parms addParameter:@"BANK_NAME" value:_bankName.text];
+    [parms addParameter:@"BANK_NO" value:_bankNum.text];
+    [parms addParameter:@"BANK_USERNAME" value:_name.text];
+    [parms addParameter:@"BANK_ADDR" value:_bankSubName.text];
+    [parms addParameter:@"IFDEFAULT" value:[NSString stringWithFormat:@"%d",_defaultBtn.selected]];
+    [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
+    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"添加银行卡" successBlock:^(id data) {
+        [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+    } failureBlock:^(NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -11,4 +11,6 @@
 @interface NoticeModel : NSObject
 @property (nonatomic, strong) NSString *TITLE;
 @property (nonatomic, strong) NSString *CONTENT;
+@property (nonatomic, strong) NSString *CREATE_TIME;
 @end
+

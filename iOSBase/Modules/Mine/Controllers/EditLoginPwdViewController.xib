@@ -109,13 +109,6 @@
                         <action selector="toEditCentainAction:" destination="-1" eventType="touchUpInside" id="o0x-P0-LT9"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQU-5I-kqh">
-                    <rect key="frame" x="309" y="209" width="54" height="28"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title="忘记密码">
-                        <color key="titleColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -125,8 +118,6 @@
                 <constraint firstItem="rNy-DI-607" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FdX-5S-GwP"/>
                 <constraint firstAttribute="trailing" secondItem="rNy-DI-607" secondAttribute="trailing" id="I9e-U2-lMv"/>
                 <constraint firstItem="nEN-7R-D8t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="boQ-ge-WiE"/>
-                <constraint firstItem="kQU-5I-kqh" firstAttribute="top" secondItem="nEN-7R-D8t" secondAttribute="bottom" constant="8" id="dLQ-b5-yYD"/>
-                <constraint firstAttribute="trailing" secondItem="kQU-5I-kqh" secondAttribute="trailing" constant="12" id="hmh-Eu-Dfe"/>
                 <constraint firstItem="dEV-A7-itW" firstAttribute="top" secondItem="rNy-DI-607" secondAttribute="bottom" constant="1" id="k3H-sq-KC7"/>
                 <constraint firstAttribute="trailing" secondItem="nEN-7R-D8t" secondAttribute="trailing" constant="12" id="ksf-ZQ-tU7"/>
                 <constraint firstAttribute="trailing" secondItem="dEV-A7-itW" secondAttribute="trailing" id="neH-iQ-zSI"/>

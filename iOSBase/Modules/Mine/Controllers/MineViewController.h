@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface MineViewController : BaseViewController
+@interface MineViewController : BaseViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate> //一定要声明这三个协议，缺一不可
+
+@property(nonatomic,strong) UIImagePickerController *imagePicker; //声明全局的UIImagePickerController
+
 
 @end

@@ -19,9 +19,12 @@
 #import "ShareCodeViewController.h"
 #import "AboutViewController.h"
 #import "NoticeViewController.h"
-@interface MineViewController () <UITableViewDataSource, UITableViewDelegate> {
+#import "UploadPic.h"
+@interface MineViewController () <UITableViewDataSource, UITableViewDelegate,StarRatingViewDelegate> {
     NSArray *titleArr;
     NSArray *imgArr;
+    MineHeadView *headV;
+    NSString *headNewUrl;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -44,6 +47,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    [self.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -86,16 +90,51 @@
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        MineHeadView *headV = [[NSBundle mainBundle] loadNibNamed:@"MineHeadView" owner:nil options:nil].lastObject;
+        headV = [[NSBundle mainBundle] loadNibNamed:@"MineHeadView" owner:nil options:nil].lastObject;
         [headV.backBtn addTapBlock:^(UIButton *btn) {
             [self.navigationController popViewControllerAnimated:YES];
         }];
         [headV.headImg sd_setImageWithURL:[NSURL URLWithString:[SPUtil objectForKey:k_app_HEAD_URL]] placeholderImage:[UIImage imageNamed:@"head"]];
+
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toChangeHeadImgAction)];
+        [headV.headImg addGestureRecognizer:tap];
+        
         headV.userName.text = [NSString stringWithFormat:@"用户名：%@",[SPUtil objectForKey:k_app_NICK_NAME]];
-        headV.trustLbl.text = [NSString stringWithFormat:@"信用：%@",[SPUtil objectForKey:k_app_CREDIT]];
+
+        [headV.nibStarRatingView setScore:[[SPUtil objectForKey:k_app_CREDIT] floatValue]/kNUMBER_OF_STAR withAnimation:YES];
+        
         return headV;
     }
     return nil;
+}
+
+- (void)toChangeHeadImgAction {
+    [UIAlertController showActionSheetWithTitle:@"更换头像" Message:nil cancelBtnTitle:@"取消" OtherBtnTitles:@[@"拍照",@"相册"] ClickBtn:^(NSInteger index) {
+        NSUInteger sourceType = 0;
+        // 判断系统是否支持相机
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            imagePickerController.delegate = self; //设置代理
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.sourceType = sourceType; //图片来源
+            if (index == 1) {
+                //拍照
+                sourceType = UIImagePickerControllerSourceTypeCamera;
+                imagePickerController.sourceType = sourceType;
+                [self presentViewController:imagePickerController animated:YES completion:nil];
+            }else if (index == 2){
+                //相册
+                sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                imagePickerController.sourceType = sourceType;
+                [self presentViewController:imagePickerController animated:YES completion:nil];
+            }
+        }else {
+            sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            imagePickerController.sourceType = sourceType;
+            [self presentViewController:imagePickerController animated:YES completion:nil];
+        }
+
+    }];
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -108,6 +147,7 @@
         [tuichuBtn setTitleColor:mainColor forState:UIControlStateNormal];
         [tuichuBtn addTapBlock:^(UIButton *btn) {
             [SPUtil setBool:NO forKey:k_app_login];
+            [SPUtil clear];
             LoginViewController *loginVC = [[LoginViewController alloc] init];
             BaseNavViewController *loginNav = [[BaseNavViewController alloc] initWithRootViewController:loginVC];
             AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -156,6 +196,48 @@
         self.navigationController.navigationBarHidden = YES;
         [SVProgressHUD showInfoWithStatus:@"开发中"];
     }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+    
+    NSString *photoPath = [[UploadPic sharedInstance] photoSavePathForURL:info[UIImagePickerControllerReferenceURL]];
+    NSData *imageData = UIImageJPEGRepresentation(info[UIImagePickerControllerEditedImage],1.0);
+    if ((float)imageData.length/1024 > 100) {//需要测试
+        imageData = UIImageJPEGRepresentation(info[UIImagePickerControllerEditedImage], 1024*100.0/(float)imageData.length);
+    }
+    
+    [imageData writeToFile:photoPath atomically:YES];
+    NSString *fileName = [NSString stringWithFormat:@"%f_%d.jpg", [[NSDate date] timeIntervalSince1970], arc4random()%1000];
+    [[UploadPic sharedInstance] uploadFileMultipartWithPath:photoPath fileName:fileName callback:^(NSString *url) {
+        if (url.length == 0) {
+            [SVProgressHUD showErrorWithStatus:@"上传失败"];
+        }else {
+            headV.headImg.image = info[UIImagePickerControllerEditedImage];
+            headNewUrl = url;
+            [self editHeadImg];
+        }
+    }];
+}
+
+- (void)editHeadImg {
+    RequestParams *parms = [[RequestParams alloc] initWithParams:API_PERSONMES];
+    [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
+    [parms addParameter:@"HEAD_URL" value:headNewUrl];
+    [parms addParameter:@"NICK_NAME" value:[SPUtil objectForKey:k_app_NICK_NAME]];
+    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"修改头像" successBlock:^(id data) {
+        [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+        
+        [SPUtil setObject:headNewUrl forKey:k_app_HEAD_URL];
+        
+    } failureBlock:^(NSError *error) {
+        
+    }];
+}
+
+//当用户取消选择的时候，调用该方法
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)didReceiveMemoryWarning {

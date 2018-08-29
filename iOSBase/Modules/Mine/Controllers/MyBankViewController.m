@@ -9,7 +9,11 @@
 #import "MyBankViewController.h"
 #import "MyBankCell.h"
 #import "AddBankViewController.h"
+#import "MyBankModel.h"
 @interface MyBankViewController () <UITableViewDataSource, UITableViewDelegate>
+{
+    NSMutableArray *myBankArr;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -24,19 +28,46 @@
     self.tableView.rowHeight = 90;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"MyBankCell" bundle:nil] forCellReuseIdentifier:@"MyBankCell"];
+    
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self requestData];
+}
+
+- (void)requestData {
+    myBankArr = [NSMutableArray array];
+    RequestParams *parms = [[RequestParams alloc] initWithParams:API_PAYMES];
+    [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
+    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"我的银行卡" successBlock:^(id data) {
+        for (NSDictionary *dic in data[@"pd"]) {
+            MyBankModel *model = [MyBankModel mj_objectWithKeyValues:dic];
+            [myBankArr addObject:model];
+        }
+        [self.tableView reloadData];
+    } failureBlock:^(NSError *error) {
+        
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return myBankArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MyBankCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyBankCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    MyBankModel *model = myBankArr[indexPath.row];
+    cell.bankName.text = model.BANK_NAME;
+    cell.bankNum.text = model.BANK_NO;
+    if ([model.IFDEFAULT isEqualToString:@"1"]) {
+        cell.morenStatus.hidden = NO;
+    }else {
+        cell.morenStatus.hidden = YES;
+    }
+    
     return cell;
 }
 
@@ -71,7 +102,32 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    MyBankModel *model = myBankArr[indexPath.row];
+    if ([model.IFDEFAULT isEqualToString:@"1"]) {
+        return;
+    }
+    [UIAlertController showActionSheetWithTitle:@"银行卡操作" Message:nil cancelBtnTitle:@"取消" OtherBtnTitles:@[@"设置默认",@"删除"] ClickBtn:^(NSInteger index) {
+        if (index == 1) {
+            RequestParams *parms = [[RequestParams alloc] initWithParams:API_MODPAYMES];
+            [parms addParameter:@"ID" value:model.ID];
+            [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
+            [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"修改默认" successBlock:^(id data) {
+                [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+                [self requestData];
+            } failureBlock:^(NSError *error) {
+                
+            }];
+        }else if (index == 2) {
+            RequestParams *parms = [[RequestParams alloc] initWithParams:API_DELPAYMES];
+            [parms addParameter:@"ID" value:model.ID];
+            [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"删除银行卡" successBlock:^(id data) {
+                [SVProgressHUD showSuccessWithStatus:@"删除成功"];
+                [self requestData];
+            } failureBlock:^(NSError *error) {
+                
+            }];
+        }
+    }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

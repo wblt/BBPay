@@ -55,6 +55,9 @@
                     <state key="normal" title="复制Dpay地址">
                         <color key="titleColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="copyAction:" destination="-1" eventType="touchUpInside" id="y4y-E1-pro"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7v-tW-UP3">
                     <rect key="frame" x="158.5" y="623" width="58" height="29"/>
@@ -62,6 +65,9 @@
                     <state key="normal" title="分享记录">
                         <color key="titleColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="toShareRecordVCAction:" destination="-1" eventType="touchUpInside" id="otV-AX-T27"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

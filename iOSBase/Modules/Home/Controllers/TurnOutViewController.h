@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface TurnOutViewController : BaseViewController
-
+@property (nonatomic, strong) NSString *mobile;
 @end

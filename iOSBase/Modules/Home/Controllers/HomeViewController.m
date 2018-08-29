@@ -10,14 +10,18 @@
 #import "MineViewController.h"
 #import "HMScannerController.h"
 #import "TurnOutViewController.h"
-#import "ShareCodeViewController.h"
+#import "GetIntoViewController.h"
 #import "PurchaseViewController.h"
 #import "DigitalAssetsViewController.h"
+#import "SDCycleScrollView.h"
 @interface HomeViewController ()
+{
+    SDCycleScrollView *bannerView;
+}
 @property (weak, nonatomic) IBOutlet UILabel *score;
 @property (weak, nonatomic) IBOutlet UILabel *money;
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewWidth;
+@property (weak, nonatomic) IBOutlet UILabel *uidLbl;
 
 @end
 
@@ -25,8 +29,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.scrollViewWidth.constant = KScreenWidth*2;
     self.title = @"首页";
+    self.uidLbl.text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_USER_ID]];
+    self.score.text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_INTEGRAL]];
+    self.money.text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_BALANCE]];
+    [self.headImg sd_setImageWithURL:[NSURL URLWithString:[SPUtil objectForKey:k_app_HEAD_URL]] placeholderImage:[UIImage imageNamed:@"head"]];
+    bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, KScreenHeight-308-navHeight, KScreenWidth, 100) imageURLStringsGroup:@[@"http://p0hct3xqb.bkt.clouddn.com/shareshop2018-06-06_5b17fd93a0445.jpg",@"http://p0hct3xqb.bkt.clouddn.com/shareshop2018-06-06_5b17fdb969459.jpg"]];
+    [self.view addSubview:bannerView];
     [self requestData];
 }
 
@@ -40,6 +49,7 @@
     [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"首页" successBlock:^(id data) {
 
+        self.uidLbl.text = [NSString stringWithFormat:@"UID:%@",data[@"pd"][@"USER_ID"]];
         self.score.text = data[@"pd"][@"INTEGRAL"];
         self.money.text = data[@"pd"][@"BALANCE"];
         [self.headImg sd_setImageWithURL:[NSURL URLWithString:data[@"pd"][@"HEAD_URL"]] placeholderImage:[UIImage imageNamed:@"head"]];
@@ -67,8 +77,12 @@
 - (IBAction)QRCodeScannerAction:(UIButton *)sender {
     
     HMScannerController *scanner = [HMScannerController scannerWithCardName:nil avatar:nil completion:^(NSString *stringValue) {
-        
-//        self.scanResultLabel.text = stringValue;
+        if ([Util valiMobile:stringValue]) {
+            self.navigationController.navigationBarHidden = NO;
+            TurnOutViewController *turnOutVC = [[TurnOutViewController alloc] init];
+            turnOutVC.mobile = stringValue;
+            [self.navigationController pushViewController:turnOutVC animated:YES];
+        }
     }];
     
     [scanner setTitleColor:mainColor tintColor:mainColor];
@@ -82,7 +96,7 @@
         TurnOutViewController *turnOutVC = [[TurnOutViewController alloc] init];
         [self.navigationController pushViewController:turnOutVC animated:YES];
     }else if (sender.tag == 102) {
-        ShareCodeViewController *vc = [[ShareCodeViewController alloc] init];
+        GetIntoViewController *vc = [[GetIntoViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 103) {
         PurchaseViewController *vc = [[PurchaseViewController alloc] init];
@@ -99,6 +113,10 @@
     }
 }
 
+- (IBAction)headImgTapAction:(UITapGestureRecognizer *)sender {
+    MineViewController *mineVC = [[MineViewController alloc] init];
+    [self.navigationController pushViewController:mineVC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

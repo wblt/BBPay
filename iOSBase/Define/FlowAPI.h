@@ -41,6 +41,7 @@
 #define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)
 #define KScreenHeight [[UIScreen mainScreen] bounds].size.height
 
+#define navHeight ((KScreenWidth == 1125.0 && KScreenHeight == 2436.0) ? 88.0 : 64.0)
 //金色
 #define mainColor UIColorFromHex(0xCBAE86)
 //底色
@@ -50,8 +51,19 @@
 //灰色字体
 #define mainGrayColor UIColorFromHex(0x848484)
 
+#define weakify(...) \
+rac_keywordify \
+metamacro_foreach_cxt(rac_weakify_,, __weak, __VA_ARGS__)
+
+#define strongify(...) \
+rac_keywordify \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+metamacro_foreach(rac_strongify_,, __VA_ARGS__) \
+_Pragma("clang diagnostic pop")
+
 // 主服务器地址
-#define SERVER_IP         @"http://ddcapp.top"
+#define SERVER_IP         @"http://139.196.225.206:8082"
 
 // 登录
 #define API_LOGIN       SERVER_IP@"/app/user/login"
@@ -65,5 +77,31 @@
 #define API_AQPASSW       SERVER_IP@"/app/tool/aqPassw"
 //
 #define API_NOTICE       SERVER_IP@"/app/index/notice"
+//
+#define API_SIGNCREATE       SERVER_IP@"/upload/signCreate"
+//
+#define API_PERSONMES       SERVER_IP@"/app/tool/cgPersonMes"
+//
+#define API_PAYMES       SERVER_IP@"/app/tool/payMes"
+//
+#define API_MODPAYMES       SERVER_IP@"/app/tool/modPayMes"
+//
+#define API_DELPAYMES       SERVER_IP@"/app/tool/delPayMes"
+//
+#define API_ADDPAYMES       SERVER_IP@"/app/tool/addPayMes"
+//
+#define API_INVITATION       SERVER_IP@"/app/index/invitation"
+//
+#define API_FRIENDS       SERVER_IP@"/app/index/friends"
+//
+#define API_SEND       SERVER_IP@"/app/my/send"
+//
+#define API_SENDDEAIL       SERVER_IP@"/app/my/sendDetail"
+//
+#define API_RECEIVEDEAIL       SERVER_IP@"/app/my/receiveDetail"
+//
+#define API_CHANGEINTEGRAL       SERVER_IP@"/app/my/changeIntegral"
+//
+#define API_CGDETAIL       SERVER_IP@"/app/my/cgDetail"
 
 #endif /* FlowAPI_h */

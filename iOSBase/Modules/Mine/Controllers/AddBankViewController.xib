@@ -14,6 +14,7 @@
                 <outlet property="bankName" destination="crJ-VT-so6" id="Roy-7B-Vda"/>
                 <outlet property="bankNum" destination="PRt-xo-gPO" id="Bdf-St-17y"/>
                 <outlet property="bankSubName" destination="wl1-86-Tpf" id="HPU-gq-Pf0"/>
+                <outlet property="defaultBtn" destination="aex-Tk-xtG" id="or9-Oe-vXp"/>
                 <outlet property="name" destination="Osy-jd-hSZ" id="0FC-vh-TrM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -73,6 +74,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addBankAction:" destination="-1" eventType="touchUpInside" id="xb5-IO-0z5"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW0-Aq-QlN">
                     <rect key="frame" x="0.0" y="51" width="375" height="50"/>

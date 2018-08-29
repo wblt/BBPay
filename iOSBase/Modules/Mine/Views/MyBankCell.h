@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MyBankCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *bankName;
+@property (weak, nonatomic) IBOutlet UILabel *bankNum;
+@property (weak, nonatomic) IBOutlet UILabel *morenStatus;
 
 @end

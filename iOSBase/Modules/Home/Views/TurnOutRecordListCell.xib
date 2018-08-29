@@ -83,6 +83,13 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="detail" destination="Yxk-r4-z6b" id="vlY-6Q-Qnq"/>
+                <outlet property="img" destination="obi-OE-JhQ" id="67t-mW-ANR"/>
+                <outlet property="money" destination="2uG-SF-r5i" id="rnn-f6-As4"/>
+                <outlet property="time" destination="V5f-Zs-VZG" id="Xph-cK-EtU"/>
+                <outlet property="title" destination="FbW-PR-gUz" id="E0A-Au-GKV"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

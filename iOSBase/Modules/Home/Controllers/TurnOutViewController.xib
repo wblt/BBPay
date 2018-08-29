@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TurnOutViewController">
             <connections>
+                <outlet property="moneyNum" destination="cMM-th-diV" id="xGc-9z-HlO"/>
+                <outlet property="phoneText" destination="rdD-f2-mjk" id="eJH-Kl-Lo6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -69,7 +71,7 @@
                             </constraints>
                             <color key="textColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                     <color key="value" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,6 +105,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="toCentainAction:" destination="-1" eventType="touchUpInside" id="oAH-wg-jye"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUA-gv-sLp">
                     <rect key="frame" x="12" y="211" width="351" height="50"/>

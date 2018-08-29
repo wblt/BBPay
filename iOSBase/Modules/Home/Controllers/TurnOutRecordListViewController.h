@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface TurnOutRecordListViewController : BaseViewController
-
+@property (nonatomic, strong) NSString *url;
 @end

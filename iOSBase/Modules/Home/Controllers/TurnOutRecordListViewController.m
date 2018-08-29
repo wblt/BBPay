@@ -8,7 +8,11 @@
 
 #import "TurnOutRecordListViewController.h"
 #import "TurnOutRecordListCell.h"
+#import "TurnOutRecordModel.h"
 @interface TurnOutRecordListViewController () <UITableViewDataSource, UITableViewDelegate>
+{
+    NSMutableArray *turnOutArr;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -16,31 +20,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"转出记录";
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 70;
     self.tableView.backgroundColor = mainBackgroudColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"TurnOutRecordListCell" bundle:nil] forCellReuseIdentifier:@"TurnOutRecordListCell"];
+    [self requestData];
+}
+
+- (void)requestData {
+    turnOutArr = [NSMutableArray array];
+    RequestParams *parms = [[RequestParams alloc] initWithParams:_url];
+    [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
+    [parms addParameter:@"QUERY_ID" value:@"0"];
+    [parms addParameter:@"TYPE" value:@"1"];
+    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"转出记录" successBlock:^(id data) {
+        for (NSDictionary *dic in data[@"pd"]) {
+            TurnOutRecordModel *model = [TurnOutRecordModel mj_objectWithKeyValues:dic];
+            [turnOutArr addObject:model];
+        }
+        [self.tableView reloadData];
+    } failureBlock:^(NSError *error) {
+        
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return turnOutArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TurnOutRecordListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TurnOutRecordListCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    cell.titleText.text = titleArr[indexPath.section][indexPath.row];
-//    cell.img.image = [UIImage imageNamed:imgArr[indexPath.section][indexPath.row]];
-//    if (indexPath.section == 0 && indexPath.row == 0) {
-//        cell.detailTitle.text = @"大兵哥";
-//    }else if (indexPath.section == 4 && indexPath.row == 2) {
-//        cell.detailTitle.text = @"1.0";
-//    }else {
-//        cell.detailTitle.text = @"";
-//    }
+    TurnOutRecordModel *model = turnOutArr[indexPath.row];
+    cell.title.text = model.NICK_NAME;
+    cell.detail.text = [NSString stringWithFormat:@"UID:%@",model.USER_ID];
+    cell.money.text = model.BALANCE;
+    cell.time.text = model.CREATE_TIME;
+    [cell.img sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"head"]];
     return cell;
 }
 

@@ -31,6 +31,7 @@
 #import "UIView+Extend.h"
 #import "GTMBase64.h"
 #import "NSString+MD5.h"
+#import "UIAlertController+HCAdd.h"
 
 //第三方
 #import <MBProgressHUD.h>

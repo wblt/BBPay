@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConvertibilityViewController">
             <connections>
+                <outlet property="money" destination="CD2-8V-pi6" id="wX7-o0-v2O"/>
+                <outlet property="score" destination="br3-ij-K0J" id="UDj-BV-ito"/>
+                <outlet property="scoreNum" destination="27F-P2-RvL" id="E7B-PE-BP8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -133,6 +136,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="scoreExchangeAction:" destination="-1" eventType="touchUpInside" id="R4N-MS-GaQ"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

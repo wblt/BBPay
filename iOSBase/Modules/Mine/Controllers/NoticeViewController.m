@@ -28,6 +28,7 @@
     self.tableView.backgroundColor = mainBackgroudColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"NoticeCell" bundle:nil] forCellReuseIdentifier:@"NoticeCell"];
+    [self requestData];
 }
 
 - (void)requestData {
@@ -56,6 +57,7 @@
     NoticeModel *model = noticeArr[indexPath.row];
     cell.title.text = model.TITLE;
     cell.detailTitle.text = model.CONTENT;
+    cell.time.text = model.CREATE_TIME;
     return cell;
 }
 
