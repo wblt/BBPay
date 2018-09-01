@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface AddBankViewController : BaseViewController
-
+@property (nonatomic) BOOL isFrist;
 @end

@@ -10,7 +10,7 @@
 #import "XDMenuPopoverBackgroundView.h"
 #import <Masonry.h>
 
-static CGFloat const itemHeight = 30;
+static CGFloat const itemHeight = 45;
 static CGFloat const iconWidth = 50;
 static CGFloat const borderInset = 0;
 static NSString * const cellIdentifier = @"ItemCell";

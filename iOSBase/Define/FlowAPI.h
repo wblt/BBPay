@@ -63,7 +63,7 @@ metamacro_foreach(rac_strongify_,, __VA_ARGS__) \
 _Pragma("clang diagnostic pop")
 
 // 主服务器地址
-#define SERVER_IP         @"http://139.196.225.206:8082"
+#define SERVER_IP         @"http://ddcapp.top"
 
 // 登录
 #define API_LOGIN       SERVER_IP@"/app/user/login"
@@ -103,5 +103,26 @@ _Pragma("clang diagnostic pop")
 #define API_CHANGEINTEGRAL       SERVER_IP@"/app/my/changeIntegral"
 //
 #define API_CGDETAIL       SERVER_IP@"/app/my/cgDetail"
-
+//
+#define API_BUY       SERVER_IP@"/app/market/buy"
+//
+#define API_BUYORDERLIST       SERVER_IP@"/app/market/buyOrderList"
+//
+#define API_ORDERCANCLE       SERVER_IP@"/app/market/orderCancle"
+//
+#define API_PAY       SERVER_IP@"/app/market/pay"
+//
+#define API_BUYLIST       SERVER_IP@"/app/market/buyList"
+//
+#define API_TOMARKET       SERVER_IP@"/app/market/toMarket"
+//
+#define API_BUYLOGS       SERVER_IP@"/app/market/buyLogs"
+//
+#define API_SELL       SERVER_IP@"/app/market/sell"
+//
+#define API_SELLORDERLIST       SERVER_IP@"/app/market/sellOrderList"
+#define API_SELLLIST       SERVER_IP@"/app/market/sellList"
+#define API_SELLLOGS       SERVER_IP@"/app/market/sellLogs"
+#define API_SUREPAY       SERVER_IP@"/app/market/surePay"
+#define API_ORDERDETAIL       SERVER_IP@"/app/market/orderDetail"
 #endif /* FlowAPI_h */

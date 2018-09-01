@@ -16,8 +16,6 @@
 }
 @property (weak, nonatomic) IBOutlet UITextField *phoneText;
 @property (weak, nonatomic) IBOutlet UITextField *passwordText;
-@property (weak, nonatomic) IBOutlet UITextField *codeText;
-@property (weak, nonatomic) IBOutlet MQVerCodeImageView *verCodeImgView;
 
 @end
 
@@ -28,21 +26,7 @@
     
     self.title = @"登录";
     _imageCodeStr = @"";
-    _verCodeImgView.bolck = ^(NSString *imageCodeStr){//看情况是否需要
-        _imageCodeStr = imageCodeStr;
-        NSLog(@"imageCodeStr = %@",imageCodeStr);
-    };
-    _verCodeImgView.isRotation = NO;
-    [_verCodeImgView freshVerCode];
     
-    //点击刷新
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
-    [_verCodeImgView addGestureRecognizer:tap];
-}
-
-- (void)tapClick:(UITapGestureRecognizer*)tap
-{
-    [_verCodeImgView freshVerCode];
 }
 
 - (IBAction)toHomeVC:(id)sender {
@@ -61,10 +45,6 @@
         return;
     }
     
-    if (![self.codeText.text isEqualToString:_imageCodeStr] || self.codeText.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请输入正确的图片验证码"];
-        return;
-    }
     RequestParams *parms = [[RequestParams alloc] initWithParams:API_LOGIN];
     [parms addParameter:@"USER_NAME" value:self.phoneText.text];
     [parms addParameter:@"PASSWORD" value:self.passwordText.text];
@@ -78,7 +58,7 @@
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         appDelegate.window.rootViewController = homeNav;
     } failureBlock:^(NSError *error) {
-        [_verCodeImgView freshVerCode];
+       
     }];
     
 }
@@ -92,11 +72,6 @@
 - (IBAction)toForgetPwdVC:(id)sender {
     ForgetPwdController *forgetVC = [[ForgetPwdController alloc] init];
     [self.navigationController pushViewController:forgetVC animated:YES];
-}
-
-- (void)test {
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

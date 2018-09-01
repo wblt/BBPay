@@ -22,10 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"添加银行卡";
+    if (_isFrist) {
+        _defaultBtn.selected = YES;
+    }
 }
 
 - (IBAction)selectedDefaultAction:(UIButton *)sender {
-    sender.selected = !sender.selected;
+    if (_isFrist) {
+        sender.selected = YES;
+    }else {
+        sender.selected = !sender.selected;
+    }
 }
 
 - (IBAction)toSelectBankName:(UIButton *)sender {

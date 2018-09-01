@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "MyBankModel.h"
 @interface PurchaseViewController : BaseViewController
-
+@property (nonatomic, strong) MyBankModel *bankModel;
 @end

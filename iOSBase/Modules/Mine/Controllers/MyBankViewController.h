@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "MyBankModel.h"
+//typedef void(^BankBlock)(MyBankModel *model);
 
 @interface MyBankViewController : BaseViewController
-
+//@property (nonatomic, copy) BankBlock bankBlock;
+//@property (nonatomic) BOOL isSelectedBank;
 @end

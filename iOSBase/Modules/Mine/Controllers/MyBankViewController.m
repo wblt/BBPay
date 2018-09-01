@@ -95,6 +95,7 @@
     [addBankBtn setImage:[UIImage imageNamed:@"jiahao"] forState:UIControlStateNormal];
     [addBankBtn addTapBlock:^(UIButton *btn) {
         AddBankViewController *addBankVC = [[AddBankViewController alloc] init];
+        addBankVC.isFrist = (myBankArr.count == 0);
         [self.navigationController pushViewController:addBankVC animated:YES];
     }];
     [footV addSubview:addBankBtn];
@@ -103,31 +104,37 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MyBankModel *model = myBankArr[indexPath.row];
-    if ([model.IFDEFAULT isEqualToString:@"1"]) {
-        return;
-    }
-    [UIAlertController showActionSheetWithTitle:@"银行卡操作" Message:nil cancelBtnTitle:@"取消" OtherBtnTitles:@[@"设置默认",@"删除"] ClickBtn:^(NSInteger index) {
-        if (index == 1) {
-            RequestParams *parms = [[RequestParams alloc] initWithParams:API_MODPAYMES];
-            [parms addParameter:@"ID" value:model.ID];
-            [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
-            [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"修改默认" successBlock:^(id data) {
-                [SVProgressHUD showSuccessWithStatus:@"修改成功"];
-                [self requestData];
-            } failureBlock:^(NSError *error) {
-                
-            }];
-        }else if (index == 2) {
-            RequestParams *parms = [[RequestParams alloc] initWithParams:API_DELPAYMES];
-            [parms addParameter:@"ID" value:model.ID];
-            [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"删除银行卡" successBlock:^(id data) {
-                [SVProgressHUD showSuccessWithStatus:@"删除成功"];
-                [self requestData];
-            } failureBlock:^(NSError *error) {
-                
-            }];
+//    if (self.isSelectedBank) {
+//        self.bankBlock(model);
+//        [self.navigationController popViewControllerAnimated:YES];
+//
+//    }else {
+        if ([model.IFDEFAULT isEqualToString:@"1"]) {
+            return;
         }
-    }];
+        [UIAlertController showActionSheetWithTitle:@"银行卡操作" Message:nil cancelBtnTitle:@"取消" OtherBtnTitles:@[@"设置默认",@"删除银行卡"] ClickBtn:^(NSInteger index) {
+            if (index == 1) {
+                RequestParams *parms = [[RequestParams alloc] initWithParams:API_MODPAYMES];
+                [parms addParameter:@"ID" value:model.ID];
+                [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
+                [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"修改默认" successBlock:^(id data) {
+                    [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+                    [self requestData];
+                } failureBlock:^(NSError *error) {
+                    
+                }];
+            }else if (index == 2) {
+                RequestParams *parms = [[RequestParams alloc] initWithParams:API_DELPAYMES];
+                [parms addParameter:@"ID" value:model.ID];
+                [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"删除银行卡" successBlock:^(id data) {
+                    [SVProgressHUD showSuccessWithStatus:@"删除成功"];
+                    [self requestData];
+                } failureBlock:^(NSError *error) {
+                    
+                }];
+            }
+        }];
+//    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

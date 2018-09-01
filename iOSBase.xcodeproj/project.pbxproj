@@ -56,6 +56,15 @@
 		EE3573AE2132ABEA00C1F167 /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573AC2132ABE900C1F167 /* TransactionViewController.m */; };
 		EE3573B22132AE6700C1F167 /* PostSaleOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573B02132AE6700C1F167 /* PostSaleOrderViewController.m */; };
 		EE3573B32132AE6700C1F167 /* PostSaleOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3573B12132AE6700C1F167 /* PostSaleOrderViewController.xib */; };
+		EE38DFDF2139180F0083A67B /* PurchaseOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE38DFDD2139180F0083A67B /* PurchaseOrderViewController.m */; };
+		EE38DFE02139180F0083A67B /* PurchaseOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE38DFDE2139180F0083A67B /* PurchaseOrderViewController.xib */; };
+		EE38DFE4213919840083A67B /* PurchaseOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE38DFE2213919840083A67B /* PurchaseOrderCell.m */; };
+		EE38DFE5213919840083A67B /* PurchaseOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE38DFE3213919840083A67B /* PurchaseOrderCell.xib */; };
+		EE38DFE821391B5B0083A67B /* PurchaseOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE38DFE721391B5B0083A67B /* PurchaseOrderModel.m */; };
+		EE38DFEA213928DD0083A67B /* UploadImageNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE38DFE9213928DD0083A67B /* UploadImageNoteView.xib */; };
+		EE38DFEF21393A580083A67B /* PurchaseCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE38DFED21393A580083A67B /* PurchaseCenterViewController.xib */; };
+		EE38DFF3213941310083A67B /* PurchaseRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE38DFF1213941310083A67B /* PurchaseRecordViewController.m */; };
+		EE38DFF4213941310083A67B /* PurchaseRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE38DFF2213941310083A67B /* PurchaseRecordViewController.xib */; };
 		EE58F03121368E5C00548520 /* AddBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE58F03021368E5C00548520 /* AddBankViewController.m */; };
 		EE58F03321368EA000548520 /* AddBankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE58F03221368EA000548520 /* AddBankViewController.xib */; };
 		EE58F03A2136957900548520 /* GetIntoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE58F0382136957900548520 /* GetIntoViewController.m */; };
@@ -118,6 +127,7 @@
 		EED14B2C21297B27005973C6 /* AnotherSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED14B2B21297B26005973C6 /* AnotherSearchViewController.m */; };
 		EEDDB27E211F164F007FE540 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDDB27C211F164F007FE540 /* MineViewController.m */; };
 		EEDDB27F211F164F007FE540 /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEDDB27D211F164F007FE540 /* MineViewController.xib */; };
+		EEDF7FBA21394890005B1B65 /* PurchaseCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE38DFEC21393A580083A67B /* PurchaseCenterViewController.m */; };
 		EEE4249B212DB5DD000A3915 /* DigitalAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE42499212DB5DD000A3915 /* DigitalAssetsViewController.m */; };
 		EEE4249C212DB5DD000A3915 /* DigitalAssetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE4249A212DB5DD000A3915 /* DigitalAssetsViewController.xib */; };
 		EEE424A0212DB6FC000A3915 /* DigitalAssetsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE4249E212DB6FC000A3915 /* DigitalAssetsCell.m */; };
@@ -136,6 +146,7 @@
 		EEF19E71212B0B9700B812B1 /* ShareCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF19E6F212B0B9700B812B1 /* ShareCodeViewController.xib */; };
 		EEF19E75212B0F0400B812B1 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF19E73212B0F0400B812B1 /* AboutViewController.m */; };
 		EEF19E76212B0F0400B812B1 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF19E74212B0F0400B812B1 /* AboutViewController.xib */; };
+		EEF2ADB12139951F00EA6DFD /* PurchaseOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF2ADB02139951F00EA6DFD /* PurchaseOrderDetailViewController.m */; };
 		EEF59C9D2136E09100337311 /* TurnOutRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF59C9C2136E09100337311 /* TurnOutRecordModel.m */; };
 		EEF59CA62136EEB600337311 /* ExchangeRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF59CA42136EEB600337311 /* ExchangeRecordViewController.m */; };
 		EEF59CA72136EEB600337311 /* ExchangeRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF59CA52136EEB600337311 /* ExchangeRecordViewController.xib */; };
@@ -259,6 +270,21 @@
 		EE3573AF2132AE6700C1F167 /* PostSaleOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostSaleOrderViewController.h; sourceTree = "<group>"; };
 		EE3573B02132AE6700C1F167 /* PostSaleOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostSaleOrderViewController.m; sourceTree = "<group>"; };
 		EE3573B12132AE6700C1F167 /* PostSaleOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostSaleOrderViewController.xib; sourceTree = "<group>"; };
+		EE38DFDC2139180F0083A67B /* PurchaseOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseOrderViewController.h; sourceTree = "<group>"; };
+		EE38DFDD2139180F0083A67B /* PurchaseOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseOrderViewController.m; sourceTree = "<group>"; };
+		EE38DFDE2139180F0083A67B /* PurchaseOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseOrderViewController.xib; sourceTree = "<group>"; };
+		EE38DFE1213919840083A67B /* PurchaseOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseOrderCell.h; sourceTree = "<group>"; };
+		EE38DFE2213919840083A67B /* PurchaseOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseOrderCell.m; sourceTree = "<group>"; };
+		EE38DFE3213919840083A67B /* PurchaseOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseOrderCell.xib; sourceTree = "<group>"; };
+		EE38DFE621391B5B0083A67B /* PurchaseOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseOrderModel.h; sourceTree = "<group>"; };
+		EE38DFE721391B5B0083A67B /* PurchaseOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseOrderModel.m; sourceTree = "<group>"; };
+		EE38DFE9213928DD0083A67B /* UploadImageNoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadImageNoteView.xib; sourceTree = "<group>"; };
+		EE38DFEB21393A580083A67B /* PurchaseCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseCenterViewController.h; sourceTree = "<group>"; };
+		EE38DFEC21393A580083A67B /* PurchaseCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseCenterViewController.m; sourceTree = "<group>"; };
+		EE38DFED21393A580083A67B /* PurchaseCenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseCenterViewController.xib; sourceTree = "<group>"; };
+		EE38DFF0213941310083A67B /* PurchaseRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseRecordViewController.h; sourceTree = "<group>"; };
+		EE38DFF1213941310083A67B /* PurchaseRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseRecordViewController.m; sourceTree = "<group>"; };
+		EE38DFF2213941310083A67B /* PurchaseRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseRecordViewController.xib; sourceTree = "<group>"; };
 		EE58F03021368E5C00548520 /* AddBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBankViewController.m; sourceTree = "<group>"; };
 		EE58F03221368EA000548520 /* AddBankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBankViewController.xib; sourceTree = "<group>"; };
 		EE58F0372136957900548520 /* GetIntoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetIntoViewController.h; sourceTree = "<group>"; };
@@ -386,6 +412,8 @@
 		EEF19E72212B0F0400B812B1 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		EEF19E73212B0F0400B812B1 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		EEF19E74212B0F0400B812B1 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		EEF2ADAF2139951F00EA6DFD /* PurchaseOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseOrderDetailViewController.h; sourceTree = "<group>"; };
+		EEF2ADB02139951F00EA6DFD /* PurchaseOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseOrderDetailViewController.m; sourceTree = "<group>"; };
 		EEF59C9B2136E09100337311 /* TurnOutRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TurnOutRecordModel.h; sourceTree = "<group>"; };
 		EEF59C9C2136E09100337311 /* TurnOutRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TurnOutRecordModel.m; sourceTree = "<group>"; };
 		EEF59CA32136EEB600337311 /* ExchangeRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeRecordViewController.h; sourceTree = "<group>"; };
@@ -831,6 +859,8 @@
 				EEF59C9C2136E09100337311 /* TurnOutRecordModel.m */,
 				EEF59CAD2136F0DC00337311 /* ExchangeModel.h */,
 				EEF59CAE2136F0DC00337311 /* ExchangeModel.m */,
+				EE38DFE621391B5B0083A67B /* PurchaseOrderModel.h */,
+				EE38DFE721391B5B0083A67B /* PurchaseOrderModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -871,6 +901,17 @@
 				EE3573AF2132AE6700C1F167 /* PostSaleOrderViewController.h */,
 				EE3573B02132AE6700C1F167 /* PostSaleOrderViewController.m */,
 				EE3573B12132AE6700C1F167 /* PostSaleOrderViewController.xib */,
+				EE38DFDC2139180F0083A67B /* PurchaseOrderViewController.h */,
+				EE38DFDD2139180F0083A67B /* PurchaseOrderViewController.m */,
+				EE38DFDE2139180F0083A67B /* PurchaseOrderViewController.xib */,
+				EE38DFEB21393A580083A67B /* PurchaseCenterViewController.h */,
+				EE38DFEC21393A580083A67B /* PurchaseCenterViewController.m */,
+				EE38DFED21393A580083A67B /* PurchaseCenterViewController.xib */,
+				EE38DFF0213941310083A67B /* PurchaseRecordViewController.h */,
+				EE38DFF1213941310083A67B /* PurchaseRecordViewController.m */,
+				EE38DFF2213941310083A67B /* PurchaseRecordViewController.xib */,
+				EEF2ADAF2139951F00EA6DFD /* PurchaseOrderDetailViewController.h */,
+				EEF2ADB02139951F00EA6DFD /* PurchaseOrderDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -890,6 +931,10 @@
 				EEF59CA82136EF7A00337311 /* ExchangeRecordCell.h */,
 				EEF59CA92136EF7A00337311 /* ExchangeRecordCell.m */,
 				EEF59CAA2136EF7A00337311 /* ExchangeRecordCell.xib */,
+				EE38DFE1213919840083A67B /* PurchaseOrderCell.h */,
+				EE38DFE2213919840083A67B /* PurchaseOrderCell.m */,
+				EE38DFE3213919840083A67B /* PurchaseOrderCell.xib */,
+				EE38DFE9213928DD0083A67B /* UploadImageNoteView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1187,11 +1232,14 @@
 				363853E320046DF500899B11 /* README.md in Resources */,
 				EED0574F212284A500F0AB9C /* back_icon@2x.png in Resources */,
 				EED0574B212284A500F0AB9C /* close_icon@2x.png in Resources */,
+				EE38DFF4213941310083A67B /* PurchaseRecordViewController.xib in Resources */,
 				EEF19E6C212B053F00B812B1 /* SuggestionViewController.xib in Resources */,
+				EE38DFEA213928DD0083A67B /* UploadImageNoteView.xib in Resources */,
 				EEB368D5211DEE3300CF00AF /* RegisterViewController.xib in Resources */,
 				363853E020046DDC00899B11 /* README.md in Resources */,
 				EEF19E76212B0F0400B812B1 /* AboutViewController.xib in Resources */,
 				EE3573B32132AE6700C1F167 /* PostSaleOrderViewController.xib in Resources */,
+				EE38DFE5213919840083A67B /* PurchaseOrderCell.xib in Resources */,
 				EED14AFE21296579005973C6 /* MyBankCell.xib in Resources */,
 				363854592004C11A00899B11 /* README.md in Resources */,
 				EEF19E67212B011900B812B1 /* EditLoginPwdViewController.xib in Resources */,
@@ -1201,8 +1249,10 @@
 				EED0574C212284A500F0AB9C /* sure_placeholder_error@2x.png in Resources */,
 				EE58F03B2136957900548520 /* GetIntoViewController.xib in Resources */,
 				363853F42004714D00899B11 /* README.md in Resources */,
+				EE38DFEF21393A580083A67B /* PurchaseCenterViewController.xib in Resources */,
 				3638545F2004C4EF00899B11 /* README.md in Resources */,
 				EEB368D0211DE6FE00CF00AF /* HomeViewController.xib in Resources */,
+				EE38DFE02139180F0083A67B /* PurchaseOrderViewController.xib in Resources */,
 				EE21C96E2135549F00A4E0CA /* NoticeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1276,6 +1326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEDF7FBA21394890005B1B65 /* PurchaseCenterViewController.m in Sources */,
 				EEE424A0212DB6FC000A3915 /* DigitalAssetsCell.m in Sources */,
 				EE58F03121368E5C00548520 /* AddBankViewController.m in Sources */,
 				EE58F03F21369BBD00548520 /* ShareRecordViewController.m in Sources */,
@@ -1293,6 +1344,7 @@
 				EE01E9C8212913BF00D2019B /* MQVerCodeImageView.m in Sources */,
 				EEB368CF211DE6FE00CF00AF /* HomeViewController.m in Sources */,
 				EEB368D4211DEE3300CF00AF /* RegisterViewController.m in Sources */,
+				EEF2ADB12139951F00EA6DFD /* PurchaseOrderDetailViewController.m in Sources */,
 				EE58F0592136A20900548520 /* WCLPassWordView.m in Sources */,
 				EE58F04321369C7F00548520 /* ShareRecordModel.m in Sources */,
 				EE58F05C2136A22700548520 /* UIColor+PPCategory.m in Sources */,
@@ -1339,12 +1391,15 @@
 				EED14B2421296EDD005973C6 /* PinYinForObjc.m in Sources */,
 				3638541B2004981D00899B11 /* UIColor+Extend.m in Sources */,
 				3638541D2004981D00899B11 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
+				EE38DFE821391B5B0083A67B /* PurchaseOrderModel.m in Sources */,
 				EED14B2C21297B27005973C6 /* AnotherSearchViewController.m in Sources */,
 				EEF19E6B212B053F00B812B1 /* SuggestionViewController.m in Sources */,
 				363854262004997200899B11 /* RequestParams.m in Sources */,
 				EE58F03A2136957900548520 /* GetIntoViewController.m in Sources */,
 				EE3573A92132ABC300C1F167 /* XDMenuPopoverBackgroundView.m in Sources */,
+				EE38DFF3213941310083A67B /* PurchaseRecordViewController.m in Sources */,
 				EE041B32213686C40021C7E3 /* MyBankModel.m in Sources */,
+				EE38DFE4213919840083A67B /* PurchaseOrderCell.m in Sources */,
 				EED0574A212284A500F0AB9C /* SureWebViewController.m in Sources */,
 				EE3573B22132AE6700C1F167 /* PostSaleOrderViewController.m in Sources */,
 				EEF59CAF2136F0DC00337311 /* ExchangeModel.m in Sources */,
@@ -1358,6 +1413,7 @@
 				3638541C2004981D00899B11 /* UIView+Extend.m in Sources */,
 				363853AA200465BA00899B11 /* AppDelegate.m in Sources */,
 				3638541A2004981D00899B11 /* UICollectionView+IndexPath.m in Sources */,
+				EE38DFDF2139180F0083A67B /* PurchaseOrderViewController.m in Sources */,
 				363854182004981D00899B11 /* NSString+MD5.m in Sources */,
 				EEFD6479212C552700BF1C34 /* ConvertibilityViewController.m in Sources */,
 				EE21C9712135581900A4E0CA /* NoticeModel.m in Sources */,

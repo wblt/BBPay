@@ -32,6 +32,7 @@
 #import "GTMBase64.h"
 #import "NSString+MD5.h"
 #import "UIAlertController+HCAdd.h"
+#import "YQPayKeyWordVC.h"
 
 //第三方
 #import <MBProgressHUD.h>

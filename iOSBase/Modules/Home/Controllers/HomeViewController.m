@@ -100,13 +100,17 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 103) {
         PurchaseViewController *vc = [[PurchaseViewController alloc] init];
+        vc.title = @"买入";
         [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 104) {
         PurchaseViewController *vc = [[PurchaseViewController alloc] init];
+        vc.title = @"卖出";
         [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 105) {
-        DigitalAssetsViewController *vc = [[DigitalAssetsViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        self.navigationController.navigationBarHidden = YES;
+        [SVProgressHUD showInfoWithStatus:@"开发中"];
+//        DigitalAssetsViewController *vc = [[DigitalAssetsViewController alloc] init];
+//        [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 106) {
         self.navigationController.navigationBarHidden = YES;
         [SVProgressHUD showInfoWithStatus:@"开发中"];
