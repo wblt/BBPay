@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		363853AA200465BA00899B11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 363853A9200465BA00899B11 /* AppDelegate.m */; };
 		363853B2200465BA00899B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 363853B1200465BA00899B11 /* Assets.xcassets */; };
-		363853B5200465BA00899B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363853B3200465BA00899B11 /* LaunchScreen.storyboard */; };
 		363853B8200465BA00899B11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 363853B7200465BA00899B11 /* main.m */; };
 		363853C2200465BA00899B11 /* iOSBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 363853C1200465BA00899B11 /* iOSBaseTests.m */; };
 		363853CD200465BA00899B11 /* iOSBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 363853CC200465BA00899B11 /* iOSBaseUITests.m */; };
@@ -45,6 +44,8 @@
 		EE041B2E213677BA0021C7E3 /* UploadPic.m in Sources */ = {isa = PBXBuildFile; fileRef = EE041B2B213677B90021C7E3 /* UploadPic.m */; };
 		EE041B2F213677BA0021C7E3 /* QCloudUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EE041B2C213677B90021C7E3 /* QCloudUtils.m */; };
 		EE041B32213686C40021C7E3 /* MyBankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE041B31213686C40021C7E3 /* MyBankModel.m */; };
+		EE15094B213AD405004F01EC /* ScoreRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE150949213AD405004F01EC /* ScoreRecordViewController.m */; };
+		EE15094C213AD405004F01EC /* ScoreRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE15094A213AD405004F01EC /* ScoreRecordViewController.xib */; };
 		EE21C968213553F100A4E0CA /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE21C966213553F100A4E0CA /* NoticeViewController.m */; };
 		EE21C969213553F100A4E0CA /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE21C967213553F100A4E0CA /* NoticeViewController.xib */; };
 		EE21C96D2135549F00A4E0CA /* NoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE21C96B2135549F00A4E0CA /* NoticeCell.m */; };
@@ -147,6 +148,11 @@
 		EEF19E75212B0F0400B812B1 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF19E73212B0F0400B812B1 /* AboutViewController.m */; };
 		EEF19E76212B0F0400B812B1 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF19E74212B0F0400B812B1 /* AboutViewController.xib */; };
 		EEF2ADB12139951F00EA6DFD /* PurchaseOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF2ADB02139951F00EA6DFD /* PurchaseOrderDetailViewController.m */; };
+		EEF340DA213B672300B5705C /* RedPackgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF340D9213B672300B5705C /* RedPackgeView.xib */; };
+		EEF340E0213B776500B5705C /* ScoreRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF340DF213B776500B5705C /* ScoreRecordModel.m */; };
+		EEF340E4213B79C700B5705C /* ExchangeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF340E2213B79C700B5705C /* ExchangeListCell.m */; };
+		EEF340E5213B79C700B5705C /* ExchangeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF340E3213B79C700B5705C /* ExchangeListCell.xib */; };
+		EEF340E7213B817B00B5705C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF340E6213B817B00B5705C /* Launch Screen.storyboard */; };
 		EEF59C9D2136E09100337311 /* TurnOutRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF59C9C2136E09100337311 /* TurnOutRecordModel.m */; };
 		EEF59CA62136EEB600337311 /* ExchangeRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF59CA42136EEB600337311 /* ExchangeRecordViewController.m */; };
 		EEF59CA72136EEB600337311 /* ExchangeRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF59CA52136EEB600337311 /* ExchangeRecordViewController.xib */; };
@@ -188,7 +194,6 @@
 		363853A8200465BA00899B11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		363853A9200465BA00899B11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		363853B1200465BA00899B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		363853B4200465BA00899B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		363853B6200465BA00899B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		363853B7200465BA00899B11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		363853BD200465BA00899B11 /* iOSBaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSBaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +257,9 @@
 		EE041B2C213677B90021C7E3 /* QCloudUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCloudUtils.m; sourceTree = "<group>"; };
 		EE041B30213686C40021C7E3 /* MyBankModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyBankModel.h; sourceTree = "<group>"; };
 		EE041B31213686C40021C7E3 /* MyBankModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyBankModel.m; sourceTree = "<group>"; };
+		EE150948213AD405004F01EC /* ScoreRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreRecordViewController.h; sourceTree = "<group>"; };
+		EE150949213AD405004F01EC /* ScoreRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreRecordViewController.m; sourceTree = "<group>"; };
+		EE15094A213AD405004F01EC /* ScoreRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreRecordViewController.xib; sourceTree = "<group>"; };
 		EE21C965213553F100A4E0CA /* NoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
 		EE21C966213553F100A4E0CA /* NoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
 		EE21C967213553F100A4E0CA /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
@@ -414,6 +422,13 @@
 		EEF19E74212B0F0400B812B1 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		EEF2ADAF2139951F00EA6DFD /* PurchaseOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseOrderDetailViewController.h; sourceTree = "<group>"; };
 		EEF2ADB02139951F00EA6DFD /* PurchaseOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseOrderDetailViewController.m; sourceTree = "<group>"; };
+		EEF340D9213B672300B5705C /* RedPackgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedPackgeView.xib; sourceTree = "<group>"; };
+		EEF340DE213B776500B5705C /* ScoreRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreRecordModel.h; sourceTree = "<group>"; };
+		EEF340DF213B776500B5705C /* ScoreRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreRecordModel.m; sourceTree = "<group>"; };
+		EEF340E1213B79C700B5705C /* ExchangeListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeListCell.h; sourceTree = "<group>"; };
+		EEF340E2213B79C700B5705C /* ExchangeListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeListCell.m; sourceTree = "<group>"; };
+		EEF340E3213B79C700B5705C /* ExchangeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeListCell.xib; sourceTree = "<group>"; };
+		EEF340E6213B817B00B5705C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EEF59C9B2136E09100337311 /* TurnOutRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TurnOutRecordModel.h; sourceTree = "<group>"; };
 		EEF59C9C2136E09100337311 /* TurnOutRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TurnOutRecordModel.m; sourceTree = "<group>"; };
 		EEF59CA32136EEB600337311 /* ExchangeRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeRecordViewController.h; sourceTree = "<group>"; };
@@ -510,7 +525,7 @@
 				363853A8200465BA00899B11 /* AppDelegate.h */,
 				363853A9200465BA00899B11 /* AppDelegate.m */,
 				363853B1200465BA00899B11 /* Assets.xcassets */,
-				363853B3200465BA00899B11 /* LaunchScreen.storyboard */,
+				EEF340E6213B817B00B5705C /* Launch Screen.storyboard */,
 				363853B6200465BA00899B11 /* Info.plist */,
 				363853B7200465BA00899B11 /* main.m */,
 			);
@@ -861,6 +876,8 @@
 				EEF59CAE2136F0DC00337311 /* ExchangeModel.m */,
 				EE38DFE621391B5B0083A67B /* PurchaseOrderModel.h */,
 				EE38DFE721391B5B0083A67B /* PurchaseOrderModel.m */,
+				EEF340DE213B776500B5705C /* ScoreRecordModel.h */,
+				EEF340DF213B776500B5705C /* ScoreRecordModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -912,6 +929,9 @@
 				EE38DFF2213941310083A67B /* PurchaseRecordViewController.xib */,
 				EEF2ADAF2139951F00EA6DFD /* PurchaseOrderDetailViewController.h */,
 				EEF2ADB02139951F00EA6DFD /* PurchaseOrderDetailViewController.m */,
+				EE150948213AD405004F01EC /* ScoreRecordViewController.h */,
+				EE150949213AD405004F01EC /* ScoreRecordViewController.m */,
+				EE15094A213AD405004F01EC /* ScoreRecordViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -935,6 +955,10 @@
 				EE38DFE2213919840083A67B /* PurchaseOrderCell.m */,
 				EE38DFE3213919840083A67B /* PurchaseOrderCell.xib */,
 				EE38DFE9213928DD0083A67B /* UploadImageNoteView.xib */,
+				EEF340D9213B672300B5705C /* RedPackgeView.xib */,
+				EEF340E1213B79C700B5705C /* ExchangeListCell.h */,
+				EEF340E2213B79C700B5705C /* ExchangeListCell.m */,
+				EEF340E3213B79C700B5705C /* ExchangeListCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1195,6 +1219,7 @@
 				EE3573AD2132ABEA00C1F167 /* TransactionViewController.xib in Resources */,
 				EEFD647A212C552700BF1C34 /* ConvertibilityViewController.xib in Resources */,
 				EEE424A6212DBA0C000A3915 /* DigitalAssetsHeadView.xib in Resources */,
+				EEF340DA213B672300B5705C /* RedPackgeView.xib in Resources */,
 				EEED0A30213255A600784C55 /* DigitalTurnOutViewController.xib in Resources */,
 				EEF59CA72136EEB600337311 /* ExchangeRecordViewController.xib in Resources */,
 				363853E620046DFC00899B11 /* README.md in Resources */,
@@ -1205,9 +1230,9 @@
 				EED14AEA21294CF7005973C6 /* MineCell.xib in Resources */,
 				EED14AEC212954F0005973C6 /* MineHeadView.xib in Resources */,
 				EED05749212284A500F0AB9C /* close_icon@3x.png in Resources */,
+				EEF340E5213B79C700B5705C /* ExchangeListCell.xib in Resources */,
 				EEF19E71212B0B9700B812B1 /* ShareCodeViewController.xib in Resources */,
 				EEB368CB211DE4DE00CF00AF /* LoginViewController.xib in Resources */,
-				363853B5200465BA00899B11 /* LaunchScreen.storyboard in Resources */,
 				EED14AF92129633A005973C6 /* MyBankViewController.xib in Resources */,
 				3638545B2004C13200899B11 /* README.md in Resources */,
 				EEFD6484212C57A000BF1C34 /* TurnOutRecordListCell.xib in Resources */,
@@ -1226,6 +1251,7 @@
 				EED14AF421296137005973C6 /* EditNicknameViewController.xib in Resources */,
 				363854612004C4FA00899B11 /* README.md in Resources */,
 				EEF19E62212AFC3400B812B1 /* IndividualPropertyViewController.xib in Resources */,
+				EE15094C213AD405004F01EC /* ScoreRecordViewController.xib in Resources */,
 				EEF59CAC2136EF7A00337311 /* ExchangeRecordCell.xib in Resources */,
 				EEE4249C212DB5DD000A3915 /* DigitalAssetsViewController.xib in Resources */,
 				EEDDB27F211F164F007FE540 /* MineViewController.xib in Resources */,
@@ -1233,6 +1259,7 @@
 				EED0574F212284A500F0AB9C /* back_icon@2x.png in Resources */,
 				EED0574B212284A500F0AB9C /* close_icon@2x.png in Resources */,
 				EE38DFF4213941310083A67B /* PurchaseRecordViewController.xib in Resources */,
+				EEF340E7213B817B00B5705C /* Launch Screen.storyboard in Resources */,
 				EEF19E6C212B053F00B812B1 /* SuggestionViewController.xib in Resources */,
 				EE38DFEA213928DD0083A67B /* UploadImageNoteView.xib in Resources */,
 				EEB368D5211DEE3300CF00AF /* RegisterViewController.xib in Resources */,
@@ -1368,6 +1395,7 @@
 				EEFD6483212C57A000BF1C34 /* TurnOutRecordListCell.m in Sources */,
 				EEFD6474212C521D00BF1C34 /* TurnOutViewController.m in Sources */,
 				EEB368CA211DE4DE00CF00AF /* LoginViewController.m in Sources */,
+				EEF340E4213B79C700B5705C /* ExchangeListCell.m in Sources */,
 				EED14AE921294CF7005973C6 /* MineCell.m in Sources */,
 				363854162004981D00899B11 /* SPUtil.m in Sources */,
 				EEE424A4212DBA02000A3915 /* DigitalAssetsHeadView.m in Sources */,
@@ -1382,6 +1410,7 @@
 				EE610A1421362D5500E92D87 /* UIView+SDExtension.m in Sources */,
 				EED14AFD21296579005973C6 /* MyBankCell.m in Sources */,
 				EEF59CAB2136EF7A00337311 /* ExchangeRecordCell.m in Sources */,
+				EE15094B213AD405004F01EC /* ScoreRecordViewController.m in Sources */,
 				3638541F2004981D00899B11 /* Util.m in Sources */,
 				363853B8200465BA00899B11 /* main.m in Sources */,
 				EE041B24213641D50021C7E3 /* TQStarRatingView.m in Sources */,
@@ -1403,6 +1432,7 @@
 				EED0574A212284A500F0AB9C /* SureWebViewController.m in Sources */,
 				EE3573B22132AE6700C1F167 /* PostSaleOrderViewController.m in Sources */,
 				EEF59CAF2136F0DC00337311 /* ExchangeModel.m in Sources */,
+				EEF340E0213B776500B5705C /* ScoreRecordModel.m in Sources */,
 				EE58F0512136A1E400548520 /* YQSelectPayStyleView.m in Sources */,
 				EE610A1821362D5500E92D87 /* TAAnimatedDotView.m in Sources */,
 				3638542B20049D8500899B11 /* BaseNavViewController.m in Sources */,
@@ -1450,17 +1480,6 @@
 			targetProxy = 363853C9200465BA00899B11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		363853B3200465BA00899B11 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				363853B4200465BA00899B11 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		363853CF200465BA00899B11 /* Debug */ = {

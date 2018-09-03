@@ -9,7 +9,8 @@
 #import "IndividualPropertyViewController.h"
 
 @interface IndividualPropertyViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *money;
+@property (weak, nonatomic) IBOutlet UILabel *score;
 @end
 
 @implementation IndividualPropertyViewController
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的资产";
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.score.text = [SPUtil objectForKey:k_app_INTEGRAL];
+    self.money.text = [SPUtil objectForKey:k_app_BALANCE];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,12 +7,15 @@
 //
 
 #import "ExchangeRecordViewController.h"
-#import "ExchangeRecordCell.h"
+#import "ExchangeListCell.h"
 #import "ExchangeModel.h"
 @interface ExchangeRecordViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableArray *exchangeArr;
+    
 }
+@property (nonatomic, strong) NSString *lastId;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -23,23 +26,49 @@
     self.title = @"兑换记录";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 60;
+    self.tableView.rowHeight = 44;
     self.tableView.backgroundColor = mainBackgroudColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerNib:[UINib nibWithNibName:@"ExchangeRecordCell" bundle:nil] forCellReuseIdentifier:@"ExchangeRecordCell"];
-    [self requestData];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ExchangeListCell" bundle:nil] forCellReuseIdentifier:@"ExchangeListCell"];
+    exchangeArr = [NSMutableArray array];
+    
+    [self requestData:@"1"];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self requestData:@"1"];
+    }];
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self requestData:@"2"];
+    }];
+    
 }
 
-- (void)requestData {
-    exchangeArr = [NSMutableArray array];
+- (void)requestData:(NSString *)type {
+    
     RequestParams *parms = [[RequestParams alloc] initWithParams:API_CGDETAIL];
     [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
-    [parms addParameter:@"QUERY_ID" value:@"0"];
-    [parms addParameter:@"TYPE" value:@"1"];
-    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"转出记录" successBlock:^(id data) {
+    [parms addParameter:@"QUERY_ID" value:[type isEqualToString:@"1"] ? @"0" : _lastId];
+    [parms addParameter:@"TYPE" value:type];
+    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"兑换记录" successBlock:^(id data) {
+        NSMutableArray *arr = [NSMutableArray array];
         for (NSDictionary *dic in data[@"pd"]) {
             ExchangeModel *model = [ExchangeModel mj_objectWithKeyValues:dic];
-            [exchangeArr addObject:model];
+            [arr addObject:model];
+        }
+        if([type isEqualToString:@"1"]){
+            exchangeArr = arr;
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer resetNoMoreData];
+        }else{
+            [exchangeArr addObjectsFromArray:arr];
+            [self.tableView.mj_footer endRefreshing];
+        }
+        if (exchangeArr.count > 0) {
+            ExchangeModel *lastModel = exchangeArr[exchangeArr.count-1];
+            _lastId = lastModel.ID;
+        }
+        if(arr.count == 0){
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
         [self.tableView reloadData];
     } failureBlock:^(NSError *error) {
@@ -52,12 +81,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ExchangeRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExchangeRecordCell" forIndexPath:indexPath];
+    ExchangeListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExchangeListCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     ExchangeModel *model = exchangeArr[indexPath.row];
-    cell.score.text = [NSString stringWithFormat:@"积分:%@",model.INTEGRAL];
-    cell.money.text = [NSString stringWithFormat:@"余额:%@",model.BALANCE];
-    cell.time.text = model.CREATE_TIME;
+    cell.lbl2.text = model.INTEGRAL;
+    cell.lbl1.text = [NSString stringWithFormat:@"-%@",model.BALANCE];
+    cell.lbl3.text = [Util timestampToString:[NSString stringWithFormat:@"%ld",[model.CREATE_TIME integerValue]/1000] formatterString:@"yyyy-MM-dd HH:mm:ss"];
     return cell;
 }
 

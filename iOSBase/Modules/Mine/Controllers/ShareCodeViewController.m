@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"邀请好友";
     [self requestData];
 }
 

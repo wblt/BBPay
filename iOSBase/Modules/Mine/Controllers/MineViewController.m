@@ -34,9 +34,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    titleArr = @[@[@"昵称",@"我的银行卡",@"我的资产"],@[@"登录密码",@"支付密码"],@[@"公告",@"个人信息"],@[@"我的店铺",@"订单",@"管理地址"],@[@"投诉建议",@"分享",@"版本",@"关于"]];
-    imgArr = @[@[@"nick_icon",@"mybank_icon",@"shuzichan_icon"],@[@"login_pwd_icon",@"pay_pwd"],@[@"gonggao_icon",@"msg_icon"],@[@"dianpu_icon",@"dingdan_icon",@"adrress_icon"],@[@"jianyi_icon",@"fengxiang_icon",@"banben_icon",@"about_icon"]];
+    self.title = @"设置";
+    titleArr = @[@[@"昵称",@"我的银行卡",@"我的资产"],@[@"登录密码",@"支付密码"],@[@"公告"],@[@"我的店铺",@"订单",@"管理地址"],@[@"分享",@"版本",@"关于"]];
+    imgArr = @[@[@"nick_icon",@"mybank_icon",@"shuzichan_icon"],@[@"login_pwd_icon",@"pay_pwd"],@[@"gonggao_icon"],@[@"dianpu_icon",@"dingdan_icon",@"adrress_icon"],@[@"fengxiang_icon",@"banben_icon",@"about_icon"]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 50;
@@ -46,7 +46,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
     [self.tableView reloadData];
 }
 
@@ -66,8 +65,8 @@
     cell.img.image = [UIImage imageNamed:imgArr[indexPath.section][indexPath.row]];
     if (indexPath.section == 0 && indexPath.row == 0) {
         cell.detailTitle.text = [SPUtil objectForKey:k_app_NICK_NAME];
-    }else if (indexPath.section == 4 && indexPath.row == 2) {
-        cell.detailTitle.text = @"1.0";
+    }else if (indexPath.section == 4 && indexPath.row == 1) {
+        cell.detailTitle.text = @"1.0.0";
     }else {
         cell.detailTitle.text = @"";
     }
@@ -91,9 +90,6 @@
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         headV = [[NSBundle mainBundle] loadNibNamed:@"MineHeadView" owner:nil options:nil].lastObject;
-        [headV.backBtn addTapBlock:^(UIButton *btn) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
         [headV.headImg sd_setImageWithURL:[NSURL URLWithString:[SPUtil objectForKey:k_app_HEAD_URL]] placeholderImage:[UIImage imageNamed:@"head"]];
 
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toChangeHeadImgAction)];
@@ -160,7 +156,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.navigationController.navigationBarHidden = NO;
     if (indexPath.section == 0 && indexPath.row == 0) {
         EditNicknameViewController *editVC = [[EditNicknameViewController alloc] init];
         [self.navigationController pushViewController:editVC animated:YES];
@@ -179,22 +174,18 @@
         editPwdVC.isPayPwd = YES;
         [self.navigationController pushViewController:editPwdVC animated:YES];
     }else if (indexPath.section == 4 && indexPath.row == 0) {
-        SuggestionViewController *suggestionVC = [[SuggestionViewController alloc] init];
-        [self.navigationController pushViewController:suggestionVC animated:YES];
-    }else if (indexPath.section == 4 && indexPath.row == 1) {
         ShareCodeViewController *vc = [[ShareCodeViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 4 && indexPath.row == 1) {
+        
     }else if (indexPath.section == 4 && indexPath.row == 2) {
-        self.navigationController.navigationBarHidden = YES;
-    }else if (indexPath.section == 4 && indexPath.row == 3) {
         AboutViewController *vc = [[AboutViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 2 && indexPath.row == 0) {
         NoticeViewController *vc = [[NoticeViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }else {
-        self.navigationController.navigationBarHidden = YES;
-        [SVProgressHUD showInfoWithStatus:@"开发中"];
+        [SVProgressHUD showInfoWithStatus:@"商城暂未开放，即将呈现敬请期待！"];
     }
 }
 

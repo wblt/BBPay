@@ -43,13 +43,15 @@
 
 #define navHeight ((KScreenWidth == 1125.0 && KScreenHeight == 2436.0) ? 88.0 : 64.0)
 //金色
-#define mainColor UIColorFromHex(0xCBAE86)
+#define mainColor UIColorFromHex(0x000000)
 //底色
-#define mainBackgroudColor UIColorFromHex(0x303030)
+#define mainBackgroudColor UIColorFromHex(0xF4F4F4)
 //控件底色
-#define mainItemsBackgroudColor UIColorFromHex(0x424242)
+#define mainItemsBackgroudColor UIColorFromHex(0xffffff)
+//蓝色
+#define mainBlueColor UIColorFromHex(0x3BA7EC)
 //灰色字体
-#define mainGrayColor UIColorFromHex(0x848484)
+//#define mainGrayColor UIColorFromHex(0x848484)
 
 #define weakify(...) \
 rac_keywordify \
@@ -62,8 +64,10 @@ _Pragma("clang diagnostic ignored \"-Wshadow\"") \
 metamacro_foreach(rac_strongify_,, __VA_ARGS__) \
 _Pragma("clang diagnostic pop")
 
+
 // 主服务器地址
-#define SERVER_IP         @"http://ddcapp.top"
+//#define SERVER_IP         @"http://ddcapp.top"
+#define SERVER_IP         @"http://139.196.225.206:8082"
 
 // 登录
 #define API_LOGIN       SERVER_IP@"/app/user/login"
@@ -125,4 +129,11 @@ _Pragma("clang diagnostic pop")
 #define API_SELLLOGS       SERVER_IP@"/app/market/sellLogs"
 #define API_SUREPAY       SERVER_IP@"/app/market/surePay"
 #define API_ORDERDETAIL       SERVER_IP@"/app/market/orderDetail"
+//领取奖励
+#define API_REWARD       SERVER_IP@"/app/index/reward"
+//积分记录
+#define API_INTEGREALLOG       SERVER_IP@"/app/index/integralLog"
+//积分记录
+#define API_BALANCELOG       SERVER_IP@"/app/index/balanceLog"
+
 #endif /* FlowAPI_h */

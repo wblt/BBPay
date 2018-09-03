@@ -138,6 +138,9 @@
             [parms addParameter:@"PASSW" value:pass];
             [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"买入创建订单" successBlock:^(id data) {
                 [SVProgressHUD showSuccessWithStatus:@"创建订单成功"];
+                PurchaseOrderViewController * vc = [[PurchaseOrderViewController alloc] init];
+                vc.title = [self.title isEqualToString:@"买入"] ? @"买入订单" : @"卖出订单";
+                [self.navigationController pushViewController:vc animated:YES];
             } failureBlock:^(NSError *error) {
                 
             }];

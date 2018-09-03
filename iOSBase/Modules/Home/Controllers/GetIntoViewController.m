@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"转入";
     NSString *cardName = [SPUtil objectForKey:k_app_TEL];
     
     [HMScannerController cardImageWithCardName:cardName avatar:nil scale:0.2 completion:^(UIImage *image) {

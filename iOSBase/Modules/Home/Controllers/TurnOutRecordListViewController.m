@@ -13,6 +13,7 @@
 {
     NSMutableArray *turnOutArr;
 }
+@property (nonatomic, strong) NSString *lastId;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -27,19 +28,45 @@
     self.tableView.backgroundColor = mainBackgroudColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"TurnOutRecordListCell" bundle:nil] forCellReuseIdentifier:@"TurnOutRecordListCell"];
-    [self requestData];
+    turnOutArr = [NSMutableArray array];
+    [self requestData:@"1"];
+ 
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self requestData:@"1"];
+    }];
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self requestData:@"2"];
+    }];
+
 }
 
-- (void)requestData {
-    turnOutArr = [NSMutableArray array];
-    RequestParams *parms = [[RequestParams alloc] initWithParams:_url];
+- (void)requestData:(NSString *)type {
+    
+    RequestParams *parms = [[RequestParams alloc] initWithParams:API_SENDDEAIL];
     [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
-    [parms addParameter:@"QUERY_ID" value:@"0"];
-    [parms addParameter:@"TYPE" value:@"1"];
+    [parms addParameter:@"QUERY_ID" value:[type isEqualToString:@"1"] ? @"0" : _lastId];
+    [parms addParameter:@"TYPE" value:type];
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"转出记录" successBlock:^(id data) {
+        NSMutableArray *arr = [NSMutableArray array];
         for (NSDictionary *dic in data[@"pd"]) {
             TurnOutRecordModel *model = [TurnOutRecordModel mj_objectWithKeyValues:dic];
-            [turnOutArr addObject:model];
+            [arr addObject:model];
+        }
+        
+        if([type isEqualToString:@"1"]){
+            turnOutArr = arr;
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer resetNoMoreData];
+        }else{
+            [turnOutArr addObjectsFromArray:arr];
+            [self.tableView.mj_footer endRefreshing];
+        }
+        if (turnOutArr.count > 0) {
+            TurnOutRecordModel *lastModel = turnOutArr[turnOutArr.count-1];
+            _lastId = lastModel.ID;
+        }
+        if(arr.count == 0){
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
         [self.tableView reloadData];
     } failureBlock:^(NSError *error) {
@@ -56,7 +83,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     TurnOutRecordModel *model = turnOutArr[indexPath.row];
     cell.title.text = model.NICK_NAME;
-    cell.detail.text = [NSString stringWithFormat:@"UID:%@",model.USER_ID];
+    cell.detail.text = @"";//[NSString stringWithFormat:@"UID:%@",model.USER_ID];
     cell.money.text = model.BALANCE;
     cell.time.text = model.CREATE_TIME;
     [cell.img sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"head"]];

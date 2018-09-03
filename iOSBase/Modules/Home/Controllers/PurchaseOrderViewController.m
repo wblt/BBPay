@@ -20,6 +20,7 @@
     UIButton *uploadBtn;
     UIImageView *uploadImg;
 }
+@property (nonatomic, strong) NSString *lastId;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *brn1;
 @property (weak, nonatomic) IBOutlet UIButton *btn2;
@@ -39,20 +40,45 @@
     self.tableView.backgroundColor = mainBackgroudColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"PurchaseOrderCell" bundle:nil] forCellReuseIdentifier:@"PurchaseOrderCell"];
-    [self requestData];
+    orderArr = [NSMutableArray array];
+    [self requestData:@"1"];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self requestData:@"1"];
+    }];
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self requestData:@"2"];
+    }];
 }
 
-- (void)requestData {
-    orderArr = [NSMutableArray array];
+- (void)requestData:(NSString *)queryType {
+    
     RequestParams *parms = [[RequestParams alloc] initWithParams:([self.title isEqualToString:@"买入订单"] ? API_BUYORDERLIST : API_SELLORDERLIST)];
     [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
-    [parms addParameter:@"QUERY_ID" value:@"0"];
-    [parms addParameter:@"TYPE" value:@"1"];
+    [parms addParameter:@"QUERY_ID" value:[queryType isEqualToString:@"1"] ? @"0" : _lastId];
+    [parms addParameter:@"TYPE" value:queryType];
     [parms addParameter:@"STATUS" value:[NSString stringWithFormat:@"%d",type]];
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"转出记录" successBlock:^(id data) {
+        NSMutableArray *arr = [NSMutableArray array];
         for (NSDictionary *dic in data[@"pd"]) {
             PurchaseOrderModel *model = [PurchaseOrderModel mj_objectWithKeyValues:dic];
-            [orderArr addObject:model];
+            [arr addObject:model];
+        }
+        
+        if([queryType isEqualToString:@"1"]){
+            orderArr = arr;
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer resetNoMoreData];
+        }else{
+            [orderArr addObjectsFromArray:arr];
+            [self.tableView.mj_footer endRefreshing];
+        }
+        if (orderArr.count > 0) {
+            PurchaseOrderModel *lastModel = orderArr[orderArr.count-1];
+            _lastId = lastModel.ID;
+        }
+        if(arr.count == 0){
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
         [self.tableView reloadData];
     } failureBlock:^(NSError *error) {
@@ -72,7 +98,8 @@
     }else if (sender == _btn3) {
         type = 3;
     }
-    [self requestData];
+    orderArr = [NSMutableArray array];
+    [self requestData:@"1"];
 }
 
 
@@ -115,7 +142,8 @@
                         [parms addParameter:@"ID" value:model.ID];
                         [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"取消订单" successBlock:^(id data) {
                             [SVProgressHUD showSuccessWithStatus:@"取消成功"];
-                            [self requestData];
+                            orderArr = [NSMutableArray array];
+                            [self requestData:@"1"];
                         } failureBlock:^(NSError *error) {
                             
                         }];
@@ -126,6 +154,9 @@
                 UIView *imageNoteView = [[NSBundle mainBundle] loadNibNamed:@"UploadImageNoteView" owner:nil options:nil].lastObject;
                 imageNoteView.frame = self.view.bounds;
                 uploadImg = [imageNoteView viewWithTag:101];
+                uploadImg.userInteractionEnabled = YES;
+                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toPicSelected)];
+                [uploadImg addGestureRecognizer:tap];
                 uploadBtn = [imageNoteView viewWithTag:102];
                 __weak typeof(self) weakSelf = self;
                 [uploadBtn addTapBlock:^(UIButton *btn) {
@@ -143,7 +174,8 @@
                         [parms addParameter:@"IMAGE_NOTE" value:_url];
                         [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"去付款" successBlock:^(id data) {
                             [SVProgressHUD showSuccessWithStatus:@"确认付款成功"];
-                            [self requestData];
+                            orderArr = [NSMutableArray array];
+                            [self requestData:@"1"];
                         } failureBlock:^(NSError *error) {
                             
                         }];
@@ -185,13 +217,14 @@
                         [parms addParameter:@"ID" value:model.ID];
                         [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"取消订单" successBlock:^(id data) {
                             [SVProgressHUD showSuccessWithStatus:@"取消成功"];
-                            [self requestData];
+                            orderArr = [NSMutableArray array];
+                            [self requestData:@"1"];
                         } failureBlock:^(NSError *error) {
                             
                         }];
                     }
                 }];
-            }else if ([model.STATUS isEqualToString:@"1"]) {
+            }else if ([model.STATUS isEqualToString:@"2"]) {
                 YQPayKeyWordVC *yqVC = [[YQPayKeyWordVC alloc] init];
                 [yqVC showInViewController:self money:model.BUSINESS_COUNT];
                 yqVC.block = ^(NSString *pass) {
@@ -200,7 +233,8 @@
                     [parms addParameter:@"PASSW" value:pass];
                     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"订单确认收款" successBlock:^(id data) {
                         [SVProgressHUD showSuccessWithStatus:@"确认收款"];
-                        [self requestData];
+                        orderArr = [NSMutableArray array];
+                        [self requestData:@"1"];
                     } failureBlock:^(NSError *error) {
                         
                     }];
@@ -211,6 +245,15 @@
     }
     
     return cell;
+}
+
+- (void)toPicSelected {
+    NSUInteger sourceType = 0;
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self; //设置代理
+    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePickerController.sourceType = sourceType;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

@@ -34,7 +34,6 @@
 - (void)requestData {
     noticeArr = [NSMutableArray array];
     RequestParams *parms = [[RequestParams alloc] initWithParams:API_NOTICE];
-//    [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"公告" successBlock:^(id data) {
         for (NSDictionary *dic in data[@"pd"]) {
             NoticeModel *model = [NoticeModel mj_objectWithKeyValues:dic];

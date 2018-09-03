@@ -55,7 +55,7 @@
     cell.title.text = model.NICK_NAME;
     cell.detail.text = model.TEL;
     cell.money.text = @"";
-    cell.time.text = model.CREATE_TIME;
+    cell.time.text = [Util timestampToString:[NSString stringWithFormat:@"%ld",[model.CREATE_TIME integerValue]/1000] formatterString:@"yyyy-MM-dd HH:mm:ss"];
     [cell.img sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"head"]];
     if ([model.SPECIAL isEqualToString:@"1"]) {
         cell.img.layer.borderColor = [UIColor yellowColor].CGColor;

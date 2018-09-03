@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn4;
 @property (weak, nonatomic) IBOutlet UIButton *btn5;
 @property (weak, nonatomic) IBOutlet UIButton *btn6;
-
+@property (nonatomic, strong) NSString *lastId;
 @end
 
 @implementation PurchaseCenterViewController
@@ -38,19 +38,44 @@
     self.tableView.backgroundColor = mainBackgroudColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"PurchaseOrderCell" bundle:nil] forCellReuseIdentifier:@"PurchaseOrderCell"];
-    [self requestData];
+    orderArr = [NSMutableArray array];
+    [self requestData:@"1"];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self requestData:@"1"];
+    }];
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self requestData:@"2"];
+    }];
 }
 
-- (void)requestData {
-    orderArr = [NSMutableArray array];
+- (void)requestData:(NSString *)type {
+    
     RequestParams *parms = [[RequestParams alloc] initWithParams:([self.title isEqualToString:@"买入中心"] ? API_BUYLIST : API_SELLLIST)];
     [parms addParameter:@"BUSINESS_COUNT" value:selectedBtn.titleLabel.text];
-    [parms addParameter:@"QUERY_ID" value:@"0"];
-    [parms addParameter:@"TYPE" value:@"1"];
+    [parms addParameter:@"QUERY_ID" value:[type isEqualToString:@"1"] ? @"0" : _lastId];
+    [parms addParameter:@"TYPE" value:type];
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"买单列表" successBlock:^(id data) {
+        NSMutableArray *arr = [NSMutableArray array];
         for (NSDictionary *dic in data[@"pd"]) {
             PurchaseOrderModel *model = [PurchaseOrderModel mj_objectWithKeyValues:dic];
-            [orderArr addObject:model];
+            [arr addObject:model];
+        }
+        
+        if([type isEqualToString:@"1"]){
+            orderArr = arr;
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer resetNoMoreData];
+        }else{
+            [orderArr addObjectsFromArray:arr];
+            [self.tableView.mj_footer endRefreshing];
+        }
+        if (orderArr.count > 0) {
+            PurchaseOrderModel *lastModel = orderArr[orderArr.count-1];
+            _lastId = lastModel.ID;
+        }
+        if(arr.count == 0){
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
         [self.tableView reloadData];
     } failureBlock:^(NSError *error) {
@@ -64,7 +89,8 @@
     }
     sender.selected = YES;
     selectedBtn = sender;
-    [self requestData];
+    orderArr = [NSMutableArray array];
+    [self requestData:@"1"];
 }
 
 
@@ -92,7 +118,8 @@
             [parms addParameter:@"PASSW" value:pass];
             [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"从买单里面下卖单" successBlock:^(id data) {
                 [SVProgressHUD showSuccessWithStatus:([self.title isEqualToString:@"买入中心"] ? @"卖出成功" : @"购买成功")];
-                [self requestData];
+                orderArr = [NSMutableArray array];
+                [self requestData:@"1"];
             } failureBlock:^(NSError *error) {
                 
             }];

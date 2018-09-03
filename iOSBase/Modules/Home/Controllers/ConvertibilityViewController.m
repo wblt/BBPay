@@ -39,7 +39,7 @@
     }
     
     YQPayKeyWordVC *yqVC = [[YQPayKeyWordVC alloc] init];
-    [yqVC showInViewController:self money:_money.text];
+    [yqVC showInViewController:self money:_scoreNum.text];
     yqVC.block = ^(NSString *pass) {
         RequestParams *parms = [[RequestParams alloc] initWithParams:API_CHANGEINTEGRAL];
         [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];

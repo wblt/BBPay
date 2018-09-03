@@ -21,10 +21,10 @@
     self.view.backgroundColor = mainBackgroudColor;
     
     /**<设置导航栏背景颜色*/
-    self.navigationController.navigationBar.barTintColor = mainBackgroudColor;
-    [self.navigationController.navigationBar setTintColor:mainColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :mainColor, NSFontAttributeName : [UIFont systemFontOfSize:16]}];
-    
+    self.navigationController.navigationBar.barTintColor = mainBlueColor;
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor], NSFontAttributeName : [UIFont systemFontOfSize:16]}];
+
     UIBarButtonItem *backbutton = [[UIBarButtonItem alloc] init];
     backbutton.title = @"";
     self.navigationItem.backBarButtonItem = backbutton;

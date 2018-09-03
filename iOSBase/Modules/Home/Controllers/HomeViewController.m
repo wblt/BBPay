@@ -14,14 +14,19 @@
 #import "PurchaseViewController.h"
 #import "DigitalAssetsViewController.h"
 #import "SDCycleScrollView.h"
+#import "ScoreRecordViewController.h"
 @interface HomeViewController ()
 {
     SDCycleScrollView *bannerView;
+    NSString *PROFIT_BALANCE;
+    NSString *PROFIT_INTEGRAL;
 }
 @property (weak, nonatomic) IBOutlet UILabel *score;
 @property (weak, nonatomic) IBOutlet UILabel *money;
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
 @property (weak, nonatomic) IBOutlet UILabel *uidLbl;
+@property (weak, nonatomic) IBOutlet UIScrollView *scorllView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scorllW;
 
 @end
 
@@ -30,18 +35,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"首页";
+    _scorllW.constant = KScreenWidth;
     self.uidLbl.text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_USER_ID]];
     self.score.text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_INTEGRAL]];
     self.money.text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_BALANCE]];
     [self.headImg sd_setImageWithURL:[NSURL URLWithString:[SPUtil objectForKey:k_app_HEAD_URL]] placeholderImage:[UIImage imageNamed:@"head"]];
-    bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, KScreenHeight-308-navHeight, KScreenWidth, 100) imageURLStringsGroup:@[@"http://p0hct3xqb.bkt.clouddn.com/shareshop2018-06-06_5b17fd93a0445.jpg",@"http://p0hct3xqb.bkt.clouddn.com/shareshop2018-06-06_5b17fdb969459.jpg"]];
-    [self.view addSubview:bannerView];
-    [self requestData];
+    bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 307, KScreenWidth, 100) imageNamesGroup:@[@"banner1",@"banner2",@"banner3"]];
+    [_scorllView addSubview:bannerView];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    [self requestData]; 
 }
 
 - (void)requestData {
@@ -64,12 +71,48 @@
         [SPUtil setObject:data[@"pd"][@"VIP"] forKey:k_app_VIP];
         [SPUtil setObject:data[@"pd"][@"W_ADDRESS"] forKey:k_app_W_ADDRESS];
         [SPUtil setObject:data[@"pd"][@"IFPAS"] forKey:k_app_IFPAS];
+        PROFIT_BALANCE = data[@"pd"][@"PROFIT_BALANCE"];
+        PROFIT_INTEGRAL = data[@"pd"][@"PROFIT_INTEGRAL"];
+        if ([data[@"pd"][@"IFJL"] integerValue] == 0) {
+            
+            UIView *redPackgeView = [[NSBundle mainBundle] loadNibNamed:@"RedPackgeView" owner:nil options:nil].lastObject;
+            redPackgeView.frame = self.view.bounds;
+            UILabel *money = [redPackgeView viewWithTag:101];
+            money.text = [NSString stringWithFormat:@"%.2f",[data[@"pd"][@"PROFIT_BALANCE"] floatValue]];
+            UIButton *receiveBtn = [redPackgeView viewWithTag:102];
+            [receiveBtn addTapBlock:^(UIButton *btn) {
+                [redPackgeView removeFromSuperview];
+                [self toReceiveRedpackageRequest];
+            }];
+            [self.view addSubview:redPackgeView];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toRemoveRedPackgeView:)];
+            [redPackgeView addGestureRecognizer:tap];
+        }
+    } failureBlock:^(NSError *error) {
+        
+    }];
+}
+
+- (void)toRemoveRedPackgeView:(UITapGestureRecognizer *)tap {
+    [tap.view removeFromSuperview];
+}
+
+- (void)toReceiveRedpackageRequest {
+    RequestParams *parms = [[RequestParams alloc] initWithParams:API_REWARD];
+    [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
+    [parms addParameter:@"USER_ID" value:[SPUtil objectForKey:k_app_USER_ID]];
+    [parms addParameter:@"INTEGRAL" value:PROFIT_INTEGRAL];
+    [parms addParameter:@"BALANCE" value:PROFIT_BALANCE];
+    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"领取奖励" successBlock:^(id data) {
+        [SVProgressHUD showSuccessWithStatus:@"领取成功"];
+        [self requestData];
     } failureBlock:^(NSError *error) {
         
     }];
 }
 
 - (IBAction)toMineVC:(UIButton *)sender {
+    self.navigationController.navigationBarHidden = NO;
     MineViewController *mineVC = [[MineViewController alloc] init];
     [self.navigationController pushViewController:mineVC animated:YES];
 }
@@ -85,7 +128,7 @@
         }
     }];
     
-    [scanner setTitleColor:mainColor tintColor:mainColor];
+    [scanner setTitleColor:[UIColor whiteColor] tintColor:[UIColor whiteColor]];
     
     [self showDetailViewController:scanner sender:nil];
 }
@@ -108,18 +151,42 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 105) {
         self.navigationController.navigationBarHidden = YES;
-        [SVProgressHUD showInfoWithStatus:@"开发中"];
+        [SVProgressHUD showInfoWithStatus:@"数字资产暂未开放，即将呈现敬请期待！"];
 //        DigitalAssetsViewController *vc = [[DigitalAssetsViewController alloc] init];
 //        [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 106) {
         self.navigationController.navigationBarHidden = YES;
-        [SVProgressHUD showInfoWithStatus:@"开发中"];
+        [SVProgressHUD showInfoWithStatus:@"商城暂未开放，即将呈现敬请期待！"];
+    }else if (sender.tag == 107) {
+        self.navigationController.navigationBarHidden = YES;
+        [SVProgressHUD showInfoWithStatus:@"D公益暂未开放，即将呈现敬请期待！"];
+    }else if (sender.tag == 108) {
+        self.navigationController.navigationBarHidden = YES;
+        [SVProgressHUD showInfoWithStatus:@"D贷暂未开放，即将呈现敬请期待！"];
+    }else if (sender.tag == 109) {
+        self.navigationController.navigationBarHidden = YES;
+        [SVProgressHUD showInfoWithStatus:@"D信用暂未开放，即将呈现敬请期待！"];
     }
 }
 
 - (IBAction)headImgTapAction:(UITapGestureRecognizer *)sender {
+    self.navigationController.navigationBarHidden = NO;
     MineViewController *mineVC = [[MineViewController alloc] init];
     [self.navigationController pushViewController:mineVC animated:YES];
+}
+
+- (IBAction)toScoreRecordAction:(id)sender {
+    self.navigationController.navigationBarHidden = NO;
+    ScoreRecordViewController *VC = [[ScoreRecordViewController alloc] init];
+    VC.title = @"积分记录";
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+- (IBAction)toMoneyRecordAction:(id)sender {
+    self.navigationController.navigationBarHidden = NO;
+    ScoreRecordViewController *VC = [[ScoreRecordViewController alloc] init];
+    VC.title = @"余额记录";
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

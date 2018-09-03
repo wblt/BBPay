@@ -23,15 +23,16 @@
                         </imageView>
                         <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaZ-Kt-njd">
                             <rect key="frame" x="0.0" y="162" width="275" height="38"/>
+                            <color key="backgroundColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="上传付款凭证">
-                                <color key="titleColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <state key="selected" title="确认提交付款"/>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4t-Sn-YXC">
                             <rect key="frame" x="0.0" y="161" width="275" height="1"/>
-                            <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="lQQ-5h-53z"/>
                             </constraints>
@@ -40,11 +41,15 @@
                             <rect key="frame" x="107.5" y="51" width="60" height="60"/>
                         </imageView>
                         <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN7-h7-Xou">
-                            <rect key="frame" x="10" y="10" width="22" height="22"/>
-                            <state key="normal" image="close_icon.png"/>
+                            <rect key="frame" x="5" y="5" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="TkW-Lu-7iH"/>
+                                <constraint firstAttribute="width" constant="25" id="fZI-NP-fUF"/>
+                            </constraints>
+                            <state key="normal" image="pay-close"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="a4t-Sn-YXC" secondAttribute="trailing" id="6Vt-FB-nTJ"/>
                         <constraint firstAttribute="bottom" secondItem="a4t-Sn-YXC" secondAttribute="bottom" constant="38" id="9lm-1l-0Kx"/>
@@ -53,13 +58,13 @@
                         <constraint firstItem="739-aE-VCm" firstAttribute="top" secondItem="O8k-w0-MH4" secondAttribute="top" id="IgS-Zn-o6z"/>
                         <constraint firstItem="MaZ-Kt-njd" firstAttribute="leading" secondItem="O8k-w0-MH4" secondAttribute="leading" id="Mem-Xb-VIo"/>
                         <constraint firstAttribute="bottom" secondItem="739-aE-VCm" secondAttribute="bottom" constant="38" id="SYx-Bo-YyB"/>
-                        <constraint firstItem="wN7-h7-Xou" firstAttribute="top" secondItem="O8k-w0-MH4" secondAttribute="top" constant="10" id="TjS-52-hlC"/>
+                        <constraint firstItem="wN7-h7-Xou" firstAttribute="top" secondItem="O8k-w0-MH4" secondAttribute="top" constant="5" id="TjS-52-hlC"/>
                         <constraint firstAttribute="trailing" secondItem="MaZ-Kt-njd" secondAttribute="trailing" id="UOP-Fe-NH4"/>
                         <constraint firstItem="MaZ-Kt-njd" firstAttribute="top" secondItem="739-aE-VCm" secondAttribute="bottom" id="XCb-Ig-JkX"/>
                         <constraint firstItem="6LG-LR-gDc" firstAttribute="centerX" secondItem="739-aE-VCm" secondAttribute="centerX" id="Zhc-V2-PRF"/>
                         <constraint firstAttribute="bottom" secondItem="MaZ-Kt-njd" secondAttribute="bottom" id="o1B-wW-K9f"/>
                         <constraint firstItem="739-aE-VCm" firstAttribute="leading" secondItem="O8k-w0-MH4" secondAttribute="leading" id="oGz-bn-8Ze"/>
-                        <constraint firstItem="wN7-h7-Xou" firstAttribute="leading" secondItem="O8k-w0-MH4" secondAttribute="leading" constant="10" id="qvn-cl-s9F"/>
+                        <constraint firstItem="wN7-h7-Xou" firstAttribute="leading" secondItem="O8k-w0-MH4" secondAttribute="leading" constant="5" id="qvn-cl-s9F"/>
                         <constraint firstItem="6LG-LR-gDc" firstAttribute="centerY" secondItem="739-aE-VCm" secondAttribute="centerY" id="vo1-D7-bnG"/>
                         <constraint firstItem="a4t-Sn-YXC" firstAttribute="leading" secondItem="O8k-w0-MH4" secondAttribute="leading" id="zVd-RO-fEn"/>
                     </constraints>
@@ -76,6 +81,6 @@
     </objects>
     <resources>
         <image name="banben_icon" width="60" height="60"/>
-        <image name="close_icon.png" width="22" height="22"/>
+        <image name="pay-close" width="13" height="13"/>
     </resources>
 </document>
