@@ -66,8 +66,8 @@ _Pragma("clang diagnostic pop")
 
 
 // 主服务器地址
-//#define SERVER_IP         @"http://ddcapp.top"
-#define SERVER_IP         @"http://139.196.225.206:8082"
+#define SERVER_IP         @"http://ddcapp.top"
+//#define SERVER_IP         @"http://139.196.225.206:8082"
 
 // 登录
 #define API_LOGIN       SERVER_IP@"/app/user/login"

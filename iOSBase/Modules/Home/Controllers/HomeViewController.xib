@@ -19,6 +19,7 @@
                 <outlet property="scorllW" destination="Hse-J8-nyE" id="NHj-K6-jOd"/>
                 <outlet property="uidLbl" destination="3we-ij-bJg" id="iNF-Mz-gLK"/>
                 <outlet property="view" destination="2IZ-z8-fki" id="mgF-jT-E7d"/>
+                <outlet property="vipImg" destination="dNG-Xu-Iun" id="8PK-sd-wUg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -408,6 +409,13 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vipIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dNG-Xu-Iun">
+                                    <rect key="frame" x="198" y="194" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="aHN-SD-PCU"/>
+                                        <constraint firstAttribute="height" constant="30" id="r65-4P-VWv"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -432,6 +440,7 @@
                                 <constraint firstItem="QG3-DM-SO6" firstAttribute="width" secondItem="dwi-Z1-qZY" secondAttribute="width" id="8yz-ag-2KC"/>
                                 <constraint firstItem="3we-ij-bJg" firstAttribute="leading" secondItem="fQr-ph-s87" secondAttribute="leading" constant="12" id="9t0-24-4cr"/>
                                 <constraint firstItem="unj-1c-8ab" firstAttribute="centerX" secondItem="ay8-Cz-bDX" secondAttribute="centerX" id="9vS-1L-a5v"/>
+                                <constraint firstItem="IIP-Ih-aHk" firstAttribute="trailing" secondItem="dNG-Xu-Iun" secondAttribute="trailing" constant="-1" id="AXM-LF-tKM"/>
                                 <constraint firstItem="Rtr-M5-TAM" firstAttribute="width" secondItem="G9Q-Cv-YfQ" secondAttribute="width" id="AkY-cD-a4m"/>
                                 <constraint firstItem="JZ9-6s-jlT" firstAttribute="centerX" secondItem="U7C-Bq-1PF" secondAttribute="centerX" id="BKY-UJ-ioX"/>
                                 <constraint firstItem="xvY-mo-6il" firstAttribute="leading" secondItem="ay8-Cz-bDX" secondAttribute="trailing" constant="3" id="CrD-yO-Vas"/>
@@ -468,6 +477,7 @@
                                 <constraint firstItem="65L-XX-Ozl" firstAttribute="top" secondItem="4eo-Te-weW" secondAttribute="bottom" constant="8" id="NXh-WM-xJm"/>
                                 <constraint firstItem="3TO-w9-EkW" firstAttribute="top" secondItem="Klv-a8-vRO" secondAttribute="bottom" constant="8" id="Nne-Zs-qfQ"/>
                                 <constraint firstItem="dwi-Z1-qZY" firstAttribute="leading" secondItem="fQr-ph-s87" secondAttribute="leading" constant="2" id="NpZ-I0-nh0"/>
+                                <constraint firstItem="IIP-Ih-aHk" firstAttribute="bottom" secondItem="dNG-Xu-Iun" secondAttribute="bottom" constant="-4" id="NsF-u2-kdX"/>
                                 <constraint firstItem="Klv-a8-vRO" firstAttribute="width" secondItem="Klv-a8-vRO" secondAttribute="height" multiplier="1:1" id="ODS-hW-eha"/>
                                 <constraint firstItem="gPh-Wb-92E" firstAttribute="leading" secondItem="fQr-ph-s87" secondAttribute="leading" id="PnT-6o-wem"/>
                                 <constraint firstItem="xvY-mo-6il" firstAttribute="top" secondItem="ay8-Cz-bDX" secondAttribute="top" id="QcF-Lo-N2H"/>
@@ -564,6 +574,7 @@
         <image name="setting_icon" width="60" height="60"/>
         <image name="shangcheng_icon" width="60" height="60"/>
         <image name="shuzichan_icon" width="60" height="60"/>
+        <image name="vipIcon" width="60" height="60"/>
         <image name="zhuanchu_icon" width="60" height="60"/>
         <image name="zhuanru_icon" width="60" height="60"/>
     </resources>

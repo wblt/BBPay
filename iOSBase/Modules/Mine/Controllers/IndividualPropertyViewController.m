@@ -19,8 +19,8 @@
     [super viewDidLoad];
     self.title = @"我的资产";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.score.text = [SPUtil objectForKey:k_app_INTEGRAL];
-    self.money.text = [SPUtil objectForKey:k_app_BALANCE];
+    self.score.text = [NSString stringWithFormat:@"%@",[SPUtil objectForKey:k_app_INTEGRAL]];
+    self.money.text = [NSString stringWithFormat:@"%@",[SPUtil objectForKey:k_app_BALANCE]];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -58,11 +58,11 @@
     cell.time.text = [Util timestampToString:[NSString stringWithFormat:@"%ld",[model.CREATE_TIME integerValue]/1000] formatterString:@"yyyy-MM-dd HH:mm:ss"];
     [cell.img sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"head"]];
     if ([model.SPECIAL isEqualToString:@"1"]) {
-        cell.img.layer.borderColor = [UIColor yellowColor].CGColor;
-        cell.img.layer.borderWidth = 2;
-    }else {
         cell.img.layer.borderColor = [UIColor clearColor].CGColor;
         cell.img.layer.borderWidth = 0;
+    }else {
+        cell.img.layer.borderColor = [UIColor colorWithWhite:0.6 alpha:0.6].CGColor;
+        cell.img.layer.borderWidth = 20;
     }
     return cell;
 }

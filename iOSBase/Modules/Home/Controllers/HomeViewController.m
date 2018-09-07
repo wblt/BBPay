@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *uidLbl;
 @property (weak, nonatomic) IBOutlet UIScrollView *scorllView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scorllW;
+@property (weak, nonatomic) IBOutlet UIImageView *vipImg;
 
 @end
 
@@ -37,8 +38,8 @@
     self.title = @"首页";
     _scorllW.constant = KScreenWidth;
     self.uidLbl.text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_USER_ID]];
-    self.score.text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_INTEGRAL]];
-    self.money.text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_BALANCE]];
+    self.score.text = [NSString stringWithFormat:@"%@",[SPUtil objectForKey:k_app_INTEGRAL]];
+    self.money.text = [NSString stringWithFormat:@"%@",[SPUtil objectForKey:k_app_BALANCE]];
     [self.headImg sd_setImageWithURL:[NSURL URLWithString:[SPUtil objectForKey:k_app_HEAD_URL]] placeholderImage:[UIImage imageNamed:@"head"]];
     bannerView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 307, KScreenWidth, 100) imageNamesGroup:@[@"banner1",@"banner2",@"banner3"]];
     [_scorllView addSubview:bannerView];
@@ -57,9 +58,16 @@
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"首页" successBlock:^(id data) {
 
         self.uidLbl.text = [NSString stringWithFormat:@"UID:%@",data[@"pd"][@"USER_ID"]];
-        self.score.text = data[@"pd"][@"INTEGRAL"];
-        self.money.text = data[@"pd"][@"BALANCE"];
+        self.score.text = [NSString stringWithFormat:@"%@",data[@"pd"][@"INTEGRAL"]];
+        self.money.text = [NSString stringWithFormat:@"%@",data[@"pd"][@"BALANCE"]];
         [self.headImg sd_setImageWithURL:[NSURL URLWithString:data[@"pd"][@"HEAD_URL"]] placeholderImage:[UIImage imageNamed:@"head"]];
+        if ([data[@"pd"][@"SPECIAL"] isEqualToString:@"0"]) {
+            self.headImg.layer.borderColor = [UIColor colorWithWhite:0.6 alpha:0.6].CGColor;
+            self.headImg.layer.borderWidth = 40;
+        }
+        if ([data[@"pd"][@"VIP"] isEqualToString:@"1"]) {
+            _vipImg.hidden = false;
+        }
         [SPUtil setObject:data[@"pd"][@"USER_NAME"] forKey:k_app_USER_NAME];
         [SPUtil setObject:data[@"pd"][@"NICK_NAME"] forKey:k_app_NICK_NAME];
         [SPUtil setObject:data[@"pd"][@"USER_ID"] forKey:k_app_USER_ID];
