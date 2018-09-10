@@ -31,12 +31,8 @@
 
 - (IBAction)toHomeVC:(id)sender {
     
-//    if (![Util valiMobile:_phoneText.text]) {
-//        [SVProgressHUD showErrorWithStatus:@"请输入正确的手机号"];
-//        return;
-//    }
     if (_phoneText.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请输入手机号/用户名"];
+        [SVProgressHUD showErrorWithStatus:@"请输入手机号/UID"];
         return;
     }
     
@@ -51,7 +47,7 @@
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"登录" successBlock:^(id data) {
         [SVProgressHUD showSuccessWithStatus:@"登录成功"];
         [SPUtil setBool:YES forKey:k_app_login];
-        [SPUtil setObject:_phoneText.text forKey:k_app_USER_NAME];
+        [SPUtil setObject:data[@"pd"][@"USER_NAME"] forKey:k_app_USER_NAME];
         [SPUtil setObject:_passwordText.text forKey:k_app_PASSWORD];
         HomeViewController *homeVC = [[HomeViewController alloc] init];
         BaseNavViewController *homeNav = [[BaseNavViewController alloc] initWithRootViewController:homeVC];

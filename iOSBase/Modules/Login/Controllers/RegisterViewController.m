@@ -85,7 +85,7 @@
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"注册" successBlock:^(id data) {
         [SVProgressHUD showSuccessWithStatus:@"注册成功"];
         [SPUtil setBool:YES forKey:k_app_login];
-        [SPUtil setObject:_nickName.text forKey:k_app_USER_NAME];
+        [SPUtil setObject:data[@"pd"][@"USER_NAME"] forKey:k_app_USER_NAME];
         [SPUtil setObject:_phoneText.text forKey:k_app_TEL];
         [SPUtil setObject:_passwordText.text forKey:k_app_PASSWORD];
         HomeViewController *homeVC = [[HomeViewController alloc] init];

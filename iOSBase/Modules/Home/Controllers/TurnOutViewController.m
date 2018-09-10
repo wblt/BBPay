@@ -39,8 +39,8 @@
 }
 
 - (IBAction)toCentainAction:(UIButton *)sender {
-    if (![Util valiMobile:_phoneText.text]) {
-        [SVProgressHUD showErrorWithStatus:@"请输入对方账户"];
+    if (_phoneText.text.length == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入对方手机号/UID"];
         return;
     }
     if ([_moneyNum.text floatValue] == 0.0) {

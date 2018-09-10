@@ -128,12 +128,11 @@
 - (IBAction)QRCodeScannerAction:(UIButton *)sender {
     
     HMScannerController *scanner = [HMScannerController scannerWithCardName:nil avatar:nil completion:^(NSString *stringValue) {
-        if ([Util valiMobile:stringValue]) {
-            self.navigationController.navigationBarHidden = NO;
-            TurnOutViewController *turnOutVC = [[TurnOutViewController alloc] init];
-            turnOutVC.mobile = stringValue;
-            [self.navigationController pushViewController:turnOutVC animated:YES];
-        }
+        
+        self.navigationController.navigationBarHidden = NO;
+        TurnOutViewController *turnOutVC = [[TurnOutViewController alloc] init];
+        turnOutVC.mobile = stringValue;
+        [self.navigationController pushViewController:turnOutVC animated:YES];
     }];
     
     [scanner setTitleColor:[UIColor whiteColor] tintColor:[UIColor whiteColor]];
