@@ -95,7 +95,7 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toChangeHeadImgAction)];
         [headV.headImg addGestureRecognizer:tap];
         
-        headV.userName.text = [NSString stringWithFormat:@"用户名：%@",[SPUtil objectForKey:k_app_NICK_NAME]];
+        headV.userName.text = [NSString stringWithFormat:@"UID：%@",[SPUtil objectForKey:k_app_USER_ID]];
 
         [headV.nibStarRatingView setScore:[[SPUtil objectForKey:k_app_CREDIT] floatValue]/kNUMBER_OF_STAR withAnimation:YES];
         
