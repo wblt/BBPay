@@ -48,7 +48,7 @@
                         <constraint firstItem="jvc-wO-rwg" firstAttribute="centerY" secondItem="QPe-M4-TsX" secondAttribute="centerY" id="pxI-4l-Zrz"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yod-XQ-gqx">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yod-XQ-gqx">
                     <rect key="frame" x="0.0" y="51" width="375" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转出金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj1-x9-pPa">
@@ -76,13 +76,13 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ths-Bu-6xZ">
-                    <rect key="frame" x="12" y="151" width="351" height="50"/>
+                    <rect key="frame" x="12" y="131" width="351" height="50"/>
                     <color key="backgroundColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Kcm-mI-27x"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title="确认">
+                    <state key="normal" title="下一步">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -96,7 +96,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUA-gv-sLp">
-                    <rect key="frame" x="12" y="211" width="351" height="50"/>
+                    <rect key="frame" x="12" y="191" width="351" height="50"/>
                     <color key="backgroundColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="XtZ-VK-DVd"/>
@@ -125,7 +125,7 @@
                 <constraint firstItem="QPe-M4-TsX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PdZ-r6-8La"/>
                 <constraint firstItem="QPe-M4-TsX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VUf-Ed-nZN"/>
                 <constraint firstItem="uUA-gv-sLp" firstAttribute="top" secondItem="Ths-Bu-6xZ" secondAttribute="bottom" constant="10" id="Xf3-MI-fdU"/>
-                <constraint firstItem="Ths-Bu-6xZ" firstAttribute="top" secondItem="yod-XQ-gqx" secondAttribute="bottom" constant="50" id="frS-uR-raa"/>
+                <constraint firstItem="Ths-Bu-6xZ" firstAttribute="top" secondItem="yod-XQ-gqx" secondAttribute="bottom" constant="30" id="frS-uR-raa"/>
                 <constraint firstAttribute="trailing" secondItem="yod-XQ-gqx" secondAttribute="trailing" id="jRc-IR-T5c"/>
                 <constraint firstItem="yod-XQ-gqx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kF6-mU-6bB"/>
                 <constraint firstItem="yod-XQ-gqx" firstAttribute="top" secondItem="QPe-M4-TsX" secondAttribute="bottom" constant="1" id="nkJ-4F-TSb"/>

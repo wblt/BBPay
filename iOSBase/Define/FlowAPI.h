@@ -100,6 +100,8 @@ _Pragma("clang diagnostic pop")
 //
 #define API_SEND       SERVER_IP@"/app/my/send"
 //
+#define API_USER       SERVER_IP@"/app/index/user"
+//
 #define API_SENDDEAIL       SERVER_IP@"/app/my/sendDetail"
 //
 #define API_RECEIVEDEAIL       SERVER_IP@"/app/my/receiveDetail"

@@ -89,6 +89,8 @@
 		EE610A1821362D5500E92D87 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE610A0E21362D5500E92D87 /* TAAnimatedDotView.m */; };
 		EE610A1921362D5500E92D87 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE610A0F21362D5500E92D87 /* TAAbstractDotView.m */; };
 		EE73CABB21466DF8004844D8 /* DDC_TargetAG (2).ipa in Resources */ = {isa = PBXBuildFile; fileRef = EE73CABA21466DF8004844D8 /* DDC_TargetAG (2).ipa */; };
+		EE82F49E2148AA310071590F /* TurnOutNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE82F49C2148AA310071590F /* TurnOutNextViewController.m */; };
+		EE82F49F2148AA310071590F /* TurnOutNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE82F49D2148AA310071590F /* TurnOutNextViewController.xib */; };
 		EEB368CA211DE4DE00CF00AF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368C8211DE4DE00CF00AF /* LoginViewController.m */; };
 		EEB368CB211DE4DE00CF00AF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEB368C9211DE4DE00CF00AF /* LoginViewController.xib */; };
 		EEB368CF211DE6FE00CF00AF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368CD211DE6FE00CF00AF /* HomeViewController.m */; };
@@ -332,6 +334,9 @@
 		EE610A1121362D5500E92D87 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
 		EE610A1221362D5500E92D87 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
 		EE73CABA21466DF8004844D8 /* DDC_TargetAG (2).ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDC_TargetAG (2).ipa"; sourceTree = "<group>"; };
+		EE82F49B2148AA310071590F /* TurnOutNextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TurnOutNextViewController.h; sourceTree = "<group>"; };
+		EE82F49C2148AA310071590F /* TurnOutNextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TurnOutNextViewController.m; sourceTree = "<group>"; };
+		EE82F49D2148AA310071590F /* TurnOutNextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TurnOutNextViewController.xib; sourceTree = "<group>"; };
 		EEB368C7211DE4DE00CF00AF /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		EEB368C8211DE4DE00CF00AF /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		EEB368C9211DE4DE00CF00AF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -894,6 +899,9 @@
 				EEFD6471212C521D00BF1C34 /* TurnOutViewController.h */,
 				EEFD6472212C521D00BF1C34 /* TurnOutViewController.m */,
 				EEFD6473212C521D00BF1C34 /* TurnOutViewController.xib */,
+				EE82F49B2148AA310071590F /* TurnOutNextViewController.h */,
+				EE82F49C2148AA310071590F /* TurnOutNextViewController.m */,
+				EE82F49D2148AA310071590F /* TurnOutNextViewController.xib */,
 				EE58F0372136957900548520 /* GetIntoViewController.h */,
 				EE58F0382136957900548520 /* GetIntoViewController.m */,
 				EE58F0392136957900548520 /* GetIntoViewController.xib */,
@@ -1267,6 +1275,7 @@
 				EEF19E6C212B053F00B812B1 /* SuggestionViewController.xib in Resources */,
 				EE38DFEA213928DD0083A67B /* UploadImageNoteView.xib in Resources */,
 				EEB368D5211DEE3300CF00AF /* RegisterViewController.xib in Resources */,
+				EE82F49F2148AA310071590F /* TurnOutNextViewController.xib in Resources */,
 				363853E020046DDC00899B11 /* README.md in Resources */,
 				EEF19E76212B0F0400B812B1 /* AboutViewController.xib in Resources */,
 				EE3573B32132AE6700C1F167 /* PostSaleOrderViewController.xib in Resources */,
@@ -1389,6 +1398,7 @@
 				EE610A1621362D5500E92D87 /* TADotView.m in Sources */,
 				EED14AEF212959B9005973C6 /* MineHeadView.m in Sources */,
 				EE58F0542136A1E400548520 /* YQInputPayKeyWordView.m in Sources */,
+				EE82F49E2148AA310071590F /* TurnOutNextViewController.m in Sources */,
 				EEF19E66212B011900B812B1 /* EditLoginPwdViewController.m in Sources */,
 				EEF19E70212B0B9700B812B1 /* ShareCodeViewController.m in Sources */,
 				EE610A1321362D5500E92D87 /* SDCycleScrollView.m in Sources */,

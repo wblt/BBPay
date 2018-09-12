@@ -10,6 +10,7 @@
 #import "ConvertibilityViewController.h"
 #import "TurnOutRecordListViewController.h"
 #import "YQPayKeyWordVC.h"
+#import "TurnOutNextViewController.h"
 @interface TurnOutViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneText;
 @property (weak, nonatomic) IBOutlet UITextField *moneyNum;
@@ -43,26 +44,18 @@
         [SVProgressHUD showErrorWithStatus:@"请输入对方手机号/UID"];
         return;
     }
-    if ([_moneyNum.text floatValue] == 0.0) {
-        [SVProgressHUD showErrorWithStatus:@"请输入转账金额"];
-        return;
-    }
     
-    YQPayKeyWordVC *yqVC = [[YQPayKeyWordVC alloc] init];
-    [yqVC showInViewController:self money:_moneyNum.text];
-    yqVC.block = ^(NSString *pass) {
-        RequestParams *parms = [[RequestParams alloc] initWithParams:API_SEND];
-        [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
-        [parms addParameter:@"TEL" value:self.phoneText.text];
-        [parms addParameter:@"S_MONEY" value:self.moneyNum.text];
-        [parms addParameter:@"PASSW" value:pass];
-        [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"转出" successBlock:^(id data) {
-            [SVProgressHUD showSuccessWithStatus:@"转出成功"];
-            [self toTurnOutRecord];
-        } failureBlock:^(NSError *error) {
-            
-        }];
-    };
+    RequestParams *parms = [[RequestParams alloc] initWithParams:API_USER];
+    [parms addParameter:@"USER_NAME" value:self.phoneText.text];
+    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"转出下一步" successBlock:^(id data) {
+        TurnOutNextViewController *turnOutNextVC = [[TurnOutNextViewController alloc] init];
+        turnOutNextVC.toTel = self.phoneText.text;
+        turnOutNextVC.userDic = data;
+        [self.navigationController pushViewController:turnOutNextVC animated:YES];
+    } failureBlock:^(NSError *error) {
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
