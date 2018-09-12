@@ -29,7 +29,7 @@ xcshareddata
 
 ## Obj-C/Swift specific
 *.hmap
-*.ipa
+#*.ipa
 *.dSYM.zip
 *.dSYM
 
