@@ -88,7 +88,6 @@
 		EE610A1721362D5500E92D87 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EE610A0D21362D5500E92D87 /* TAPageControl.m */; };
 		EE610A1821362D5500E92D87 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE610A0E21362D5500E92D87 /* TAAnimatedDotView.m */; };
 		EE610A1921362D5500E92D87 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE610A0F21362D5500E92D87 /* TAAbstractDotView.m */; };
-		EE73CABB21466DF8004844D8 /* DDC_TargetAG (2).ipa in Resources */ = {isa = PBXBuildFile; fileRef = EE73CABA21466DF8004844D8 /* DDC_TargetAG (2).ipa */; };
 		EE82F49E2148AA310071590F /* TurnOutNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE82F49C2148AA310071590F /* TurnOutNextViewController.m */; };
 		EE82F49F2148AA310071590F /* TurnOutNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE82F49D2148AA310071590F /* TurnOutNextViewController.xib */; };
 		EEB368CA211DE4DE00CF00AF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368C8211DE4DE00CF00AF /* LoginViewController.m */; };
@@ -333,7 +332,6 @@
 		EE610A1021362D5500E92D87 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
 		EE610A1121362D5500E92D87 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
 		EE610A1221362D5500E92D87 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
-		EE73CABA21466DF8004844D8 /* DDC_TargetAG (2).ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDC_TargetAG (2).ipa"; sourceTree = "<group>"; };
 		EE82F49B2148AA310071590F /* TurnOutNextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TurnOutNextViewController.h; sourceTree = "<group>"; };
 		EE82F49C2148AA310071590F /* TurnOutNextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TurnOutNextViewController.m; sourceTree = "<group>"; };
 		EE82F49D2148AA310071590F /* TurnOutNextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TurnOutNextViewController.xib; sourceTree = "<group>"; };
@@ -589,7 +587,6 @@
 				363853E220046DF500899B11 /* README.md */,
 				363853F5200495C100899B11 /* PrefixHeader.pch */,
 				363853F82004977400899B11 /* FlowAPI.h */,
-				EE73CABA21466DF8004844D8 /* DDC_TargetAG (2).ipa */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -1247,7 +1244,6 @@
 				EED14AF92129633A005973C6 /* MyBankViewController.xib in Resources */,
 				3638545B2004C13200899B11 /* README.md in Resources */,
 				EEFD6484212C57A000BF1C34 /* TurnOutRecordListCell.xib in Resources */,
-				EE73CABB21466DF8004844D8 /* DDC_TargetAG (2).ipa in Resources */,
 				3638545D2004C4BB00899B11 /* README.md in Resources */,
 				EE58F0502136A1E400548520 /* YQSelectPayStyleView.xib in Resources */,
 				363853B2200465BA00899B11 /* Assets.xcassets in Resources */,
