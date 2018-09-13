@@ -49,9 +49,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2B-qK-6fA">
-                    <rect key="frame" x="142" y="494" width="91" height="29"/>
+                    <rect key="frame" x="144" y="494" width="88" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="复制Dpay地址">
+                    <state key="normal" title="复制DDC地址">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -68,13 +68,27 @@
                         <action selector="toShareRecordVCAction:" destination="-1" eventType="touchUpInside" id="otV-AX-T27"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOE-Za-k0y">
+                    <rect key="frame" x="144" y="518" width="88" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="dzT-s2-q9w"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="rOE-Za-k0y" firstAttribute="trailing" secondItem="R2B-qK-6fA" secondAttribute="trailing" id="7tB-UU-HPT"/>
                 <constraint firstItem="R7v-tW-UP3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8sA-an-wX5"/>
                 <constraint firstItem="IHH-HY-kGb" firstAttribute="top" secondItem="Mrb-09-RHU" secondAttribute="bottom" constant="10" id="M6V-hD-y2j"/>
                 <constraint firstItem="Mrb-09-RHU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="Mof-rX-Fnt"/>
+                <constraint firstItem="rOE-Za-k0y" firstAttribute="centerX" secondItem="R2B-qK-6fA" secondAttribute="centerX" id="Oii-ni-UR5"/>
                 <constraint firstItem="R7v-tW-UP3" firstAttribute="top" secondItem="R2B-qK-6fA" secondAttribute="bottom" constant="100" id="SJg-BP-7vK"/>
+                <constraint firstItem="rOE-Za-k0y" firstAttribute="top" secondItem="R2B-qK-6fA" secondAttribute="bottom" constant="-5" id="Yhz-lq-LCz"/>
+                <constraint firstItem="rOE-Za-k0y" firstAttribute="leading" secondItem="R2B-qK-6fA" secondAttribute="leading" id="djb-3d-9DL"/>
                 <constraint firstItem="IHH-HY-kGb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fak-9s-hJu"/>
                 <constraint firstItem="R2B-qK-6fA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kbA-er-OSK"/>
                 <constraint firstItem="Mrb-09-RHU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oKz-eJ-11O"/>
