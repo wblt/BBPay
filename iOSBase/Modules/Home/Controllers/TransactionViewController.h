@@ -10,4 +10,6 @@
 
 @interface TransactionViewController : BaseViewController
 
+@property (nonatomic, strong) NSDictionary *transactionDic;
+@property (nonatomic) int type;
 @end

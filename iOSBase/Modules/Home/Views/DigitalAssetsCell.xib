@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,54 +29,43 @@
                                     <constraint firstAttribute="height" constant="4" id="oJN-81-3N3"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dpay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob9-4q-HWv">
-                                <rect key="frame" x="21" y="6" width="33.5" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DDC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob9-4q-HWv">
+                                <rect key="frame" x="21" y="6" width="30" height="17.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bj-Vr-lkN">
-                                <rect key="frame" x="12" y="31" width="43.5" height="16"/>
+                                <rect key="frame" x="12" y="31.5" width="43.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="比特币资产" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbm-8h-SMy">
-                                <rect key="frame" x="12" y="55" width="66.5" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DDC资产" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbm-8h-SMy">
+                                <rect key="frame" x="12" y="55.5" width="51" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="莱特币资产" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvK-4Q-C3S">
-                                <rect key="frame" x="127.5" y="31" width="67" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvK-4Q-C3S">
+                                <rect key="frame" x="138" y="31.5" width="44" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前价格" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOf-2n-uTy">
-                                <rect key="frame" x="133.5" y="55" width="53.5" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.79607843140000001" green="0.68235294120000001" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="135.5" y="55.5" width="49.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额交易" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-jX-n3p">
-                                <rect key="frame" x="258.5" y="31" width="53.5" height="16"/>
-                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额交易" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgB-z9-xiN">
-                                <rect key="frame" x="200" y="31" width="53.5" height="16"/>
-                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="现金交易" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-jX-n3p">
+                                <rect key="frame" x="258" y="31.5" width="54" height="16"/>
+                                <color key="backgroundColor" red="0.067913472652435303" green="0.81401866674423218" blue="0.44521123170852661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FgM-jX-n3p" firstAttribute="leading" secondItem="fgB-z9-xiN" secondAttribute="trailing" constant="5" id="1gm-a9-DlC"/>
                             <constraint firstItem="ob9-4q-HWv" firstAttribute="leading" secondItem="5DC-Xg-UmF" secondAttribute="trailing" constant="5" id="1ip-LI-pM7"/>
                             <constraint firstItem="dvK-4Q-C3S" firstAttribute="centerY" secondItem="U60-Dh-qWp" secondAttribute="centerY" id="5IG-5H-eQV"/>
                             <constraint firstItem="5DC-Xg-UmF" firstAttribute="leading" secondItem="U60-Dh-qWp" secondAttribute="leading" constant="12" id="9aQ-OU-w6U"/>
@@ -87,7 +76,6 @@
                             <constraint firstItem="ob9-4q-HWv" firstAttribute="top" secondItem="U60-Dh-qWp" secondAttribute="top" constant="6" id="Rty-E1-Jc2"/>
                             <constraint firstItem="LOf-2n-uTy" firstAttribute="centerX" secondItem="U60-Dh-qWp" secondAttribute="centerX" id="SjA-Lp-6me"/>
                             <constraint firstAttribute="trailing" secondItem="FgM-jX-n3p" secondAttribute="trailing" constant="8" id="aKB-WK-ZzE"/>
-                            <constraint firstItem="FgM-jX-n3p" firstAttribute="centerY" secondItem="fgB-z9-xiN" secondAttribute="centerY" id="bPY-Co-SJ5"/>
                             <constraint firstItem="5DC-Xg-UmF" firstAttribute="top" secondItem="U60-Dh-qWp" secondAttribute="top" constant="12" id="dyn-6Y-NPv"/>
                             <constraint firstItem="0Bj-Vr-lkN" firstAttribute="leading" secondItem="U60-Dh-qWp" secondAttribute="leading" constant="12" id="hq1-ZS-sGd"/>
                             <constraint firstItem="LOf-2n-uTy" firstAttribute="centerX" secondItem="dvK-4Q-C3S" secondAttribute="centerX" id="ps1-ai-bOW"/>
@@ -105,6 +93,12 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="detailName" destination="Wbm-8h-SMy" id="LNK-gU-cp3"/>
+                <outlet property="name" destination="ob9-4q-HWv" id="MDg-xP-JpE"/>
+                <outlet property="num" destination="0Bj-Vr-lkN" id="QIX-KT-KOq"/>
+                <outlet property="price" destination="dvK-4Q-C3S" id="haf-1P-3Wm"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

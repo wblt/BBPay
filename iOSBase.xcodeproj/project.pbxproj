@@ -88,6 +88,13 @@
 		EE610A1721362D5500E92D87 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EE610A0D21362D5500E92D87 /* TAPageControl.m */; };
 		EE610A1821362D5500E92D87 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE610A0E21362D5500E92D87 /* TAAnimatedDotView.m */; };
 		EE610A1921362D5500E92D87 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE610A0F21362D5500E92D87 /* TAAbstractDotView.m */; };
+		EE6F0BEA2179B7A4001ABBEB /* TradeRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6F0BE82179B7A4001ABBEB /* TradeRecordViewController.m */; };
+		EE6F0BEB2179B7A4001ABBEB /* TradeRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6F0BE92179B7A4001ABBEB /* TradeRecordViewController.xib */; };
+		EE6F0BEF2179BA87001ABBEB /* TradeRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6F0BED2179BA87001ABBEB /* TradeRecordCell.m */; };
+		EE6F0BF02179BA87001ABBEB /* TradeRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6F0BEE2179BA87001ABBEB /* TradeRecordCell.xib */; };
+		EE6F0BF62179BC3F001ABBEB /* TradeRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6F0BF52179BC3F001ABBEB /* TradeRecordModel.m */; };
+		EE6F0BFA2179C8FE001ABBEB /* TransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6F0BF82179C8FE001ABBEB /* TransactionCell.m */; };
+		EE6F0BFB2179C8FE001ABBEB /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6F0BF92179C8FE001ABBEB /* TransactionCell.xib */; };
 		EE82F49E2148AA310071590F /* TurnOutNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE82F49C2148AA310071590F /* TurnOutNextViewController.m */; };
 		EE82F49F2148AA310071590F /* TurnOutNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE82F49D2148AA310071590F /* TurnOutNextViewController.xib */; };
 		EEB368CA211DE4DE00CF00AF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB368C8211DE4DE00CF00AF /* LoginViewController.m */; };
@@ -332,6 +339,17 @@
 		EE610A1021362D5500E92D87 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
 		EE610A1121362D5500E92D87 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
 		EE610A1221362D5500E92D87 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		EE6F0BE72179B7A4001ABBEB /* TradeRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeRecordViewController.h; sourceTree = "<group>"; };
+		EE6F0BE82179B7A4001ABBEB /* TradeRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeRecordViewController.m; sourceTree = "<group>"; };
+		EE6F0BE92179B7A4001ABBEB /* TradeRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TradeRecordViewController.xib; sourceTree = "<group>"; };
+		EE6F0BEC2179BA87001ABBEB /* TradeRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeRecordCell.h; sourceTree = "<group>"; };
+		EE6F0BED2179BA87001ABBEB /* TradeRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeRecordCell.m; sourceTree = "<group>"; };
+		EE6F0BEE2179BA87001ABBEB /* TradeRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TradeRecordCell.xib; sourceTree = "<group>"; };
+		EE6F0BF42179BC3F001ABBEB /* TradeRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeRecordModel.h; sourceTree = "<group>"; };
+		EE6F0BF52179BC3F001ABBEB /* TradeRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeRecordModel.m; sourceTree = "<group>"; };
+		EE6F0BF72179C8FE001ABBEB /* TransactionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionCell.h; sourceTree = "<group>"; };
+		EE6F0BF82179C8FE001ABBEB /* TransactionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionCell.m; sourceTree = "<group>"; };
+		EE6F0BF92179C8FE001ABBEB /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		EE82F49B2148AA310071590F /* TurnOutNextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TurnOutNextViewController.h; sourceTree = "<group>"; };
 		EE82F49C2148AA310071590F /* TurnOutNextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TurnOutNextViewController.m; sourceTree = "<group>"; };
 		EE82F49D2148AA310071590F /* TurnOutNextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TurnOutNextViewController.xib; sourceTree = "<group>"; };
@@ -883,6 +901,8 @@
 				EE38DFE721391B5B0083A67B /* PurchaseOrderModel.m */,
 				EEF340DE213B776500B5705C /* ScoreRecordModel.h */,
 				EEF340DF213B776500B5705C /* ScoreRecordModel.m */,
+				EE6F0BF42179BC3F001ABBEB /* TradeRecordModel.h */,
+				EE6F0BF52179BC3F001ABBEB /* TradeRecordModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -940,6 +960,9 @@
 				EE150948213AD405004F01EC /* ScoreRecordViewController.h */,
 				EE150949213AD405004F01EC /* ScoreRecordViewController.m */,
 				EE15094A213AD405004F01EC /* ScoreRecordViewController.xib */,
+				EE6F0BE72179B7A4001ABBEB /* TradeRecordViewController.h */,
+				EE6F0BE82179B7A4001ABBEB /* TradeRecordViewController.m */,
+				EE6F0BE92179B7A4001ABBEB /* TradeRecordViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -967,6 +990,12 @@
 				EEF340E1213B79C700B5705C /* ExchangeListCell.h */,
 				EEF340E2213B79C700B5705C /* ExchangeListCell.m */,
 				EEF340E3213B79C700B5705C /* ExchangeListCell.xib */,
+				EE6F0BEC2179BA87001ABBEB /* TradeRecordCell.h */,
+				EE6F0BED2179BA87001ABBEB /* TradeRecordCell.m */,
+				EE6F0BEE2179BA87001ABBEB /* TradeRecordCell.xib */,
+				EE6F0BF72179C8FE001ABBEB /* TransactionCell.h */,
+				EE6F0BF82179C8FE001ABBEB /* TransactionCell.m */,
+				EE6F0BF92179C8FE001ABBEB /* TransactionCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1180,7 +1209,7 @@
 		3638539D200465BA00899B11 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = mac;
 				TargetAttributes = {
 					363853A4200465BA00899B11 = {
@@ -1231,6 +1260,7 @@
 				EEED0A30213255A600784C55 /* DigitalTurnOutViewController.xib in Resources */,
 				EEF59CA72136EEB600337311 /* ExchangeRecordViewController.xib in Resources */,
 				363853E620046DFC00899B11 /* README.md in Resources */,
+				EE6F0BEB2179B7A4001ABBEB /* TradeRecordViewController.xib in Resources */,
 				EED0574D212284A500F0AB9C /* sure_placeholder_error@3x.png in Resources */,
 				EE58F03321368EA000548520 /* AddBankViewController.xib in Resources */,
 				EE58F0522136A1E400548520 /* YQPayKeyWordVC.xib in Resources */,
@@ -1252,6 +1282,7 @@
 				EEFD647F212C56AF00BF1C34 /* TurnOutRecordListViewController.xib in Resources */,
 				EEB368DA211DEE5300CF00AF /* ForgetPwdController.xib in Resources */,
 				EED05750212284A500F0AB9C /* back_icon@3x.png in Resources */,
+				EE6F0BFB2179C8FE001ABBEB /* TransactionCell.xib in Resources */,
 				EEE424A1212DB6FC000A3915 /* DigitalAssetsCell.xib in Resources */,
 				EE58F0532136A1E400548520 /* YQInputPayKeyWordView.xib in Resources */,
 				EEFD6475212C521D00BF1C34 /* TurnOutViewController.xib in Resources */,
@@ -1270,6 +1301,7 @@
 				EEF340E7213B817B00B5705C /* Launch Screen.storyboard in Resources */,
 				EEF19E6C212B053F00B812B1 /* SuggestionViewController.xib in Resources */,
 				EE38DFEA213928DD0083A67B /* UploadImageNoteView.xib in Resources */,
+				EE6F0BF02179BA87001ABBEB /* TradeRecordCell.xib in Resources */,
 				EEB368D5211DEE3300CF00AF /* RegisterViewController.xib in Resources */,
 				EE82F49F2148AA310071590F /* TurnOutNextViewController.xib in Resources */,
 				363853E020046DDC00899B11 /* README.md in Resources */,
@@ -1376,6 +1408,7 @@
 				EED14B1F21296EDD005973C6 /* ChineseInclude.m in Sources */,
 				EED14B2621296EDD005973C6 /* UIAlertController+HCAdd.m in Sources */,
 				EEB368D9211DEE5300CF00AF /* ForgetPwdController.m in Sources */,
+				EE6F0BFA2179C8FE001ABBEB /* TransactionCell.m in Sources */,
 				EEF59CA62136EEB600337311 /* ExchangeRecordViewController.m in Sources */,
 				EE01E9C8212913BF00D2019B /* MQVerCodeImageView.m in Sources */,
 				EEB368CF211DE6FE00CF00AF /* HomeViewController.m in Sources */,
@@ -1390,14 +1423,17 @@
 				EED14B2021296EDD005973C6 /* HanyuPinyinOutputFormat.m in Sources */,
 				EEFD6488212C5BB000BF1C34 /* PurchaseViewController.m in Sources */,
 				EEE4249B212DB5DD000A3915 /* DigitalAssetsViewController.m in Sources */,
+				EE6F0BEF2179BA87001ABBEB /* TradeRecordCell.m in Sources */,
 				363854192004981D00899B11 /* UIButton+XYButton.m in Sources */,
 				EE610A1621362D5500E92D87 /* TADotView.m in Sources */,
 				EED14AEF212959B9005973C6 /* MineHeadView.m in Sources */,
 				EE58F0542136A1E400548520 /* YQInputPayKeyWordView.m in Sources */,
 				EE82F49E2148AA310071590F /* TurnOutNextViewController.m in Sources */,
 				EEF19E66212B011900B812B1 /* EditLoginPwdViewController.m in Sources */,
+				EE6F0BF62179BC3F001ABBEB /* TradeRecordModel.m in Sources */,
 				EEF19E70212B0B9700B812B1 /* ShareCodeViewController.m in Sources */,
 				EE610A1321362D5500E92D87 /* SDCycleScrollView.m in Sources */,
+				EE6F0BEA2179B7A4001ABBEB /* TradeRecordViewController.m in Sources */,
 				EE21C968213553F100A4E0CA /* NoticeViewController.m in Sources */,
 				EE041B2E213677BA0021C7E3 /* UploadPic.m in Sources */,
 				EEED0A2F213255A600784C55 /* DigitalTurnOutViewController.m in Sources */,
@@ -1506,6 +1542,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1513,6 +1550,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1561,6 +1599,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1568,6 +1607,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1605,7 +1645,7 @@
 				DEVELOPMENT_TEAM = HR6HGC9SU2;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSBase/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSBase/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1629,7 +1669,7 @@
 				DEVELOPMENT_TEAM = HR6HGC9SU2;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSBase/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSBase/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

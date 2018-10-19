@@ -157,10 +157,8 @@
         vc.title = @"卖出";
         [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 105) {
-        self.navigationController.navigationBarHidden = YES;
-        [SVProgressHUD showInfoWithStatus:@"数字资产暂未开放，即将呈现敬请期待！"];
-//        DigitalAssetsViewController *vc = [[DigitalAssetsViewController alloc] init];
-//        [self.navigationController pushViewController:vc animated:YES];
+        DigitalAssetsViewController *vc = [[DigitalAssetsViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if (sender.tag == 106) {
         self.navigationController.navigationBarHidden = YES;
         [SVProgressHUD showInfoWithStatus:@"商城暂未开放，即将呈现敬请期待！"];

@@ -23,24 +23,24 @@
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
-    // 设置窗口的根控制器
-    if ([SPUtil boolForKey:k_app_login]) {
-        if ([[Util timeToTurnTheTimestamp] integerValue]-[[SPUtil objectForKey:@"time"] integerValue] > 10*60) {
-            [SPUtil setBool:NO forKey:k_app_login];
-            LoginViewController *loginVC = [[LoginViewController alloc] init];
-            BaseNavViewController *loginNav = [[BaseNavViewController alloc] initWithRootViewController:loginVC];
-            self.window.rootViewController = loginNav;
-        }else {
+//    // 设置窗口的根控制器
+//    if ([SPUtil boolForKey:k_app_login]) {
+//        if ([[Util timeToTurnTheTimestamp] integerValue]-[[SPUtil objectForKey:@"time"] integerValue] > 10*60) {
+//            [SPUtil setBool:NO forKey:k_app_login];
+//            LoginViewController *loginVC = [[LoginViewController alloc] init];
+//            BaseNavViewController *loginNav = [[BaseNavViewController alloc] initWithRootViewController:loginVC];
+//            self.window.rootViewController = loginNav;
+//        }else {
             HomeViewController *homeVC = [[HomeViewController alloc] init];
             BaseNavViewController *homeNav = [[BaseNavViewController alloc] initWithRootViewController:homeVC];
             self.window.rootViewController = homeNav;
-        }
-    }else {
-        LoginViewController *loginVC = [[LoginViewController alloc] init];
-        BaseNavViewController *loginNav = [[BaseNavViewController alloc] initWithRootViewController:loginVC];
-        self.window.rootViewController = loginNav;
-    }
-    
+//        }
+//    }else {
+//        LoginViewController *loginVC = [[LoginViewController alloc] init];
+//        BaseNavViewController *loginNav = [[BaseNavViewController alloc] initWithRootViewController:loginVC];
+//        self.window.rootViewController = loginNav;
+//    }
+
     // 显示窗口
     [self.window makeKeyAndVisible];
     // 启动腾讯bugly

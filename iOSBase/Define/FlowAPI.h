@@ -50,6 +50,8 @@
 #define mainItemsBackgroudColor UIColorFromHex(0xffffff)
 //蓝色
 #define mainBlueColor UIColorFromHex(0x3BA7EC)
+//红色
+#define mainRedColor UIColorFromHex(0xF01B1D)
 //灰色字体
 //#define mainGrayColor UIColorFromHex(0x848484)
 
@@ -66,8 +68,8 @@ _Pragma("clang diagnostic pop")
 
 
 // 主服务器地址
-#define SERVER_IP         @"http://ddcapp.top"
-//#define SERVER_IP         @"http://139.196.225.206:8082"
+//#define SERVER_IP         @"http://ddcapp.top"
+#define SERVER_IP         @"http://211.149.191.75:8082"
 
 // 登录
 #define API_LOGIN       SERVER_IP@"/app/user/login"
@@ -137,5 +139,19 @@ _Pragma("clang diagnostic pop")
 #define API_INTEGREALLOG       SERVER_IP@"/app/index/integralLog"
 //积分记录
 #define API_BALANCELOG       SERVER_IP@"/app/index/balanceLog"
+
+//指导价 点击挂单时候获取
+#define API_MARKET_PRICE      SERVER_IP@"/app/market/price"
+//DDC币买入记录
+#define API_DDC_BUYLOGS      SERVER_IP@"/app/market/ddc_buyLogs"
+//DDC币卖出记录
+#define API_DDC_SELLLOGS      SERVER_IP@"/app/market/ddc_sellLogs"
+
+//DDC币买单列表
+#define API_DDC_BUYLIST      SERVER_IP@"/app/market/ddc_buyList"
+//DDC卖单列表
+#define API_DDC_SELLLIST      SERVER_IP@"/app/market/ddc_sellList"
+//DDC币从卖单里面下买单/从买单里面下卖单
+#define API_DDC_TOMARKET      SERVER_IP@"/app/market/ddc_toMarket"
 
 #endif /* FlowAPI_h */
