@@ -10,6 +10,7 @@
 #import "TransactionCell.h"
 #import "XDMenuView.h"
 #import "TradeRecordModel.h"
+#import "DDCReleaseViewController.h"
 @interface TransactionViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     UIButton *selcetedBtn;
@@ -246,6 +247,9 @@
 
 - (IBAction)toPostSaleOrder:(UIButton *)sender {
     if (_type == 0) {
+        DDCReleaseViewController *postSaleVC = [[DDCReleaseViewController alloc] init];
+        postSaleVC.isPostSale = YES;
+        [self.navigationController pushViewController:postSaleVC animated:YES];
         
     }else {
         [SVProgressHUD showInfoWithStatus:@"暂未开放，即将呈现敬请期待！"];
@@ -254,7 +258,9 @@
 
 - (IBAction)toPostBuyOrder:(UIButton *)sender {
     if (_type == 0) {
-        
+        DDCReleaseViewController *postSaleVC = [[DDCReleaseViewController alloc] init];
+        postSaleVC.isPostSale = NO;
+        [self.navigationController pushViewController:postSaleVC animated:YES];
     }else {
         [SVProgressHUD showInfoWithStatus:@"暂未开放，即将呈现敬请期待！"];
     }
