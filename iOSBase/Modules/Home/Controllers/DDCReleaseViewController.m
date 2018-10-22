@@ -28,7 +28,29 @@
     self.money.text = [NSString stringWithFormat:@"%@",[SPUtil objectForKey:k_app_BALANCE]];
 }
 - (IBAction)cebtainAction:(UIButton *)sender {
-    
+    if ([_priceText.text integerValue] <= 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入价格"];
+        return;
+    }
+    if ([_numText.text integerValue] <= 0) {
+        [SVProgressHUD showErrorWithStatus:@"请输入数量"];
+        return;
+    }
+    YQPayKeyWordVC *yqVC = [[YQPayKeyWordVC alloc] init];
+    [yqVC showInViewController:self money:[NSString stringWithFormat:@"%ld", [_priceText.text integerValue]*[_numText.text integerValue]]];
+    yqVC.block = ^(NSString *pass) {
+        RequestParams *parms = [[RequestParams alloc] initWithParams:API_DDC_SELL];
+        [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
+        [parms addParameter:@"BUSINESS_COUNT" value:self.numText.text];
+        [parms addParameter:@"BUSINESS_PRICE" value:self.priceText.text];
+        [parms addParameter:@"PASSW" value:pass];
+        [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"DDC下单" successBlock:^(id data) {
+            [SVProgressHUD showSuccessWithStatus:@"挂单成功"];
+            
+        } failureBlock:^(NSError *error) {
+            
+        }];
+    };
 }
 
 

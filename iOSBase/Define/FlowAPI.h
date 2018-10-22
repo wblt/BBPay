@@ -153,5 +153,5 @@ _Pragma("clang diagnostic pop")
 #define API_DDC_SELLLIST      SERVER_IP@"/app/market/ddc_sellList"
 //DDC币从卖单里面下买单/从买单里面下卖单
 #define API_DDC_TOMARKET      SERVER_IP@"/app/market/ddc_toMarket"
-
+#define API_DDC_SELL      SERVER_IP@"/app/market/ddc_sell"
 #endif /* FlowAPI_h */
