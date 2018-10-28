@@ -38,6 +38,8 @@
 		3638545D2004C4BB00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3638545C2004C4BB00899B11 /* README.md */; };
 		3638545F2004C4EF00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3638545E2004C4EF00899B11 /* README.md */; };
 		363854612004C4FA00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363854602004C4F900899B11 /* README.md */; };
+		36D181572185E3F300693972 /* DDCOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D181552185E3F300693972 /* DDCOrderCell.m */; };
+		36D181582185E3F300693972 /* DDCOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D181562185E3F300693972 /* DDCOrderCell.xib */; };
 		92A34F38F4AC27A3C3ADFC02 /* libPods-iOSBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D497ADAEE224F0451F225E /* libPods-iOSBase.a */; };
 		EE01E9C8212913BF00D2019B /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */; };
 		EE041B24213641D50021C7E3 /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE041B1F213641D50021C7E3 /* TQStarRatingView.m */; };
@@ -259,6 +261,9 @@
 		3638545C2004C4BB00899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3638545E2004C4EF00899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		363854602004C4F900899B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		36D181542185E3F300693972 /* DDCOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCOrderCell.h; sourceTree = "<group>"; };
+		36D181552185E3F300693972 /* DDCOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCOrderCell.m; sourceTree = "<group>"; };
+		36D181562185E3F300693972 /* DDCOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DDCOrderCell.xib; sourceTree = "<group>"; };
 		6D47F575D57BBA9836E5F5A5 /* Pods-iOSBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBase/Pods-iOSBase.release.xcconfig"; sourceTree = "<group>"; };
 		EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQVerCodeImageView.m; sourceTree = "<group>"; };
 		EE01E9C7212913BF00D2019B /* MQVerCodeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQVerCodeImageView.h; sourceTree = "<group>"; };
@@ -1012,6 +1017,9 @@
 				EE6F0BF72179C8FE001ABBEB /* TransactionCell.h */,
 				EE6F0BF82179C8FE001ABBEB /* TransactionCell.m */,
 				EE6F0BF92179C8FE001ABBEB /* TransactionCell.xib */,
+				36D181542185E3F300693972 /* DDCOrderCell.h */,
+				36D181552185E3F300693972 /* DDCOrderCell.m */,
+				36D181562185E3F300693972 /* DDCOrderCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1301,6 +1309,7 @@
 				EE6F0BFB2179C8FE001ABBEB /* TransactionCell.xib in Resources */,
 				EEE424A1212DB6FC000A3915 /* DigitalAssetsCell.xib in Resources */,
 				EE58F0532136A1E400548520 /* YQInputPayKeyWordView.xib in Resources */,
+				36D181582185E3F300693972 /* DDCOrderCell.xib in Resources */,
 				EEFD6475212C521D00BF1C34 /* TurnOutViewController.xib in Resources */,
 				363853E920046E0400899B11 /* README.md in Resources */,
 				EED14AF421296137005973C6 /* EditNicknameViewController.xib in Resources */,
@@ -1468,6 +1477,7 @@
 				EE21C96D2135549F00A4E0CA /* NoticeCell.m in Sources */,
 				363854172004981D00899B11 /* GTMBase64.m in Sources */,
 				EE58F0552136A1E400548520 /* YQPayKeyWordVC.m in Sources */,
+				36D181572185E3F300693972 /* DDCOrderCell.m in Sources */,
 				EEF19E61212AFC3400B812B1 /* IndividualPropertyViewController.m in Sources */,
 				EED14B2121296EDD005973C6 /* ZYPinYinSearch.m in Sources */,
 				EE3573A82132ABC300C1F167 /* XDMenuView.m in Sources */,

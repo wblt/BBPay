@@ -11,6 +11,7 @@
 #import "XDMenuView.h"
 #import "TradeRecordModel.h"
 #import "DDCReleaseViewController.h"
+#import "DDCOrderViewController.h"
 @interface TransactionViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     UIButton *selcetedBtn;
@@ -42,8 +43,6 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"TransactionCell" bundle:nil] forCellReuseIdentifier:@"TransactionCell"];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"DDC" style:UIBarButtonItemStylePlain target:self action:@selector(toMoreAction:)];
-    [self changeTypeAction];
-    
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         if (self.type == 0) {
@@ -56,6 +55,11 @@
         }
     }];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self changeTypeAction];
 }
 
 - (void)changeTypeAction {
@@ -268,7 +272,8 @@
 
 - (IBAction)toOrderListAction:(UIButton *)sender {
     if (_type == 0) {
-        
+        DDCOrderViewController *ddcOrderVC = [[DDCOrderViewController alloc] init];
+        [self.navigationController pushViewController:ddcOrderVC animated:YES];
     }else {
         [SVProgressHUD showInfoWithStatus:@"暂未开放，即将呈现敬请期待！"];
     }

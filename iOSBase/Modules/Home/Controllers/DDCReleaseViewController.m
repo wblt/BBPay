@@ -46,7 +46,7 @@
         [parms addParameter:@"PASSW" value:pass];
         [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"DDC下单" successBlock:^(id data) {
             [SVProgressHUD showSuccessWithStatus:@"挂单成功"];
-            
+            [self.navigationController popViewControllerAnimated:YES];
         } failureBlock:^(NSError *error) {
             
         }];

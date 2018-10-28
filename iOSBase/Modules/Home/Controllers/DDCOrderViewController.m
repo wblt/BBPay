@@ -7,8 +7,9 @@
 //
 
 #import "DDCOrderViewController.h"
-
-@interface DDCOrderViewController ()
+#import "DDCOrderCell.h"
+@interface DDCOrderViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,7 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"查看订单";
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 41;
+    self.tableView.backgroundColor = mainBackgroudColor;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView registerNib:[UINib nibWithNibName:@"DDCOrderCell" bundle:nil] forCellReuseIdentifier:@"DDCOrderCell"];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DDCOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DDCOrderCell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 /*
