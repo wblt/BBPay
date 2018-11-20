@@ -48,7 +48,7 @@
         [SVProgressHUD showSuccessWithStatus:@"登录成功"];
         [SPUtil setBool:YES forKey:k_app_login];
         [SPUtil setObject:data[@"pd"][@"USER_NAME"] forKey:k_app_USER_NAME];
-        [SPUtil setObject:_passwordText.text forKey:k_app_PASSWORD];
+        [SPUtil setObject:self->_passwordText.text forKey:k_app_PASSWORD];
         HomeViewController *homeVC = [[HomeViewController alloc] init];
         BaseNavViewController *homeNav = [[BaseNavViewController alloc] initWithRootViewController:homeVC];
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

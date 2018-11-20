@@ -21,6 +21,10 @@
 #define k_app_VIP @"app_VIP"
 #define k_app_W_ADDRESS @"app_W_ADDRESS"
 #define k_app_IFPAS @"app_IFPAS"
+#define k_app_sj @"app_sj"
+#define k_app_ddc_d @"app_ddc_d"
+#define k_app_ddc_b @"app_ddc_b"
+
 @interface SPUtil : NSObject
 
 // 设置

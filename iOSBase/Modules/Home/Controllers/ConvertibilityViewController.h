@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface ConvertibilityViewController : BaseViewController
-
+@property(nonatomic,copy)NSString *s_title;
 @end

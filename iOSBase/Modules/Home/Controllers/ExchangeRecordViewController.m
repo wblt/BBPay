@@ -15,6 +15,8 @@
     
 }
 @property (nonatomic, strong) NSString *lastId;
+@property (weak, nonatomic) IBOutlet UILabel *jifen_label;
+
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
@@ -31,21 +33,28 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"ExchangeListCell" bundle:nil] forCellReuseIdentifier:@"ExchangeListCell"];
     exchangeArr = [NSMutableArray array];
-    
     [self requestData:@"1"];
-    
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self requestData:@"1"];
     }];
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self requestData:@"2"];
     }];
+    if ([self.s_title isEqualToString:@"积分兑换"]) {
+        self.jifen_label.text = @"兑换积分";
+    } else {
+        self.jifen_label.text = @"兑换DDC豆";
+    }
     
 }
 
 - (void)requestData:(NSString *)type {
-    
-    RequestParams *parms = [[RequestParams alloc] initWithParams:API_CGDETAIL];
+    RequestParams *parms = nil;
+    if ([self.s_title isEqualToString:@"积分兑换"]) {
+        parms = [[RequestParams alloc] initWithParams:API_CGDETAIL];
+    } else {
+        parms = [[RequestParams alloc] initWithParams:API_cgDDCDDetail];
+    }
     [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
     [parms addParameter:@"QUERY_ID" value:[type isEqualToString:@"1"] ? @"0" : _lastId];
     [parms addParameter:@"TYPE" value:type];
@@ -84,7 +93,11 @@
     ExchangeListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExchangeListCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     ExchangeModel *model = exchangeArr[indexPath.row];
-    cell.lbl2.text = model.INTEGRAL;
+    if ([self.s_title isEqualToString:@"兑换积分"]) {
+        cell.lbl2.text = model.INTEGRAL;
+    } else {
+        cell.lbl2.text = model.DDC_D;
+    }
     cell.lbl1.text = [NSString stringWithFormat:@"-%@",model.BALANCE];
     cell.lbl3.text = [Util timestampToString:[NSString stringWithFormat:@"%ld",[model.CREATE_TIME integerValue]/1000] formatterString:@"yyyy-MM-dd HH:mm:ss"];
     return cell;

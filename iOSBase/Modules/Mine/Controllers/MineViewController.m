@@ -91,14 +91,18 @@
     if (section == 0) {
         headV = [[NSBundle mainBundle] loadNibNamed:@"MineHeadView" owner:nil options:nil].lastObject;
         [headV.headImg sd_setImageWithURL:[NSURL URLWithString:[SPUtil objectForKey:k_app_HEAD_URL]] placeholderImage:[UIImage imageNamed:@"head"]];
-
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toChangeHeadImgAction)];
         [headV.headImg addGestureRecognizer:tap];
-        
-        headV.userName.text = [NSString stringWithFormat:@"UID：%@",[SPUtil objectForKey:k_app_USER_ID]];
-
+        if ([[SPUtil objectForKey:k_app_sj] isEqualToString:@"1"]) {
+            NSString *text = [NSString stringWithFormat:@"UID:S%@",[SPUtil objectForKey:k_app_USER_ID]];
+            NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc]initWithString:text];
+            [attributeStr addAttribute:NSForegroundColorAttributeName value:UIColorFromHex(0x52d869) range:NSMakeRange(4, 1)];
+            headV.userName.attributedText = attributeStr;
+        } else {
+            NSString *text = [NSString stringWithFormat:@"UID:%@",[SPUtil objectForKey:k_app_USER_ID]];
+            headV.userName.text = text;
+        }
         [headV.nibStarRatingView setScore:[[SPUtil objectForKey:k_app_CREDIT] floatValue]/kNUMBER_OF_STAR withAnimation:YES];
-        
         return headV;
     }
     return nil;
@@ -203,8 +207,8 @@
         if (url.length == 0) {
             [SVProgressHUD showErrorWithStatus:@"上传失败"];
         }else {
-            headV.headImg.image = info[UIImagePickerControllerEditedImage];
-            headNewUrl = url;
+            self->headV.headImg.image = info[UIImagePickerControllerEditedImage];
+            self->headNewUrl = url;
             [self editHeadImg];
         }
     }];
@@ -219,7 +223,7 @@
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"修改头像" successBlock:^(id data) {
         [SVProgressHUD showSuccessWithStatus:@"修改成功"];
         
-        [SPUtil setObject:headNewUrl forKey:k_app_HEAD_URL];
+        [SPUtil setObject:self->headNewUrl forKey:k_app_HEAD_URL];
         
     } failureBlock:^(NSError *error) {
         

@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *scoreNum;
 @property (weak, nonatomic) IBOutlet UILabel *money;
 @property (weak, nonatomic) IBOutlet UILabel *score;
+@property (weak, nonatomic) IBOutlet UILabel *jifen_title;
 
 @end
 
@@ -20,39 +21,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"兑换积分";
-    self.score.text = [NSString stringWithFormat:@"%@",[SPUtil objectForKey:k_app_INTEGRAL]];
+    self.title = self.s_title;
     self.money.text = [NSString stringWithFormat:@"%@",[SPUtil objectForKey:k_app_BALANCE]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"兑换记录" style:UIBarButtonItemStylePlain target:self action:@selector(toExchangeRecord)];
+    if ([self.s_title isEqualToString:@"兑换积分"]) {
+        self.jifen_title.text = @"积分";
+        self.score.text = [NSString stringWithFormat:@"%@",[SPUtil objectForKey:k_app_INTEGRAL]];
+    } else {
+        self.jifen_title.text = @"DDC豆";
+        self.score.text = [NSString stringWithFormat:@"%@",[SPUtil objectForKey:k_app_ddc_d]];
+    }
 }
 
 - (void)toExchangeRecord {
     ExchangeRecordViewController *exchangeVC = [[ExchangeRecordViewController alloc] init];
+    if ([self.s_title isEqualToString:@"兑换积分"]) {
+        exchangeVC.s_title = @"兑换积分";
+    } else {
+        exchangeVC.s_title = @"兑换DDC豆";
+    }
     [self.navigationController pushViewController:exchangeVC animated:YES];
 }
 
 - (IBAction)scoreExchangeAction:(UIButton *)sender {
-    
     if ([_scoreNum.text integerValue] < 100) {
         [SVProgressHUD showErrorWithStatus:@"请输入兑换数量"];
         return;
     }
-    
     YQPayKeyWordVC *yqVC = [[YQPayKeyWordVC alloc] init];
     [yqVC showInViewController:self money:_scoreNum.text];
     yqVC.block = ^(NSString *pass) {
-        RequestParams *parms = [[RequestParams alloc] initWithParams:API_CHANGEINTEGRAL];
+        RequestParams *parms = nil;
+        if ([self.s_title isEqualToString:@"兑换积分"]) {
+             parms = [[RequestParams alloc] initWithParams:API_CHANGEINTEGRAL];
+        } else {
+             parms = [[RequestParams alloc] initWithParams:API_changeDDCD];
+        }
         [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
         [parms addParameter:@"S_NUM" value:self.scoreNum.text];
         [parms addParameter:@"PASSW" value:pass];
         [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"兑换积分" successBlock:^(id data) {
             [SVProgressHUD showSuccessWithStatus:@"兑换成功"];
-            [self toExchangeRecord];
+            [self.navigationController popViewControllerAnimated:YES];
         } failureBlock:^(NSError *error) {
             
         }];
     };
 }
+
 
 
 - (void)didReceiveMemoryWarning {

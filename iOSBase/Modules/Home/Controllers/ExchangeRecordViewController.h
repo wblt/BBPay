@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface ExchangeRecordViewController : BaseViewController
-
+@property(nonatomic,copy) NSString *s_title;
 @end

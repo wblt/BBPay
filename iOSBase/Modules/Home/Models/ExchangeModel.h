@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *INTEGRAL;
 @property (nonatomic, strong) NSString *BALANCE;
+@property (nonatomic, strong) NSString *DDC_D;
 
 @end

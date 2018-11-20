@@ -69,7 +69,9 @@ _Pragma("clang diagnostic pop")
 
 // 主服务器地址
 //#define SERVER_IP         @"http://ddcapp.top"
-#define SERVER_IP         @"http://211.149.191.75:8082"
+//#define SERVER_IP         @"http://211.149.191.75:8080"
+#define SERVER_IP         @"http://139.196.225.206:8082"
+
 
 // 登录
 #define API_LOGIN       SERVER_IP@"/app/user/login"
@@ -109,8 +111,11 @@ _Pragma("clang diagnostic pop")
 #define API_RECEIVEDEAIL       SERVER_IP@"/app/my/receiveDetail"
 //
 #define API_CHANGEINTEGRAL       SERVER_IP@"/app/my/changeIntegral"
+#define API_changeDDCD       SERVER_IP@"/app/my/changeDDCD"
 //
 #define API_CGDETAIL       SERVER_IP@"/app/my/cgDetail"
+
+#define API_cgDDCDDetail       SERVER_IP@"/app/my/cgDDCDDetail"
 //
 #define API_BUY       SERVER_IP@"/app/market/buy"
 //
