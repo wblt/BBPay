@@ -53,6 +53,10 @@
 		EE21C96D2135549F00A4E0CA /* NoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EE21C96B2135549F00A4E0CA /* NoticeCell.m */; };
 		EE21C96E2135549F00A4E0CA /* NoticeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE21C96C2135549F00A4E0CA /* NoticeCell.xib */; };
 		EE21C9712135581900A4E0CA /* NoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EE21C9702135581900A4E0CA /* NoticeModel.m */; };
+		EE2A2C5221A44E54001154F5 /* DDCTurnOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A2C5021A44E54001154F5 /* DDCTurnOutViewController.m */; };
+		EE2A2C5321A44E54001154F5 /* DDCTurnOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2A2C5121A44E54001154F5 /* DDCTurnOutViewController.xib */; };
+		EE2A2C5721A45059001154F5 /* DDCTurnOutRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2A2C5521A45059001154F5 /* DDCTurnOutRecordViewController.m */; };
+		EE2A2C5821A45059001154F5 /* DDCTurnOutRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2A2C5621A45059001154F5 /* DDCTurnOutRecordViewController.xib */; };
 		EE3573A82132ABC300C1F167 /* XDMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573A42132ABC200C1F167 /* XDMenuView.m */; };
 		EE3573A92132ABC300C1F167 /* XDMenuPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3573A72132ABC200C1F167 /* XDMenuPopoverBackgroundView.m */; };
 		EE3573AD2132ABEA00C1F167 /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3573AA2132ABE900C1F167 /* TransactionViewController.xib */; };
@@ -286,6 +290,12 @@
 		EE21C96C2135549F00A4E0CA /* NoticeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeCell.xib; sourceTree = "<group>"; };
 		EE21C96F2135581900A4E0CA /* NoticeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeModel.h; sourceTree = "<group>"; };
 		EE21C9702135581900A4E0CA /* NoticeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeModel.m; sourceTree = "<group>"; };
+		EE2A2C4F21A44E54001154F5 /* DDCTurnOutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCTurnOutViewController.h; sourceTree = "<group>"; };
+		EE2A2C5021A44E54001154F5 /* DDCTurnOutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCTurnOutViewController.m; sourceTree = "<group>"; };
+		EE2A2C5121A44E54001154F5 /* DDCTurnOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DDCTurnOutViewController.xib; sourceTree = "<group>"; };
+		EE2A2C5421A45059001154F5 /* DDCTurnOutRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCTurnOutRecordViewController.h; sourceTree = "<group>"; };
+		EE2A2C5521A45059001154F5 /* DDCTurnOutRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCTurnOutRecordViewController.m; sourceTree = "<group>"; };
+		EE2A2C5621A45059001154F5 /* DDCTurnOutRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DDCTurnOutRecordViewController.xib; sourceTree = "<group>"; };
 		EE3573A42132ABC200C1F167 /* XDMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDMenuView.m; sourceTree = "<group>"; };
 		EE3573A52132ABC200C1F167 /* XDMenuPopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDMenuPopoverBackgroundView.h; sourceTree = "<group>"; };
 		EE3573A62132ABC200C1F167 /* XDMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDMenuView.h; sourceTree = "<group>"; };
@@ -984,6 +994,12 @@
 				EE38B98A217DD3A40079C7C4 /* DDCOrderViewController.h */,
 				EE38B98B217DD3A40079C7C4 /* DDCOrderViewController.m */,
 				EE38B98C217DD3A40079C7C4 /* DDCOrderViewController.xib */,
+				EE2A2C4F21A44E54001154F5 /* DDCTurnOutViewController.h */,
+				EE2A2C5021A44E54001154F5 /* DDCTurnOutViewController.m */,
+				EE2A2C5121A44E54001154F5 /* DDCTurnOutViewController.xib */,
+				EE2A2C5421A45059001154F5 /* DDCTurnOutRecordViewController.h */,
+				EE2A2C5521A45059001154F5 /* DDCTurnOutRecordViewController.m */,
+				EE2A2C5621A45059001154F5 /* DDCTurnOutRecordViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1321,12 +1337,14 @@
 				EEDDB27F211F164F007FE540 /* MineViewController.xib in Resources */,
 				363853E320046DF500899B11 /* README.md in Resources */,
 				EED0574F212284A500F0AB9C /* back_icon@2x.png in Resources */,
+				EE2A2C5321A44E54001154F5 /* DDCTurnOutViewController.xib in Resources */,
 				EED0574B212284A500F0AB9C /* close_icon@2x.png in Resources */,
 				EE38DFF4213941310083A67B /* PurchaseRecordViewController.xib in Resources */,
 				EEF340E7213B817B00B5705C /* Launch Screen.storyboard in Resources */,
 				EEF19E6C212B053F00B812B1 /* SuggestionViewController.xib in Resources */,
 				EE38DFEA213928DD0083A67B /* UploadImageNoteView.xib in Resources */,
 				EE6F0BF02179BA87001ABBEB /* TradeRecordCell.xib in Resources */,
+				EE2A2C5821A45059001154F5 /* DDCTurnOutRecordViewController.xib in Resources */,
 				EEB368D5211DEE3300CF00AF /* RegisterViewController.xib in Resources */,
 				EE82F49F2148AA310071590F /* TurnOutNextViewController.xib in Resources */,
 				363853E020046DDC00899B11 /* README.md in Resources */,
@@ -1423,6 +1441,7 @@
 			files = (
 				EEDF7FBA21394890005B1B65 /* PurchaseCenterViewController.m in Sources */,
 				EEE424A0212DB6FC000A3915 /* DigitalAssetsCell.m in Sources */,
+				EE2A2C5721A45059001154F5 /* DDCTurnOutRecordViewController.m in Sources */,
 				EE58F03121368E5C00548520 /* AddBankViewController.m in Sources */,
 				EE58F03F21369BBD00548520 /* ShareRecordViewController.m in Sources */,
 				EE610A1921362D5500E92D87 /* TAAbstractDotView.m in Sources */,
@@ -1498,6 +1517,7 @@
 				EED14B2C21297B27005973C6 /* AnotherSearchViewController.m in Sources */,
 				EEF19E6B212B053F00B812B1 /* SuggestionViewController.m in Sources */,
 				363854262004997200899B11 /* RequestParams.m in Sources */,
+				EE2A2C5221A44E54001154F5 /* DDCTurnOutViewController.m in Sources */,
 				EE58F03A2136957900548520 /* GetIntoViewController.m in Sources */,
 				EE3573A92132ABC300C1F167 /* XDMenuPopoverBackgroundView.m in Sources */,
 				EE38DFF3213941310083A67B /* PurchaseRecordViewController.m in Sources */,

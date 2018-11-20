@@ -13,16 +13,8 @@
 @interface PurchaseCenterViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableArray *orderArr;
-    NSArray *btnArr;
-    UIButton *selectedBtn;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *btn1;
-@property (weak, nonatomic) IBOutlet UIButton *btn2;
-@property (weak, nonatomic) IBOutlet UIButton *btn3;
-@property (weak, nonatomic) IBOutlet UIButton *btn4;
-@property (weak, nonatomic) IBOutlet UIButton *btn5;
-@property (weak, nonatomic) IBOutlet UIButton *btn6;
 @property (nonatomic, strong) NSString *lastId;
 @end
 
@@ -30,8 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    btnArr = @[_btn1,_btn2,_btn3,_btn4,_btn5,_btn6];
-    selectedBtn = _btn1;
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 70;
@@ -52,7 +43,7 @@
 - (void)requestData:(NSString *)type {
     
     RequestParams *parms = [[RequestParams alloc] initWithParams:([self.title isEqualToString:@"买入中心"] ? API_BUYLIST : API_SELLLIST)];
-    [parms addParameter:@"BUSINESS_COUNT" value:selectedBtn.titleLabel.text];
+//    [parms addParameter:@"BUSINESS_COUNT" value:selectedBtn.titleLabel.text];
     [parms addParameter:@"QUERY_ID" value:[type isEqualToString:@"1"] ? @"0" : _lastId];
     [parms addParameter:@"TYPE" value:type];
     [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"买单列表" successBlock:^(id data) {
@@ -83,17 +74,6 @@
     }];
 }
 
-- (IBAction)selectedTypeStatusAction:(UIButton *)sender {
-    for (UIButton *btn in btnArr) {
-        btn.selected = NO;
-    }
-    sender.selected = YES;
-    selectedBtn = sender;
-    orderArr = [NSMutableArray array];
-    [self requestData:@"1"];
-}
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return orderArr.count;
 }
@@ -110,7 +90,7 @@
     [cell.status setTitle:([self.title isEqualToString:@"买入中心"] ? @"卖出" : @"购买") forState:0];
     [cell.status addTapBlock:^(UIButton *btn) {
         YQPayKeyWordVC *yqVC = [[YQPayKeyWordVC alloc] init];
-        [yqVC showInViewController:self money:selectedBtn.titleLabel.text];
+//        [yqVC showInViewController:self money:selectedBtn.titleLabel.text];
         yqVC.block = ^(NSString *pass) {
             RequestParams *parms = [[RequestParams alloc] initWithParams:API_TOMARKET];
             [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];

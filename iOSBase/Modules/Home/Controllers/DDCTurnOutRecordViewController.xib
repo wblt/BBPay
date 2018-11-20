@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDCTurnOutRecordViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HC5-2a-PFk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCq-Cp-PIv">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="转出记录">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVn-Kp-dJW">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="转入记录">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="MVn-Kp-dJW" firstAttribute="top" secondItem="zCq-Cp-PIv" secondAttribute="top" id="7A8-cW-nqf"/>
+                        <constraint firstItem="MVn-Kp-dJW" firstAttribute="bottom" secondItem="zCq-Cp-PIv" secondAttribute="bottom" id="7Ke-RR-ulH"/>
+                        <constraint firstItem="MVn-Kp-dJW" firstAttribute="width" secondItem="zCq-Cp-PIv" secondAttribute="width" id="DyU-9F-FQH"/>
+                        <constraint firstAttribute="trailing" secondItem="MVn-Kp-dJW" secondAttribute="trailing" id="U3C-eM-emc"/>
+                        <constraint firstItem="zCq-Cp-PIv" firstAttribute="top" secondItem="HC5-2a-PFk" secondAttribute="top" id="Yzp-eV-JFo"/>
+                        <constraint firstAttribute="height" constant="40" id="aFV-0d-0gS"/>
+                        <constraint firstItem="MVn-Kp-dJW" firstAttribute="leading" secondItem="zCq-Cp-PIv" secondAttribute="trailing" id="hzV-KG-6Ka"/>
+                        <constraint firstItem="zCq-Cp-PIv" firstAttribute="leading" secondItem="HC5-2a-PFk" secondAttribute="leading" id="kWl-NM-i4I"/>
+                        <constraint firstAttribute="bottom" secondItem="zCq-Cp-PIv" secondAttribute="bottom" id="xbV-2U-6BQ"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zSM-7M-l9n">
+                    <rect key="frame" x="0.0" y="41" width="375" height="626"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HC5-2a-PFk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Ll-kK-hDL"/>
+                <constraint firstAttribute="bottom" secondItem="zSM-7M-l9n" secondAttribute="bottom" id="K5F-DR-BNg"/>
+                <constraint firstItem="HC5-2a-PFk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KzL-V1-y1F"/>
+                <constraint firstAttribute="trailing" secondItem="HC5-2a-PFk" secondAttribute="trailing" id="ath-qx-glo"/>
+                <constraint firstItem="zSM-7M-l9n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fwM-Qi-f0Y"/>
+                <constraint firstItem="zSM-7M-l9n" firstAttribute="top" secondItem="HC5-2a-PFk" secondAttribute="bottom" constant="1" id="wPQ-QR-fve"/>
+                <constraint firstAttribute="trailing" secondItem="zSM-7M-l9n" secondAttribute="trailing" id="zZu-jg-Ifs"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

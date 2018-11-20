@@ -12,6 +12,7 @@
 #import "DigitalTurnOutViewController.h"
 #import "TransactionViewController.h"
 #import "TradeRecordViewController.h"
+#import "DDCTurnOutViewController.h"
 @interface DigitalAssetsViewController ()<UITableViewDataSource, UITableViewDelegate> {
     NSDictionary *digitalAssets;
 }
@@ -117,7 +118,8 @@
         }];
     }
     [headV.turnOutBtn addTapBlock:^(UIButton *btn) {
-        [SVProgressHUD showInfoWithStatus:@"暂未开放，即将呈现敬请期待！"];
+        DDCTurnOutViewController *vc = [[DDCTurnOutViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
     [headV.transactionBtn addTapBlock:^(UIButton *btn) {
         
