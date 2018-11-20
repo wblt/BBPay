@@ -72,6 +72,12 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="jiage" destination="k2L-J0-zG1" id="B9P-bh-MDa"/>
+                <outlet property="nike" destination="Nwb-ph-9K7" id="pHF-Ky-iVC"/>
+                <outlet property="shuliang" destination="hHq-Ov-Gr7" id="rly-sT-iCl"/>
+                <outlet property="stauts" destination="K1G-8k-9IK" id="2QV-Nb-Njc"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

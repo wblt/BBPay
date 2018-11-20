@@ -40,6 +40,7 @@
 		363854612004C4FA00899B11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 363854602004C4F900899B11 /* README.md */; };
 		36D181572185E3F300693972 /* DDCOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D181552185E3F300693972 /* DDCOrderCell.m */; };
 		36D181582185E3F300693972 /* DDCOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D181562185E3F300693972 /* DDCOrderCell.xib */; };
+		36D3F05E21A45B5300289CEF /* DDCOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D3F05D21A45B5300289CEF /* DDCOrderModel.m */; };
 		92A34F38F4AC27A3C3ADFC02 /* libPods-iOSBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D497ADAEE224F0451F225E /* libPods-iOSBase.a */; };
 		EE01E9C8212913BF00D2019B /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */; };
 		EE041B24213641D50021C7E3 /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE041B1F213641D50021C7E3 /* TQStarRatingView.m */; };
@@ -268,6 +269,8 @@
 		36D181542185E3F300693972 /* DDCOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCOrderCell.h; sourceTree = "<group>"; };
 		36D181552185E3F300693972 /* DDCOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCOrderCell.m; sourceTree = "<group>"; };
 		36D181562185E3F300693972 /* DDCOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DDCOrderCell.xib; sourceTree = "<group>"; };
+		36D3F05C21A45B5300289CEF /* DDCOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCOrderModel.h; sourceTree = "<group>"; };
+		36D3F05D21A45B5300289CEF /* DDCOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCOrderModel.m; sourceTree = "<group>"; };
 		6D47F575D57BBA9836E5F5A5 /* Pods-iOSBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBase/Pods-iOSBase.release.xcconfig"; sourceTree = "<group>"; };
 		EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQVerCodeImageView.m; sourceTree = "<group>"; };
 		EE01E9C7212913BF00D2019B /* MQVerCodeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQVerCodeImageView.h; sourceTree = "<group>"; };
@@ -928,6 +931,8 @@
 				EEF340DF213B776500B5705C /* ScoreRecordModel.m */,
 				EE6F0BF42179BC3F001ABBEB /* TradeRecordModel.h */,
 				EE6F0BF52179BC3F001ABBEB /* TradeRecordModel.m */,
+				36D3F05C21A45B5300289CEF /* DDCOrderModel.h */,
+				36D3F05D21A45B5300289CEF /* DDCOrderModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1457,6 +1462,7 @@
 				EE6F0BFA2179C8FE001ABBEB /* TransactionCell.m in Sources */,
 				EEF59CA62136EEB600337311 /* ExchangeRecordViewController.m in Sources */,
 				EE01E9C8212913BF00D2019B /* MQVerCodeImageView.m in Sources */,
+				36D3F05E21A45B5300289CEF /* DDCOrderModel.m in Sources */,
 				EEB368CF211DE6FE00CF00AF /* HomeViewController.m in Sources */,
 				EEB368D4211DEE3300CF00AF /* RegisterViewController.m in Sources */,
 				EEF2ADB12139951F00EA6DFD /* PurchaseOrderDetailViewController.m in Sources */,

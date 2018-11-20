@@ -194,7 +194,7 @@
     }else {
         [cell.btn setTitle:@"出售" forState:UIControlStateNormal];
     }
-    if (indexPath.row == 0) {
+//    if (indexPath.row == 0) {
         cell.btn.backgroundColor = mainRedColor;
         [cell.btn addTapBlock:^(UIButton *btn) {
             UIAlertController *alt = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"" preferredStyle:UIAlertControllerStyleAlert];
@@ -243,9 +243,9 @@
             }];
            
         }];
-    }else {
-        cell.btn.backgroundColor = [UIColor grayColor];
-    }
+//    }else {
+//        cell.btn.backgroundColor = [UIColor grayColor];
+//    }
     return cell;
 }
 

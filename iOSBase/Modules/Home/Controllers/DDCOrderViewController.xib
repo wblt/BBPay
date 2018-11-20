@@ -11,7 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDCOrderViewController">
             <connections>
+                <outlet property="action_name" destination="EGg-Pq-caX" id="Dlr-nO-fLh"/>
+                <outlet property="finish_button" destination="1TM-AI-0Mk" id="z8l-d7-ecm"/>
+                <outlet property="maichu_order_img" destination="w2O-2e-BMd" id="6Qh-Qa-seR"/>
+                <outlet property="maichu_order_label" destination="w7h-Aq-Pvh" id="pch-Wy-vww"/>
+                <outlet property="mairu_order_label" destination="Rar-R8-WZ6" id="d7T-s5-Szy"/>
+                <outlet property="precess_button" destination="RK8-mp-mcX" id="Ih7-Q9-AIO"/>
                 <outlet property="tableView" destination="N6r-Ll-SrM" id="GGY-UH-Pr8"/>
+                <outlet property="unfinish_button" destination="X39-DI-cjO" id="TZe-hM-3I4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,14 +32,17 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcx-1N-dF1">
                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="90"/>
+                            <connections>
+                                <action selector="mairu_action:" destination="-1" eventType="touchUpInside" id="zJA-q2-c4W"/>
+                            </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布出售订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rar-R8-WZ6">
-                            <rect key="frame" x="54" y="60" width="80" height="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="买入订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rar-R8-WZ6">
+                            <rect key="frame" x="67.5" y="60" width="53.5" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhuanchu_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Gv3-qo-xjD">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhuanru_jilu_hui" translatesAutoresizingMaskIntoConstraints="NO" id="Gv3-qo-xjD">
                             <rect key="frame" x="82" y="28" width="24" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="j5n-qq-Dfx"/>
@@ -41,14 +51,17 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfE-53-765">
                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="90"/>
+                            <connections>
+                                <action selector="maichu_action:" destination="-1" eventType="touchUpInside" id="SHT-ii-BOX"/>
+                            </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布购买订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7h-Aq-Pvh">
-                            <rect key="frame" x="241.5" y="60" width="80" height="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卖出订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7h-Aq-Pvh">
+                            <rect key="frame" x="255" y="60" width="53.5" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhongchou_icon" translatesAutoresizingMaskIntoConstraints="NO" id="w2O-2e-BMd">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhuanru_jilu_hui" translatesAutoresizingMaskIntoConstraints="NO" id="w2O-2e-BMd">
                             <rect key="frame" x="269.5" y="28" width="24" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="0z8-07-gxh"/>
@@ -80,7 +93,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WuH-7i-FCf">
                     <rect key="frame" x="0.0" y="90" width="375" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X39-DI-cjO">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X39-DI-cjO">
                             <rect key="frame" x="0.0" y="11" width="125" height="28"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="未完成">
@@ -89,6 +102,9 @@
                             <state key="selected">
                                 <color key="titleColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="unfinish:" destination="-1" eventType="touchUpInside" id="aAo-vh-QaJ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-mp-mcX">
                             <rect key="frame" x="125" y="11" width="125" height="28"/>
@@ -99,6 +115,9 @@
                             <state key="selected">
                                 <color key="titleColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="precess:" destination="-1" eventType="touchUpInside" id="nZH-5m-NHp"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TM-AI-0Mk">
                             <rect key="frame" x="250" y="11" width="125" height="28"/>
@@ -109,6 +128,9 @@
                             <state key="selected">
                                 <color key="titleColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="finish:" destination="-1" eventType="touchUpInside" id="BHX-OW-TAA"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -194,7 +216,6 @@
         </view>
     </objects>
     <resources>
-        <image name="zhongchou_icon" width="60" height="60"/>
-        <image name="zhuanchu_icon" width="60" height="60"/>
+        <image name="zhuanru_jilu_hui" width="50" height="50"/>
     </resources>
 </document>

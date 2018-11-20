@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DDCOrderModel.h"
 
 @interface DDCOrderCell : UITableViewCell
+
+@property(nonatomic,strong) DDCOrderModel *model;
+
+@property (weak, nonatomic) IBOutlet UILabel *nike;
+
+@property (weak, nonatomic) IBOutlet UILabel *shuliang;
+
+@property (weak, nonatomic) IBOutlet UILabel *jiage;
+
+@property (weak, nonatomic) IBOutlet UILabel *stauts;
 
 @end
