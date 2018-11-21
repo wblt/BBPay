@@ -41,6 +41,7 @@
 		36D181572185E3F300693972 /* DDCOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D181552185E3F300693972 /* DDCOrderCell.m */; };
 		36D181582185E3F300693972 /* DDCOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D181562185E3F300693972 /* DDCOrderCell.xib */; };
 		36D3F05E21A45B5300289CEF /* DDCOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D3F05D21A45B5300289CEF /* DDCOrderModel.m */; };
+		36E1EEE421A5480600BF91D3 /* SZZhuanchuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E1EEE321A5480600BF91D3 /* SZZhuanchuModel.m */; };
 		92A34F38F4AC27A3C3ADFC02 /* libPods-iOSBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D497ADAEE224F0451F225E /* libPods-iOSBase.a */; };
 		EE01E9C8212913BF00D2019B /* MQVerCodeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */; };
 		EE041B24213641D50021C7E3 /* TQStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE041B1F213641D50021C7E3 /* TQStarRatingView.m */; };
@@ -271,6 +272,8 @@
 		36D181562185E3F300693972 /* DDCOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DDCOrderCell.xib; sourceTree = "<group>"; };
 		36D3F05C21A45B5300289CEF /* DDCOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCOrderModel.h; sourceTree = "<group>"; };
 		36D3F05D21A45B5300289CEF /* DDCOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDCOrderModel.m; sourceTree = "<group>"; };
+		36E1EEE221A5480600BF91D3 /* SZZhuanchuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZZhuanchuModel.h; sourceTree = "<group>"; };
+		36E1EEE321A5480600BF91D3 /* SZZhuanchuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZZhuanchuModel.m; sourceTree = "<group>"; };
 		6D47F575D57BBA9836E5F5A5 /* Pods-iOSBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSBase/Pods-iOSBase.release.xcconfig"; sourceTree = "<group>"; };
 		EE01E9C6212913BF00D2019B /* MQVerCodeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQVerCodeImageView.m; sourceTree = "<group>"; };
 		EE01E9C7212913BF00D2019B /* MQVerCodeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQVerCodeImageView.h; sourceTree = "<group>"; };
@@ -933,6 +936,8 @@
 				EE6F0BF52179BC3F001ABBEB /* TradeRecordModel.m */,
 				36D3F05C21A45B5300289CEF /* DDCOrderModel.h */,
 				36D3F05D21A45B5300289CEF /* DDCOrderModel.m */,
+				36E1EEE221A5480600BF91D3 /* SZZhuanchuModel.h */,
+				36E1EEE321A5480600BF91D3 /* SZZhuanchuModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1446,6 +1451,7 @@
 			files = (
 				EEDF7FBA21394890005B1B65 /* PurchaseCenterViewController.m in Sources */,
 				EEE424A0212DB6FC000A3915 /* DigitalAssetsCell.m in Sources */,
+				36E1EEE421A5480600BF91D3 /* SZZhuanchuModel.m in Sources */,
 				EE2A2C5721A45059001154F5 /* DDCTurnOutRecordViewController.m in Sources */,
 				EE58F03121368E5C00548520 /* AddBankViewController.m in Sources */,
 				EE58F03F21369BBD00548520 /* ShareRecordViewController.m in Sources */,

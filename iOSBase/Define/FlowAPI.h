@@ -162,6 +162,10 @@ _Pragma("clang diagnostic pop")
 #define API_ddc_buyOrderList      SERVER_IP@"/app/market/ddc_buyOrderList"
 #define API_ddc_sellOrderList      SERVER_IP@"/app/market/ddc_sellOrderList"
 #define API_ddc_orderCancle      SERVER_IP@"/app/market/ddc_orderCancle"
+#define API_sendDDCB      SERVER_IP@"/app/my/sendDDCB"
+#define API_sendDDCBDetail      SERVER_IP@"/app/my/sendDDCBDetail"
+#define API_receiveDDCBDetail      SERVER_IP@"/app/my/receiveDDCBDetail"
+
 
 
 
