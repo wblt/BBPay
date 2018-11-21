@@ -28,7 +28,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *bankName;
 @property (weak, nonatomic) IBOutlet UILabel *bankNum;
-
+@property (weak, nonatomic) IBOutlet UITextField *orther_number;
+@property (nonatomic,copy) NSString *select_type;
 @end
 
 @implementation PurchaseViewController
@@ -38,6 +39,12 @@
     btnArr = @[_btn1,_btn2,_btn3,_btn4,_btn5,_btn6];
     selectedBtn = _btn1;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(toMoreAction:)];
+    self.select_type = @"1";
+    if ([self.title isEqualToString:@"卖出"]) {
+        self.orther_number.placeholder = @"请输入其他的数量(500的整数倍)";
+    } else {
+        self.orther_number.placeholder = @"请输入其他的数量(1的整数倍)";
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -45,6 +52,24 @@
     [super viewWillAppear:animated];
     [self requestData];
 }
+
+- (IBAction)editing_changed:(id)sender {
+    for (UIButton *btn in btnArr) {
+        btn.selected = NO;
+    }
+    self.select_type = @"2";
+}
+
+- (IBAction)editing_end:(UITextField *)sender {
+    if (sender.text.length == 0) {
+        UIButton *btn = [btnArr firstObject];
+        btn.selected = YES;
+        self.select_type = @"1";
+    }
+}
+
+
+
 
 - (void)requestData {
     RequestParams *parms = [[RequestParams alloc] initWithParams:API_PAYMES];
@@ -104,6 +129,7 @@
     }
     sender.selected = YES;
     selectedBtn = sender;
+    self.select_type = @"1";
 }
 
 - (IBAction)toSelectBankInfoAction:(UITapGestureRecognizer *)sender {
@@ -123,14 +149,34 @@
         AddBankViewController *addBankVC = [[AddBankViewController alloc] init];
         addBankVC.isFrist = YES;
         [self.navigationController pushViewController:addBankVC animated:YES];
-        
     }else {
         YQPayKeyWordVC *yqVC = [[YQPayKeyWordVC alloc] init];
-        [yqVC showInViewController:self money:selectedBtn.titleLabel.text];
+        if ([self.select_type isEqualToString:@"2"]) {
+            if ([self.title isEqualToString:@"卖出"]) {
+                NSInteger number = [self.orther_number.text integerValue];
+                if (number == 0 || number % 500 != 0) {
+                    [SVProgressHUD showSuccessWithStatus:@"请输入数量并且为500的整数倍"];
+                    return;
+                }
+            } else {
+                NSInteger number = [self.orther_number.text integerValue];
+                if (number == 0 || number < 1) {
+                    [SVProgressHUD showSuccessWithStatus:@"请输入数量并且大于或等于1的整数倍"];
+                    return;
+                }
+            }
+            [yqVC showInViewController:self money:self.orther_number.text];
+        } else {
+            [yqVC showInViewController:self money:selectedBtn.titleLabel.text];
+        }
         yqVC.block = ^(NSString *pass) {
             RequestParams *parms = [[RequestParams alloc] initWithParams:([self.title isEqualToString:@"买入"] ? API_BUY : API_SELL)];
             [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
-            [parms addParameter:@"BUSINESS_COUNT" value:selectedBtn.titleLabel.text];
+            if ([self.select_type isEqualToString:@"2"]) {
+                [parms addParameter:@"BUSINESS_COUNT" value:self.orther_number.text];
+            } else {
+                [parms addParameter:@"BUSINESS_COUNT" value:selectedBtn.titleLabel.text];
+            }
             [parms addParameter:@"BANK_NO" value:_bankModel.BANK_NO];
             [parms addParameter:@"BANK_USERNAME" value:_bankModel.BANK_USERNAME];
             [parms addParameter:@"BANK_NAME" value:_bankModel.BANK_NAME];

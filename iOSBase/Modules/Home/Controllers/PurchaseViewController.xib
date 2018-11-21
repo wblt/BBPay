@@ -20,6 +20,7 @@
                 <outlet property="btn5" destination="v4i-sn-DJv" id="LYI-NX-lln"/>
                 <outlet property="btn6" destination="3ct-Nm-9Db" id="zMT-SF-afz"/>
                 <outlet property="name" destination="8h8-rs-COW" id="TaL-qm-12n"/>
+                <outlet property="orther_number" destination="tHj-Sr-Q25" id="jyy-U7-4j9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -244,13 +245,17 @@
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入其他的数量（大于等于500）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHj-Sr-Q25">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入其他的数量（500的整数倍）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHj-Sr-Q25">
                             <rect key="frame" x="110" y="10" width="253" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="rx9-dS-kuP"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            <connections>
+                                <action selector="editing_changed:" destination="-1" eventType="editingChanged" id="c9r-GG-yBF"/>
+                                <action selector="editing_end:" destination="-1" eventType="editingDidEnd" id="hr0-Fs-Y9b"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
