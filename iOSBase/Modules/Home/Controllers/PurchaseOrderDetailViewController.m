@@ -42,7 +42,12 @@
         NSDictionary *dic = data[@"pd"];
         [otherArr addObject:self.ID];
         [otherArr addObject:dic[@"BUSINESS_COUNT"]];
-        [otherArr addObject:dic[@"NICK_NAME_B"]];
+        NSString *NICK_NAME_B = dic[@"NICK_NAME_B"];
+        if (NICK_NAME_B == nil) {
+            [otherArr addObject:@""];
+        } else {
+            [otherArr addObject:NICK_NAME_B];
+        }
         [otherArr addObject:dic[@"BANK_USERNAME"]];
         [otherArr addObject:dic[@"BANK_NO"]];
         [otherArr addObject:dic[@"BANK_NAME"]];

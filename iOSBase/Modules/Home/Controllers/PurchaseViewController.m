@@ -30,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *bankNum;
 @property (weak, nonatomic) IBOutlet UITextField *orther_number;
 @property (nonatomic,copy) NSString *select_type;
+@property (nonatomic,copy) NSString *bzj;
+@property (nonatomic,copy) NSString *sxf;
 @end
 
 @implementation PurchaseViewController
@@ -45,6 +47,7 @@
     } else {
         self.orther_number.placeholder = @"请输入其他的数量(1的整数倍)";
     }
+    [self s_bzj];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -145,53 +148,69 @@
 }
 
 - (IBAction)createOrderAction:(UIButton *)sender {
-    if (_bankModel == nil) {
-        AddBankViewController *addBankVC = [[AddBankViewController alloc] init];
-        addBankVC.isFrist = YES;
-        [self.navigationController pushViewController:addBankVC animated:YES];
-    }else {
-        YQPayKeyWordVC *yqVC = [[YQPayKeyWordVC alloc] init];
-        if ([self.select_type isEqualToString:@"2"]) {
-            if ([self.title isEqualToString:@"卖出"]) {
-                NSInteger number = [self.orther_number.text integerValue];
-                if (number == 0 || number % 500 != 0) {
-                    [SVProgressHUD showSuccessWithStatus:@"请输入数量并且为500的整数倍"];
-                    return;
+    NSString *title_msg = [NSString stringWithFormat:@"确认是否您账号百分之%@的DDC币作为保证金,同时消耗卖出数量的百分之%@的DDC币。",self.bzj,self.sxf];
+    [UIAlertController showAlertViewWithTitle:@"温馨提示" Message:title_msg BtnTitles:@[@"取消",@"确定"] ClickBtn:^(NSInteger index) {
+        if (index == 1) {
+            if (self->_bankModel == nil) {
+                AddBankViewController *addBankVC = [[AddBankViewController alloc] init];
+                addBankVC.isFrist = YES;
+                [self.navigationController pushViewController:addBankVC animated:YES];
+            }else {
+                YQPayKeyWordVC *yqVC = [[YQPayKeyWordVC alloc] init];
+                if ([self.select_type isEqualToString:@"2"]) {
+                    if ([self.title isEqualToString:@"卖出"]) {
+                        NSInteger number = [self.orther_number.text integerValue];
+                        if (number == 0 || number % 500 != 0) {
+                            [SVProgressHUD showSuccessWithStatus:@"请输入数量并且为500的整数倍"];
+                            return;
+                        }
+                    } else {
+                        NSInteger number = [self.orther_number.text integerValue];
+                        if (number == 0 || number < 1) {
+                            [SVProgressHUD showSuccessWithStatus:@"请输入数量并且大于或等于1的整数倍"];
+                            return;
+                        }
+                    }
+                    [yqVC showInViewController:self money:self.orther_number.text];
+                } else {
+                    [yqVC showInViewController:self money:self->selectedBtn.titleLabel.text];
                 }
-            } else {
-                NSInteger number = [self.orther_number.text integerValue];
-                if (number == 0 || number < 1) {
-                    [SVProgressHUD showSuccessWithStatus:@"请输入数量并且大于或等于1的整数倍"];
-                    return;
-                }
+                yqVC.block = ^(NSString *pass) {
+                    RequestParams *parms = [[RequestParams alloc] initWithParams:([self.title isEqualToString:@"买入"] ? API_BUY : API_SELL)];
+                    [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
+                    if ([self.select_type isEqualToString:@"2"]) {
+                        [parms addParameter:@"BUSINESS_COUNT" value:self.orther_number.text];
+                    } else {
+                        [parms addParameter:@"BUSINESS_COUNT" value:self->selectedBtn.titleLabel.text];
+                    }
+                    [parms addParameter:@"BANK_NO" value:self->_bankModel.BANK_NO];
+                    [parms addParameter:@"BANK_USERNAME" value:self->_bankModel.BANK_USERNAME];
+                    [parms addParameter:@"BANK_NAME" value:self->_bankModel.BANK_NAME];
+                    [parms addParameter:@"BANK_ADDR" value:self->_bankModel.BANK_ADDR];
+                    [parms addParameter:@"PASSW" value:pass];
+                    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"买入创建订单" successBlock:^(id data) {
+                        [SVProgressHUD showSuccessWithStatus:@"创建订单成功"];
+                        PurchaseOrderViewController * vc = [[PurchaseOrderViewController alloc] init];
+                        vc.title = [self.title isEqualToString:@"买入"] ? @"买入订单" : @"卖出订单";
+                        [self.navigationController pushViewController:vc animated:YES];
+                    } failureBlock:^(NSError *error) {
+                        
+                    }];
+                };
             }
-            [yqVC showInViewController:self money:self.orther_number.text];
-        } else {
-            [yqVC showInViewController:self money:selectedBtn.titleLabel.text];
         }
-        yqVC.block = ^(NSString *pass) {
-            RequestParams *parms = [[RequestParams alloc] initWithParams:([self.title isEqualToString:@"买入"] ? API_BUY : API_SELL)];
-            [parms addParameter:@"USER_NAME" value:[SPUtil objectForKey:k_app_USER_NAME]];
-            if ([self.select_type isEqualToString:@"2"]) {
-                [parms addParameter:@"BUSINESS_COUNT" value:self.orther_number.text];
-            } else {
-                [parms addParameter:@"BUSINESS_COUNT" value:selectedBtn.titleLabel.text];
-            }
-            [parms addParameter:@"BANK_NO" value:_bankModel.BANK_NO];
-            [parms addParameter:@"BANK_USERNAME" value:_bankModel.BANK_USERNAME];
-            [parms addParameter:@"BANK_NAME" value:_bankModel.BANK_NAME];
-            [parms addParameter:@"BANK_ADDR" value:_bankModel.BANK_ADDR];
-            [parms addParameter:@"PASSW" value:pass];
-            [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"买入创建订单" successBlock:^(id data) {
-                [SVProgressHUD showSuccessWithStatus:@"创建订单成功"];
-                PurchaseOrderViewController * vc = [[PurchaseOrderViewController alloc] init];
-                vc.title = [self.title isEqualToString:@"买入"] ? @"买入订单" : @"卖出订单";
-                [self.navigationController pushViewController:vc animated:YES];
-            } failureBlock:^(NSError *error) {
-                
-            }];
-        };
-    }
+    }];
+}
+
+- (void)s_bzj{
+    RequestParams *parms = [[RequestParams alloc] initWithParams:API_bzj];
+    [[NetworkSingleton shareInstace] httpPost:parms withTitle:@"转出记录" successBlock:^(id data) {
+        self.bzj = data[@"pd"][@"BZJ"];
+        self.sxf = data[@"pd"][@"SXF"];
+        NSLog(@"dd");
+    } failureBlock:^(NSError *error) {
+        
+    }];
 }
 
 

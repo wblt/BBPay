@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,12 +35,12 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号：153xxxx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uug-4d-0C2">
-                                <rect key="frame" x="67" y="40" width="110" height="17"/>
+                                <rect key="frame" x="67" y="47" width="110" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018-08-11 13:30:29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKf-UJ-pq4">
-                                <rect key="frame" x="171" y="40" width="137" height="17"/>
+                                <rect key="frame" x="171" y="47" width="137" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -50,14 +50,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEa-g8-S6d">
-                                <rect key="frame" x="268" y="10" width="40" height="28"/>
+                                <rect key="frame" x="243" y="12" width="65" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="EKs-NG-4M2"/>
+                                    <constraint firstAttribute="height" constant="24" id="SEz-WW-3g6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="未完成">
-                                    <color key="titleColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZS-46-AaQ">
-                                <rect key="frame" x="193" y="12" width="65" height="24"/>
+                                <rect key="frame" x="168" y="12" width="65" height="24"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.65490196079999996" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="vAG-Mg-a7b"/>
@@ -83,7 +87,7 @@
                             <constraint firstItem="WZS-46-AaQ" firstAttribute="centerY" secondItem="DKd-ZV-Jec" secondAttribute="centerY" id="IwB-3G-2yx"/>
                             <constraint firstItem="uug-4d-0C2" firstAttribute="leading" secondItem="Ftw-qA-ys4" secondAttribute="trailing" constant="15" id="WT0-cA-N7v"/>
                             <constraint firstItem="Ftw-qA-ys4" firstAttribute="centerY" secondItem="Czd-le-caN" secondAttribute="centerY" id="bE4-n8-XGb"/>
-                            <constraint firstItem="uug-4d-0C2" firstAttribute="top" secondItem="DKd-ZV-Jec" secondAttribute="bottom" constant="8" id="dbd-wk-vpK"/>
+                            <constraint firstItem="uug-4d-0C2" firstAttribute="top" secondItem="DKd-ZV-Jec" secondAttribute="bottom" constant="15" id="dbd-wk-vpK"/>
                             <constraint firstItem="DKd-ZV-Jec" firstAttribute="top" secondItem="Czd-le-caN" secondAttribute="top" constant="15" id="h4p-YD-PwZ"/>
                             <constraint firstItem="FKf-UJ-pq4" firstAttribute="centerY" secondItem="uug-4d-0C2" secondAttribute="centerY" id="lIg-Zh-4ms"/>
                             <constraint firstItem="Ftw-qA-ys4" firstAttribute="leading" secondItem="Czd-le-caN" secondAttribute="leading" constant="12" id="oHp-EF-fxj"/>

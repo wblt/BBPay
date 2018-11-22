@@ -9,6 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface PurchaseOrderModel : NSObject
+/*
+ "BUSINESS_BALANCE" = 500;
+ "CREATE_TIME" = 1542856736000;
+ ID = 164;
+ "NICK_NAME" = gagagag;
+ SJ = 0;
+ "USER_ID" = 25994;
+ "USER_NAME" = gagagag;
+ */
 @property (nonatomic, strong) NSString *USER_NAME;
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *USER_NAME_B;
@@ -19,5 +28,7 @@
 @property (nonatomic, strong) NSString *STATUS;
 @property (nonatomic, strong) NSString *BUSINESS_COUNT;
 @property (nonatomic, strong) NSString *CREATE_TIME;
+@property (nonatomic, strong) NSString *BUSINESS_BALANCE;
+
 
 @end

@@ -165,6 +165,7 @@ _Pragma("clang diagnostic pop")
 #define API_sendDDCB      SERVER_IP@"/app/my/sendDDCB"
 #define API_sendDDCBDetail      SERVER_IP@"/app/my/sendDDCBDetail"
 #define API_receiveDDCBDetail      SERVER_IP@"/app/my/receiveDDCBDetail"
+#define API_bzj      SERVER_IP@"/app/market/bzj"
 
 
 
