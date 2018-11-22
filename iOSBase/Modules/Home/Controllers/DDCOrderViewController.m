@@ -56,6 +56,11 @@
             [self ddc_sellOrderList:@"2"];
         }
     }];
+    if ([self.select_type isEqualToString:@"1"]) {
+        [self ddc_buyOrderList:@"1"];
+    } else {
+        [self ddc_sellOrderList:@"1"];
+    }
 }
 
 
