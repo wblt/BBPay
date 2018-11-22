@@ -194,7 +194,7 @@
     cell.num.text = [NSString stringWithFormat:@"数量：%@",model.BUSINESS_BALANCE];
     [cell.headImg sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"head"]];
     if ([selcetedBtn.titleLabel.text isEqualToString:@"购买"]) {
-        [cell.btn setTitle:@"购买" forState:UIControlStateNormal];
+        [cell.btn setTitle:@"余额购买" forState:UIControlStateNormal];
     }else {
         [cell.btn setTitle:@"出售" forState:UIControlStateNormal];
     }
