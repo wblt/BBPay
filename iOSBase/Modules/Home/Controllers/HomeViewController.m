@@ -192,6 +192,15 @@
     }else if (sender.tag == 109) { // 订火车票
         self.navigationController.navigationBarHidden = YES;
         [SVProgressHUD showInfoWithStatus:@"订火车票暂未开放，即将呈现敬请期待！"];
+    } else if (sender.tag == 110) { // 话费充值
+        self.navigationController.navigationBarHidden = YES;
+        [SVProgressHUD showInfoWithStatus:@"话费充值暂未开放，即将呈现敬请期待！"];
+    } else if (sender.tag == 111) { // 油卡充值
+        self.navigationController.navigationBarHidden = YES;
+        [SVProgressHUD showInfoWithStatus:@"油卡充值暂未开放，即将呈现敬请期待！"];
+    } else if (sender.tag == 112) { // 大健康医疗
+        self.navigationController.navigationBarHidden = YES;
+        [SVProgressHUD showInfoWithStatus:@"大健康医疗暂未开放，即将呈现敬请期待！"];
     }
 }
 
