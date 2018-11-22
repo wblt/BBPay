@@ -185,7 +185,11 @@
     TransactionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     TradeRecordModel *model = transactionArr[indexPath.row];
-    cell.name.text = [NSString stringWithFormat:@"昵称：%@",model.NICK_NAME];
+    if ([model.SJ isEqualToString:@"1"]) {
+        cell.name.text = [NSString stringWithFormat:@"UID：S%@",model.USER_ID];
+    } else {
+        cell.name.text = [NSString stringWithFormat:@"UID：%@",model.USER_ID];
+    }
     cell.price.text = model.BUSINESS_PRICE;
     cell.num.text = [NSString stringWithFormat:@"数量：%@",model.BUSINESS_BALANCE];
     [cell.headImg sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"head"]];

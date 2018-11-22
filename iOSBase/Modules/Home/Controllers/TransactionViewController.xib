@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,7 +42,7 @@
                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhuanchu_icon" translatesAutoresizingMaskIntoConstraints="NO" id="h2h-qV-WrD">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fabu_sale_icon" translatesAutoresizingMaskIntoConstraints="NO" id="h2h-qV-WrD">
                             <rect key="frame" x="50.5" y="9" width="24" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="0qb-V9-0nt"/>
@@ -61,7 +61,7 @@
                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhongchou_icon" translatesAutoresizingMaskIntoConstraints="NO" id="xdC-ZC-oB7">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fabu_goumai_icon" translatesAutoresizingMaskIntoConstraints="NO" id="xdC-ZC-oB7">
                             <rect key="frame" x="175.5" y="9" width="24" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="YYh-LC-3nW"/>
@@ -80,7 +80,7 @@
                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yuanbao_icon" translatesAutoresizingMaskIntoConstraints="NO" id="xzO-KI-RZf">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shzi_dingdan_icon" translatesAutoresizingMaskIntoConstraints="NO" id="xzO-KI-RZf">
                             <rect key="frame" x="300.5" y="9" width="24" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="Hb8-rA-oc0"/>
@@ -160,10 +160,10 @@
                             <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="hhG-4G-mid">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="hhG-4G-mid">
                             <rect key="frame" x="341" y="76" width="22" height="22"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-fb-uU2">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-fb-uU2">
                             <rect key="frame" x="222.5" y="76" width="22" height="22"/>
                         </imageView>
                     </subviews>
@@ -261,8 +261,8 @@
     </objects>
     <resources>
         <image name="arrow" width="22" height="22"/>
-        <image name="yuanbao_icon" width="60" height="60"/>
-        <image name="zhongchou_icon" width="60" height="60"/>
-        <image name="zhuanchu_icon" width="60" height="60"/>
+        <image name="fabu_goumai_icon" width="48" height="48"/>
+        <image name="fabu_sale_icon" width="48" height="48"/>
+        <image name="shzi_dingdan_icon" width="48" height="48"/>
     </resources>
 </document>

@@ -112,7 +112,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     PurchaseOrderModel *model = orderArr[indexPath.row];
     cell.name.text = model.NICK_NAME;
-    cell.score.text = model.BUSINESS_COUNT;
+    cell.score.text = model.BUSINESS_BALANCE;
     cell.time.text = [Util timestampToString:[NSString stringWithFormat:@"%ld",[model.CREATE_TIME integerValue]/1000] formatterString:@"yyyy-MM-dd HH:mm:ss"];
     [cell.img sd_setImageWithURL:[NSURL URLWithString:model.HEAD_URL] placeholderImage:[UIImage imageNamed:@"head"]];
     if ([self.title isEqualToString:@"买入订单"]) {

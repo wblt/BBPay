@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *SJ_CODE;
 @property (nonatomic, strong) NSString *USER_NAME;
 @property (nonatomic, strong) NSString *BUSINESS_BALANCE;
+@property (nonatomic, strong) NSString *USER_ID;
+
 @end
 
 NS_ASSUME_NONNULL_END
